@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=3 uid="uid://tri6ohytkbxl"]
+
+[ext_resource type="Texture2D" uid="uid://drqod0fgjoueu" path="res://assets/GUI/white_circle1.png" id="1_vfywb"]
+[ext_resource type="Texture2D" uid="uid://b6d8dbj2q6uah" path="res://assets/GUI/earth_circle.png" id="2_vfywb"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8b11x"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jtyft"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("CompressedTexture2D_8b11x")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+visible = false
+modulate = Color(0, 1, 1, 0.52549)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+value = 30.0
+fill_mode = 7
+texture_progress = SubResource("CompressedTexture2D_jtyft")
+
+[node name="Control" type="Node2D" parent="."]
+
+[node name="outer_background" type="Sprite2D" parent="Control"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(100, 100)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_vfywb")
+
+[node name="earth" type="Sprite2D" parent="Control"]
+position = Vector2(100, 100)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_vfywb")
+
+[node name="inner_circle" type="Sprite2D" parent="Control"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(100, 100)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("1_vfywb")
+
+[node name="gauge_circle" type="Sprite2D" parent="Control"]
+modulate = Color(0, 1, 0.431373, 0.615686)
+position = Vector2(100, 100)
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("1_vfywb")

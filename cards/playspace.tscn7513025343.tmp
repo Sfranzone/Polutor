@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://cfcpxhlash5ar"]
+
+[ext_resource type="Script" uid="uid://d2ddau5u7op8n" path="res://playspace.gd" id="1_mnypd"]
+[ext_resource type="Texture2D" uid="uid://box48gk0b7dds" path="res://assets/background/modern-neon-city-street-at-night-vector-53932835.jpg" id="2_d8ypc"]
+[ext_resource type="PackedScene" uid="uid://p8g3lkyeiuit" path="res://enemy.tscn" id="2_tq356"]
+[ext_resource type="Texture2D" uid="uid://ckgnqsiv24qi5" path="res://assets/cards/backcard_texture.png" id="3_4agpc"]
+[ext_resource type="Texture2D" uid="uid://c3tlgmp7qgfhw" path="res://assets/cards/empty_deck_texture.png" id="4_tq356"]
+[ext_resource type="Script" uid="uid://ci2cojth16j3m" path="res://cards/deck_draw.gd" id="5_63xxw"]
+
+[node name="Playspace" type="Node2D"]
+script = ExtResource("1_mnypd")
+
+[node name="CardSlots" type="Node" parent="."]
+
+[node name="Cards" type="Node" parent="."]
+
+[node name="Enemies" type="Node" parent="."]
+
+[node name="Enemy" parent="Enemies" instance=ExtResource("2_tq356")]
+visible = false
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(575.5, 325.5)
+scale = Vector2(0.883846, 1.294)
+texture = ExtResource("2_d8ypc")
+
+[node name="Deck" type="Node2D" parent="."]
+
+[node name="Deck_draw" type="TextureButton" parent="Deck"]
+offset_left = 919.0
+offset_top = 263.0
+offset_right = 1169.0
+offset_bottom = 613.0
+texture_normal = ExtResource("3_4agpc")
+texture_pressed = ExtResource("3_4agpc")
+texture_hover = ExtResource("3_4agpc")
+texture_disabled = ExtResource("4_tq356")
+script = ExtResource("5_63xxw")

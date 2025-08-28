@@ -1,0 +1,58 @@
+[gd_scene load_steps=10 format=3 uid="uid://cfcpxhlash5ar"]
+
+[ext_resource type="Script" uid="uid://d2ddau5u7op8n" path="res://scripts/playspace.gd" id="1_1km75"]
+[ext_resource type="PackedScene" uid="uid://p8g3lkyeiuit" path="res://scenes/enemy.tscn" id="2_trwjd"]
+[ext_resource type="Texture2D" uid="uid://box48gk0b7dds" path="res://assets/background/modern-neon-city-street-at-night-vector-53932835.jpg" id="3_yp04s"]
+[ext_resource type="Texture2D" uid="uid://ckgnqsiv24qi5" path="res://assets/cards/backcard_texture.png" id="4_bdpdu"]
+[ext_resource type="Texture2D" uid="uid://c3tlgmp7qgfhw" path="res://assets/cards/empty_deck_texture.png" id="5_owkef"]
+[ext_resource type="Script" uid="uid://ci2cojth16j3m" path="res://scripts/deck_draw.gd" id="6_usm0b"]
+[ext_resource type="Script" uid="uid://dr0a5cbtntbde" path="res://scripts/discard_pile.gd" id="7_ods4o"]
+[ext_resource type="PackedScene" uid="uid://cf528wevww2fr" path="res://scenes/mse_bars.tscn" id="9_1km75"]
+[ext_resource type="PackedScene" uid="uid://ne1mtcf1gjyd" path="res://scenes/scene_transition_animation.tscn" id="10_trwjd"]
+
+[node name="Playspace_lausanne1" type="Node2D"]
+script = ExtResource("1_1km75")
+
+[node name="Enemies" type="Node" parent="."]
+
+[node name="Enemy" parent="Enemies" instance=ExtResource("2_trwjd")]
+visible = false
+
+[node name="Cards" type="Node" parent="."]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(575.5, 325.5)
+scale = Vector2(0.883846, 1.294)
+texture = ExtResource("3_yp04s")
+
+[node name="Deck" type="Node2D" parent="."]
+
+[node name="Deck_draw" type="TextureButton" parent="Deck"]
+offset_left = 1001.0
+offset_top = 431.0
+offset_right = 1251.0
+offset_bottom = 781.0
+texture_normal = ExtResource("4_bdpdu")
+texture_pressed = ExtResource("4_bdpdu")
+texture_hover = ExtResource("4_bdpdu")
+texture_disabled = ExtResource("5_owkef")
+script = ExtResource("6_usm0b")
+
+[node name="Discard" type="Node2D" parent="."]
+
+[node name="Discard_pile" type="TextureButton" parent="Discard"]
+offset_left = 1003.0
+offset_top = 29.0
+offset_right = 1253.0
+offset_bottom = 379.0
+texture_normal = ExtResource("4_bdpdu")
+texture_pressed = ExtResource("4_bdpdu")
+texture_hover = ExtResource("4_bdpdu")
+texture_disabled = ExtResource("5_owkef")
+script = ExtResource("7_ods4o")
+
+[node name="MSE_bars" parent="." instance=ExtResource("9_1km75")]
+
+[node name="Scene_transition_animation" parent="." instance=ExtResource("10_trwjd")]
+
+[node name="Node2D" type="Node2D" parent="."]

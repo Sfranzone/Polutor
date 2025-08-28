@@ -1,0 +1,137 @@
+[gd_scene load_steps=6 format=3 uid="uid://dty8pyein2cp"]
+
+[ext_resource type="Script" uid="uid://dgrw8wyg5ilbe" path="res://scripts/switzerland.gd" id="1_272to"]
+[ext_resource type="FontFile" uid="uid://c4pe7v7qaoxgf" path="res://assets/fonts/Comfortaa-Bold.ttf" id="2_12pri"]
+[ext_resource type="PackedScene" uid="uid://h3dwx6rdsu7d" path="res://scenes/menu_map.tscn" id="4_272to"]
+[ext_resource type="Texture2D" uid="uid://cb8x0whmw0p8s" path="res://assets/map/map_suisse.png" id="4_kvre6"]
+[ext_resource type="PackedScene" uid="uid://ne1mtcf1gjyd" path="res://scenes/scene_transition_animation.tscn" id="6_p83wr"]
+
+[node name="Switzerland" type="Node2D"]
+script = ExtResource("1_272to")
+
+[node name="Suisse_map" type="Node2D" parent="."]
+
+[node name="Not_available_now" type="Window" parent="Suisse_map"]
+auto_translate_mode = 1
+title = "Attention"
+initial_position = 2
+size = Vector2i(300, 200)
+visible = false
+theme_override_colors/title_color = Color(1, 1, 1, 1)
+theme_override_fonts/title_font = ExtResource("2_12pri")
+theme_override_font_sizes/title_font_size = 20
+
+[node name="message_not_available" type="Label" parent="Suisse_map/Not_available_now"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Cette zone n'est pas encore 
+disponible..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="Suisse_map"]
+offset_right = 1153.0
+offset_bottom = 649.0
+color = Color(0.593134, 0.593134, 0.593134, 1)
+
+[node name="Suisse" type="Sprite2D" parent="Suisse_map"]
+position = Vector2(86, -13)
+scale = Vector2(0.24, 0.24)
+texture = ExtResource("4_kvre6")
+centered = false
+
+[node name="Button_lausanne" type="Button" parent="Suisse_map"]
+offset_left = 177.0
+offset_top = 403.0
+offset_right = 264.0
+offset_bottom = 434.0
+theme_override_fonts/font = ExtResource("2_12pri")
+theme_override_font_sizes/font_size = 15
+text = "Lausanne"
+
+[node name="Button_neuchatel" type="Button" parent="Suisse_map"]
+offset_left = 251.0
+offset_top = 270.0
+offset_right = 338.0
+offset_bottom = 301.0
+theme_override_fonts/font = ExtResource("2_12pri")
+theme_override_font_sizes/font_size = 15
+text = "Neuchâtel"
+
+[node name="Button_berne" type="Button" parent="Suisse_map"]
+offset_left = 387.0
+offset_top = 267.0
+offset_right = 461.0
+offset_bottom = 298.0
+theme_override_fonts/font = ExtResource("2_12pri")
+theme_override_font_sizes/font_size = 15
+text = "Berne"
+
+[node name="Button_sion" type="Button" parent="Suisse_map"]
+visible = false
+offset_left = 364.0
+offset_top = 540.0
+offset_right = 438.0
+offset_bottom = 571.0
+theme_override_fonts/font = ExtResource("2_12pri")
+theme_override_font_sizes/font_size = 15
+text = "Sion"
+
+[node name="Button_lucerne" type="Button" parent="Suisse_map"]
+visible = false
+offset_left = 580.0
+offset_top = 233.0
+offset_right = 654.0
+offset_bottom = 264.0
+theme_override_fonts/font = ExtResource("2_12pri")
+theme_override_font_sizes/font_size = 15
+text = "Lucerne"
+
+[node name="Button_locarno" type="Button" parent="Suisse_map"]
+visible = false
+offset_left = 663.0
+offset_top = 500.0
+offset_right = 737.0
+offset_bottom = 531.0
+theme_override_fonts/font = ExtResource("2_12pri")
+theme_override_font_sizes/font_size = 15
+text = "Locarno"
+
+[node name="Button_bale" type="Button" parent="Suisse_map"]
+visible = false
+offset_left = 419.0
+offset_top = 88.0
+offset_right = 493.0
+offset_bottom = 119.0
+theme_override_fonts/font = ExtResource("2_12pri")
+theme_override_font_sizes/font_size = 15
+text = "Bâle"
+
+[node name="Button_zurich" type="Button" parent="Suisse_map"]
+visible = false
+offset_left = 610.0
+offset_top = 136.0
+offset_right = 684.0
+offset_bottom = 167.0
+theme_override_fonts/font = ExtResource("2_12pri")
+theme_override_font_sizes/font_size = 15
+text = "Zürich"
+
+[node name="Menu" type="Node" parent="."]
+
+[node name="Menu_map" parent="Menu" instance=ExtResource("4_272to")]
+
+[node name="Scene_transition_animation" parent="." instance=ExtResource("6_p83wr")]
+
+[connection signal="close_requested" from="Suisse_map/Not_available_now" to="." method="_on_not_available_now_close_requested"]
+[connection signal="pressed" from="Suisse_map/Button_lausanne" to="." method="_on_button_lausanne_pressed"]
+[connection signal="pressed" from="Suisse_map/Button_neuchatel" to="." method="_on_button_neuchatel_pressed"]
+[connection signal="pressed" from="Suisse_map/Button_berne" to="." method="_on_button_berne_pressed"]
+[connection signal="pressed" from="Suisse_map/Button_sion" to="." method="_on_button_sion_pressed"]
+[connection signal="pressed" from="Suisse_map/Button_lucerne" to="." method="_on_button_lucerne_pressed"]
+[connection signal="pressed" from="Suisse_map/Button_locarno" to="." method="_on_button_locarno_pressed"]
+[connection signal="pressed" from="Suisse_map/Button_bale" to="." method="_on_button_bale_pressed"]
+[connection signal="pressed" from="Suisse_map/Button_zurich" to="." method="_on_button_zurich_pressed"]

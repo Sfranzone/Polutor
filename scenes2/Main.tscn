@@ -1,0 +1,1616 @@
+[gd_scene load_steps=59 format=3 uid="uid://4lmt1jixyj1u"]
+
+[ext_resource type="Script" uid="uid://dhryot31mkwoo" path="res://scripts2/CardManager.gd" id="1_nbxl4"]
+[ext_resource type="Script" uid="uid://c5mxs7onr2mlc" path="res://scripts2/Main.gd" id="1_whado"]
+[ext_resource type="Texture2D" uid="uid://o8qdph7cbos3" path="res://assets/background/background_laus2.png" id="2_mf030"]
+[ext_resource type="Script" uid="uid://brvcjdgdrtuuj" path="res://scripts2/PlayerHand.gd" id="2_nbxl4"]
+[ext_resource type="Script" uid="uid://bfpfwl8ef4cm4" path="res://scripts2/Deck.gd" id="3_dvxfg"]
+[ext_resource type="Texture2D" uid="uid://ckgnqsiv24qi5" path="res://assets/cards/backcard_texture.png" id="4_r6w5h"]
+[ext_resource type="Script" uid="uid://b3r6vegpn230" path="res://scripts2/InputManager.gd" id="5_r6w5h"]
+[ext_resource type="FontFile" uid="uid://c4pe7v7qaoxgf" path="res://assets/fonts/Comfortaa-Bold.ttf" id="6_tu7ba"]
+[ext_resource type="PackedScene" uid="uid://dg6holjks5443" path="res://scenes2/Enemy.tscn" id="7_tydlu"]
+[ext_resource type="PackedScene" uid="uid://b3lr5g3qlghm6" path="res://scenes2/Mana.tscn" id="8_nn3pv"]
+[ext_resource type="PackedScene" uid="uid://cx1mg4bd0jghh" path="res://scenes2/PlayerHealth.tscn" id="9_nmreb"]
+[ext_resource type="Script" uid="uid://c8vja52mm8ck8" path="res://scripts2/BattleManager.gd" id="10_7ymo5"]
+[ext_resource type="PackedScene" uid="uid://ne1mtcf1gjyd" path="res://scenes/scene_transition_animation.tscn" id="12_eifcl"]
+[ext_resource type="PackedScene" uid="uid://bmxpd3d64j602" path="res://scenes2/EnvSocGauge.tscn" id="12_v3at8"]
+[ext_resource type="Script" uid="uid://dhyn8esjg3y0n" path="res://scripts2/Tutorial.gd" id="15_8ajrv"]
+[ext_resource type="Texture2D" uid="uid://cyg4kv0ytenuj" path="res://assets/tutorial/rectangle_dialogue2.webp" id="15_yefou"]
+[ext_resource type="Texture2D" uid="uid://dt8kxwm0vp0ld" path="res://assets/GUI/red_arrow.png" id="17_3e7p2"]
+[ext_resource type="PackedScene" uid="uid://h3dwx6rdsu7d" path="res://scenes/menu_map.tscn" id="18_mf030"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tu7ba"]
+size = Vector2(150, 210)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mf030"]
+bg_color = Color(0.60933, 0.60933, 0.60933, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0vw4w"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3e7p2"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="Animation" id="Animation_yefou"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/Tuto1/Welcome:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/TextureRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control/Tuto1/Welcome:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Control/Tuto1/ClickToContinue:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Control/Tuto1/ClickToContinue:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_v3at8"]
+resource_name = "TutoStart"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/Tuto1/Welcome:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/TextureRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control/Tuto1/Welcome:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Control/Tuto1/ClickToContinue:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Control/Tuto1/ClickToContinue:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(3),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8ajrv"]
+_data = {
+&"RESET": SubResource("Animation_yefou"),
+&"TutoStart": SubResource("Animation_v3at8")
+}
+
+[sub_resource type="Animation" id="Animation_8ajrv"]
+resource_name = "ContinueBlink"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ClickToContinue:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_3e7p2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ClickToContinue:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mf030"]
+_data = {
+&"ContinueBlink": SubResource("Animation_8ajrv"),
+&"RESET": SubResource("Animation_3e7p2")
+}
+
+[sub_resource type="Animation" id="Animation_mf030"]
+resource_name = "Next1"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Welcome:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Tuto2/Text2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Tuto2/RedArrow2:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(4, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ClickToContinue:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 5, 6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Tuto2/Text2:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_0vw4w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Welcome:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Tuto2/Text2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Tuto2/RedArrow2:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ClickToContinue:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Tuto2/Text2:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0vw4w"]
+_data = {
+&"Next1": SubResource("Animation_mf030"),
+&"RESET": SubResource("Animation_0vw4w")
+}
+
+[sub_resource type="Animation" id="Animation_a2uni"]
+resource_name = "PointingArrow2"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RedArrow2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(203, 163), Vector2(265, 217), Vector2(203, 163)]
+}
+
+[sub_resource type="Animation" id="Animation_7u8nh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RedArrow2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(203, 163)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xy3v0"]
+_data = {
+&"PointingArrow2": SubResource("Animation_a2uni"),
+&"RESET": SubResource("Animation_7u8nh")
+}
+
+[sub_resource type="Animation" id="Animation_xy3v0"]
+resource_name = "Next2"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Text2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Tuto1/ClickToContinue:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 5, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Tuto3/Text3:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Tuto3/Text3:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_enxmv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Text2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Tuto1/ClickToContinue:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Tuto3/Text3:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Tuto3/Text3:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_enxmv"]
+_data = {
+&"Next2": SubResource("Animation_xy3v0"),
+&"RESET": SubResource("Animation_enxmv")
+}
+
+[sub_resource type="Animation" id="Animation_2rplc"]
+resource_name = "Next3"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Text3:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Tuto1/ClickToContinue:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 5, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Tuto4/Text4:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Tuto4/Text4:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_7n8ub"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Text3:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Tuto1/ClickToContinue:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Tuto4/Text4:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Tuto4/Text4:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7n8ub"]
+_data = {
+&"Next3": SubResource("Animation_2rplc"),
+&"RESET": SubResource("Animation_7n8ub")
+}
+
+[sub_resource type="Animation" id="Animation_xilkn"]
+resource_name = "Next4"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Text4:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Tuto1/ClickToContinue:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 5, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Tuto5/Text5:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Tuto5/Text5:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Tuto5/RedArrow3:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 4, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_lksig"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Text4:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Tuto1/ClickToContinue:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Tuto5/Text5:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Tuto5/Text5:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Tuto5/RedArrow3:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lksig"]
+_data = {
+&"Next4": SubResource("Animation_xilkn"),
+&"RESET": SubResource("Animation_lksig")
+}
+
+[sub_resource type="Animation" id="Animation_41hke"]
+resource_name = "PointingArrow3"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RedArrow3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1378, 630), Vector2(1318, 701), Vector2(1378, 630)]
+}
+
+[sub_resource type="Animation" id="Animation_ybaij"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RedArrow3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1378, 630)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ybaij"]
+_data = {
+&"PointingArrow3": SubResource("Animation_41hke"),
+&"RESET": SubResource("Animation_ybaij")
+}
+
+[sub_resource type="Animation" id="Animation_58rxw"]
+resource_name = "Next5"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Text5:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Tuto1/ClickToContinue:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 5, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Tuto6/Text6:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Tuto6/Text6:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_85vtd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Text5:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Tuto1/ClickToContinue:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Tuto6/Text6:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Tuto6/Text6:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_85vtd"]
+_data = {
+&"Next5": SubResource("Animation_58rxw"),
+&"RESET": SubResource("Animation_85vtd")
+}
+
+[sub_resource type="Animation" id="Animation_54vwg"]
+resource_name = "Next6"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Text6:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Tuto1/ClickToContinue:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 5, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Tuto7/Text7:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Tuto7/Text7:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Tuto7/RedArrow4:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(3, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_mr7uq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Text6:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Tuto1/ClickToContinue:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Tuto7/Text7:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Tuto7/Text7:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Tuto7/RedArrow4:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mr7uq"]
+_data = {
+&"Next6": SubResource("Animation_54vwg"),
+&"RESET": SubResource("Animation_mr7uq")
+}
+
+[sub_resource type="Animation" id="Animation_wxwms"]
+resource_name = "PointingArrow4"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RedArrow4:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(679, 102), Vector2(579, 176), Vector2(679, 102)]
+}
+
+[sub_resource type="Animation" id="Animation_vfyhb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RedArrow4:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(679, 102)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vfyhb"]
+_data = {
+&"PointingArrow4": SubResource("Animation_wxwms"),
+&"RESET": SubResource("Animation_vfyhb")
+}
+
+[sub_resource type="Animation" id="Animation_l6cde"]
+resource_name = "Next7"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Text7:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Tuto1/ClickToContinue:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 5, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Tuto8/Text8:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Tuto8/Text8:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_2wsct"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Text7:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Tuto1/ClickToContinue:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Tuto8/Text8:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Tuto8/Text8:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wxwms"]
+_data = {
+&"Next7": SubResource("Animation_l6cde"),
+&"RESET": SubResource("Animation_2wsct")
+}
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_whado")
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(960, 540)
+texture = ExtResource("2_mf030")
+
+[node name="CardManager" type="Node2D" parent="."]
+script = ExtResource("1_nbxl4")
+
+[node name="PlayerHand" type="Node2D" parent="."]
+script = ExtResource("2_nbxl4")
+
+[node name="Deck" type="Node2D" parent="."]
+position = Vector2(150, 890)
+script = ExtResource("3_dvxfg")
+
+[node name="Sprite2D" type="Sprite2D" parent="Deck"]
+z_index = -2
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_r6w5h")
+
+[node name="Area2D" type="Area2D" parent="Deck"]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Deck/Area2D"]
+shape = SubResource("RectangleShape2D_tu7ba")
+disabled = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Deck"]
+modulate = Color(0, 0, 0, 1)
+z_index = -2
+offset_left = -9.0
+offset_top = -28.0
+offset_right = 31.0
+offset_bottom = 12.0
+scale = Vector2(2, 2)
+text = "0"
+
+[node name="InputManager" type="Node2D" parent="."]
+script = ExtResource("5_r6w5h")
+
+[node name="EndTurnButton" type="Button" parent="."]
+offset_left = 1650.0
+offset_top = 850.0
+offset_right = 1850.0
+offset_bottom = 950.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_tu7ba")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/hover = SubResource("StyleBoxFlat_mf030")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0vw4w")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3e7p2")
+text = "End Turn"
+
+[node name="Enemy" parent="." instance=ExtResource("7_tydlu")]
+
+[node name="Mana" parent="." instance=ExtResource("8_nn3pv")]
+position = Vector2(1625, 600)
+scale = Vector2(0.75, 0.75)
+
+[node name="PlayerHealth" parent="." instance=ExtResource("9_nmreb")]
+position = Vector2(175, 550)
+scale = Vector2(0.75, 0.75)
+
+[node name="EnvSocGauge" parent="." instance=ExtResource("12_v3at8")]
+position = Vector2(150, 125)
+
+[node name="BattleManager" type="Node" parent="."]
+script = ExtResource("10_7ymo5")
+
+[node name="BattleTimer1" type="Timer" parent="."]
+
+[node name="BattleTimer2" type="Timer" parent="."]
+
+[node name="BattleTimer4" type="Timer" parent="."]
+
+[node name="BattleTimer3" type="Timer" parent="."]
+
+[node name="Tutorial" type="Control" parent="."]
+visibility_layer = 2
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+script = ExtResource("15_8ajrv")
+
+[node name="Control" type="Control" parent="Tutorial"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="TutoStart" type="AnimationPlayer" parent="Tutorial/Control"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_8ajrv")
+}
+
+[node name="ColorRect" type="ColorRect" parent="Tutorial/Control"]
+visible = false
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 0)
+
+[node name="TextureRect" type="TextureRect" parent="Tutorial/Control"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 1125.0
+offset_top = 75.0
+offset_right = 2425.0
+offset_bottom = 950.0
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("15_yefou")
+
+[node name="Tuto1" type="Control" parent="Tutorial/Control"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Welcome" type="Label" parent="Tutorial/Control/Tuto1"]
+visible = false
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 1200.0
+offset_top = 210.0
+offset_right = 1825.0
+offset_bottom = 490.0
+theme_override_fonts/font = ExtResource("6_tu7ba")
+theme_override_font_sizes/font_size = 43
+text = "Bonjour et bienvenue dans Polutor !"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="ClickToContinue" type="Label" parent="Tutorial/Control/Tuto1"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 1200.0
+offset_top = 450.0
+offset_right = 1825.0
+offset_bottom = 473.0
+theme_override_fonts/font = ExtResource("6_tu7ba")
+theme_override_font_sizes/font_size = 20
+text = "Cliquer pour continuer"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ContinueButton1" type="Button" parent="Tutorial/Control/Tuto1"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+top_level = true
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="Blinking" type="AnimationPlayer" parent="Tutorial/Control/Tuto1"]
+libraries = {
+&"": SubResource("AnimationLibrary_mf030")
+}
+
+[node name="Next1" type="AnimationPlayer" parent="Tutorial/Control/Tuto1"]
+libraries = {
+&"": SubResource("AnimationLibrary_0vw4w")
+}
+
+[node name="Tuto2" type="Control" parent="Tutorial/Control"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Text2" type="Label" parent="Tutorial/Control/Tuto2"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 1200.0
+offset_top = 210.0
+offset_right = 1825.0
+offset_bottom = 490.0
+theme_override_fonts/font = ExtResource("6_tu7ba")
+theme_override_font_sizes/font_size = 25
+text = "Voici votre premier combat contre un monstre né de la pollution. Le but sera de venir à bout de lui, mais attention ! Gérez bien votre jauge environnemental et social en haut à droite de l'écran pour ne pas avoir de pénalité !"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="ContinueButton2" type="Button" parent="Tutorial/Control/Tuto2"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+top_level = true
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="RedArrow2" type="TextureRect" parent="Tutorial/Control/Tuto2"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 203.0
+offset_top = 163.0
+offset_right = 403.0
+offset_bottom = 363.0
+texture = ExtResource("17_3e7p2")
+flip_h = true
+
+[node name="PointingArrow2" type="AnimationPlayer" parent="Tutorial/Control/Tuto2"]
+libraries = {
+&"": SubResource("AnimationLibrary_xy3v0")
+}
+
+[node name="Next2" type="AnimationPlayer" parent="Tutorial/Control/Tuto2"]
+libraries = {
+&"": SubResource("AnimationLibrary_enxmv")
+}
+
+[node name="Tuto3" type="Control" parent="Tutorial/Control"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Text3" type="Label" parent="Tutorial/Control/Tuto3"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 1200.0
+offset_top = 210.0
+offset_right = 1825.0
+offset_bottom = 490.0
+theme_override_fonts/font = ExtResource("6_tu7ba")
+theme_override_font_sizes/font_size = 25
+text = "Cette jauge changera en fonction des 2 numéro en bleu clair (Baisse la jauge) et vert (Augmente la jauge) sur les cartes. Celui en bleu clair indique l'impacte social qu'aura celle-ci si elle est jouée, c'est-à-dire l'influence sur la société humaine (plus le chiffre est grand, moins bien est l'impact social de cette carte)."
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="ContinueButton3" type="Button" parent="Tutorial/Control/Tuto3"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+top_level = true
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="Next3" type="AnimationPlayer" parent="Tutorial/Control/Tuto3"]
+libraries = {
+&"": SubResource("AnimationLibrary_7n8ub")
+}
+
+[node name="Tuto4" type="Control" parent="Tutorial/Control"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Text4" type="Label" parent="Tutorial/Control/Tuto4"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 1200.0
+offset_top = 210.0
+offset_right = 1825.0
+offset_bottom = 490.0
+theme_override_fonts/font = ExtResource("6_tu7ba")
+theme_override_font_sizes/font_size = 25
+text = "Le chiffre de couleur vert est là pour indiquer l'impacte environnemental que cette carte aura sur la planète lorsqu'elle est jouée (plus c'est petit, moins cela a de répercussions). Le but sera donc, en plus de gagner le combat, de garder un équilibre sur cette jauge pour qu'elle reste dans les zones rouges."
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="ContinueButton4" type="Button" parent="Tutorial/Control/Tuto4"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+top_level = true
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="Next4" type="AnimationPlayer" parent="Tutorial/Control/Tuto4"]
+libraries = {
+&"": SubResource("AnimationLibrary_lksig")
+}
+
+[node name="Tuto5" type="Control" parent="Tutorial/Control"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Text5" type="Label" parent="Tutorial/Control/Tuto5"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 1200.0
+offset_top = 210.0
+offset_right = 1825.0
+offset_bottom = 490.0
+theme_override_fonts/font = ExtResource("6_tu7ba")
+theme_override_font_sizes/font_size = 25
+text = "Passons maintenant aux cartes. Nous avons déjà vu que chaque carte possède un coût social et environnemental. En plus de ceci, elle requiert un certain nombre de mana pour être jouée. Ce coût en mana est représenter par le chiffre en bleu foncé en haut à gauche des cartes. Votre maximum de mana par tour est 10."
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="ContinueButton5" type="Button" parent="Tutorial/Control/Tuto5"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+top_level = true
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="RedArrow3" type="TextureRect" parent="Tutorial/Control/Tuto5"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 1378.0
+offset_top = 630.0
+offset_right = 1578.0
+offset_bottom = 830.0
+texture = ExtResource("17_3e7p2")
+
+[node name="PointingArrow3" type="AnimationPlayer" parent="Tutorial/Control/Tuto5"]
+libraries = {
+&"": SubResource("AnimationLibrary_ybaij")
+}
+
+[node name="Next5" type="AnimationPlayer" parent="Tutorial/Control/Tuto5"]
+libraries = {
+&"": SubResource("AnimationLibrary_85vtd")
+}
+
+[node name="Tuto6" type="Control" parent="Tutorial/Control"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Text6" type="Label" parent="Tutorial/Control/Tuto6"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 1200.0
+offset_top = 210.0
+offset_right = 1825.0
+offset_bottom = 490.0
+theme_override_fonts/font = ExtResource("6_tu7ba")
+theme_override_font_sizes/font_size = 25
+text = "Vous pouvez laisser appuyer la souris sur une carte pour la prendre et la glisser sur le monstre pour la jouer. Celle-ci sera alors détruite et fera des dégâts au monstre en fonction du chiffre en rouge en haut à droite de la carte."
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="ContinueButton6" type="Button" parent="Tutorial/Control/Tuto6"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+top_level = true
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="Next6" type="AnimationPlayer" parent="Tutorial/Control/Tuto6"]
+libraries = {
+&"": SubResource("AnimationLibrary_mr7uq")
+}
+
+[node name="Tuto7" type="Control" parent="Tutorial/Control"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Text7" type="Label" parent="Tutorial/Control/Tuto7"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 1200.0
+offset_top = 210.0
+offset_right = 1825.0
+offset_bottom = 490.0
+theme_override_fonts/font = ExtResource("6_tu7ba")
+theme_override_font_sizes/font_size = 25
+text = "Vous verrez où la flèche clignote la barre de vie du monstre descendre à chaque fois que vous jouerez une carte. Le but étant de la descendre jusqu'à 0 pour tuer le monstre."
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="ContinueButton7" type="Button" parent="Tutorial/Control/Tuto7"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+top_level = true
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="RedArrow4" type="TextureRect" parent="Tutorial/Control/Tuto7"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 679.0
+offset_top = 102.0
+offset_right = 879.0
+offset_bottom = 302.0
+texture = ExtResource("17_3e7p2")
+
+[node name="PointingArrow4" type="AnimationPlayer" parent="Tutorial/Control/Tuto7"]
+libraries = {
+&"": SubResource("AnimationLibrary_vfyhb")
+}
+
+[node name="Next7" type="AnimationPlayer" parent="Tutorial/Control/Tuto7"]
+libraries = {
+&"": SubResource("AnimationLibrary_wxwms")
+}
+
+[node name="Tuto8" type="Control" parent="Tutorial/Control"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Text8" type="Label" parent="Tutorial/Control/Tuto8"]
+modulate = Color(0, 0, 0, 0)
+layout_mode = 0
+offset_left = 1200.0
+offset_top = 210.0
+offset_right = 1825.0
+offset_bottom = 490.0
+theme_override_fonts/font = ExtResource("6_tu7ba")
+theme_override_font_sizes/font_size = 25
+text = "En revanche, si le monstre parvient à réduire vos propres points de vie à 0, vous perdrez le combat ! Jouez stratégiquement vos cartes pour garder votre jauge saine tout en tuant le montre sans vous faire tuer. Bonne découverte et bonne chance !"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="ContinueButton8" type="Button" parent="Tutorial/Control/Tuto8"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+top_level = true
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="Next8" type="AnimationPlayer" parent="Tutorial/Control/Tuto8"]
+
+[node name="Scene_transition_animation" parent="." instance=ExtResource("12_eifcl")]
+
+[node name="Menu_map" parent="." instance=ExtResource("18_mf030")]
+
+[connection signal="pressed" from="EndTurnButton" to="BattleManager" method="_on_end_turn_button_pressed"]
+[connection signal="pressed" from="Tutorial/Control/Tuto1/ContinueButton1" to="Tutorial" method="_on_continue_button_1_pressed"]
+[connection signal="pressed" from="Tutorial/Control/Tuto2/ContinueButton2" to="Tutorial" method="_on_continue_button_2_pressed"]
+[connection signal="pressed" from="Tutorial/Control/Tuto3/ContinueButton3" to="Tutorial" method="_on_continue_button_3_pressed"]
+[connection signal="pressed" from="Tutorial/Control/Tuto4/ContinueButton4" to="Tutorial" method="_on_continue_button_4_pressed"]
+[connection signal="pressed" from="Tutorial/Control/Tuto5/ContinueButton5" to="Tutorial" method="_on_continue_button_5_pressed"]
+[connection signal="pressed" from="Tutorial/Control/Tuto6/ContinueButton6" to="Tutorial" method="_on_continue_button_6_pressed"]
+[connection signal="pressed" from="Tutorial/Control/Tuto7/ContinueButton7" to="Tutorial" method="_on_continue_button_7_pressed"]
+[connection signal="pressed" from="Tutorial/Control/Tuto8/ContinueButton8" to="Tutorial" method="_on_continue_button_8_pressed"]

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://o4icnguy4vre"]
+
+[ext_resource type="AudioStream" uid="uid://b8b7f66onrqg6" path="res://assets/musics/victory_sound.mp3" id="1_3kerc"]
+
+[node name="Victory_music" type="AudioStreamPlayer"]
+stream = ExtResource("1_3kerc")
+bus = &"Music"
+parameters/looping = true

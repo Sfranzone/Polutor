@@ -1,0 +1,102 @@
+[gd_scene load_steps=5 format=3 uid="uid://flsd6n0tj28x"]
+
+[ext_resource type="Script" uid="uid://5yla3mqh52lg" path="res://scripts/world_map.gd" id="1_r63r8"]
+[ext_resource type="Texture2D" uid="uid://b2m2ofadic4r0" path="res://assets/map/world_map.png" id="2_4ojr4"]
+[ext_resource type="FontFile" uid="uid://c4pe7v7qaoxgf" path="res://assets/fonts/Comfortaa-Bold.ttf" id="6_hxymy"]
+[ext_resource type="PackedScene" uid="uid://ne1mtcf1gjyd" path="res://scenes/scene_transition_animation.tscn" id="8_ivuc1"]
+
+[node name="World_map" type="Node2D"]
+script = ExtResource("1_r63r8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-2, -4)
+scale = Vector2(0.47, 0.47)
+texture = ExtResource("2_4ojr4")
+centered = false
+
+[node name="Continents" type="Node2D" parent="."]
+
+[node name="Europe_button" type="Button" parent="Continents"]
+offset_left = 463.0
+offset_top = 112.0
+offset_right = 586.0
+offset_bottom = 155.0
+theme_override_fonts/font = ExtResource("6_hxymy")
+theme_override_font_sizes/font_size = 30
+text = "Europe"
+
+[node name="Oceania_button" type="Button" parent="Continents"]
+offset_left = 914.0
+offset_top = 418.0
+offset_right = 1037.0
+offset_bottom = 461.0
+theme_override_fonts/font = ExtResource("6_hxymy")
+theme_override_font_sizes/font_size = 30
+text = "Océanie"
+
+[node name="South_america_button" type="Button" parent="Continents"]
+offset_left = 154.0
+offset_top = 368.0
+offset_right = 431.0
+offset_bottom = 411.0
+theme_override_fonts/font = ExtResource("6_hxymy")
+theme_override_font_sizes/font_size = 30
+text = "Amérique du Sud"
+
+[node name="North_america_button" type="Button" parent="Continents"]
+offset_left = 43.0
+offset_top = 122.0
+offset_right = 341.0
+offset_bottom = 165.0
+theme_override_fonts/font = ExtResource("6_hxymy")
+theme_override_font_sizes/font_size = 30
+text = "Amérique du Nord"
+
+[node name="Africa_button" type="Button" parent="Continents"]
+offset_left = 488.0
+offset_top = 265.0
+offset_right = 611.0
+offset_bottom = 308.0
+theme_override_fonts/font = ExtResource("6_hxymy")
+theme_override_font_sizes/font_size = 30
+text = "Afrique"
+
+[node name="Asia_button" type="Button" parent="Continents"]
+offset_left = 714.0
+offset_top = 124.0
+offset_right = 837.0
+offset_bottom = 167.0
+theme_override_fonts/font = ExtResource("6_hxymy")
+theme_override_font_sizes/font_size = 30
+text = "Asie"
+
+[node name="Not_available_now" type="Window" parent="Continents"]
+title = "Attention"
+initial_position = 2
+size = Vector2i(300, 200)
+visible = false
+theme_override_colors/title_color = Color(1, 1, 1, 1)
+theme_override_fonts/title_font = ExtResource("6_hxymy")
+theme_override_font_sizes/title_font_size = 20
+
+[node name="message_not_available" type="Label" parent="Continents/Not_available_now"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Cette zone n'est pas encore 
+disponible..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Scene_transition_animation" parent="." instance=ExtResource("8_ivuc1")]
+visible = false
+
+[connection signal="pressed" from="Continents/Europe_button" to="." method="_on_europe_button_pressed"]
+[connection signal="pressed" from="Continents/Oceania_button" to="." method="_on_oceania_button_pressed"]
+[connection signal="pressed" from="Continents/South_america_button" to="." method="_on_south_america_button_pressed"]
+[connection signal="pressed" from="Continents/North_america_button" to="." method="_on_north_america_button_pressed"]
+[connection signal="pressed" from="Continents/Africa_button" to="." method="_on_africa_button_pressed"]
+[connection signal="pressed" from="Continents/Asia_button" to="." method="_on_asia_button_pressed"]
+[connection signal="close_requested" from="Continents/Not_available_now" to="." method="_on_not_available_now_close_requested"]

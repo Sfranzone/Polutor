@@ -1,0 +1,175 @@
+[gd_scene load_steps=4 format=3 uid="uid://beer0tpket3u7"]
+
+[ext_resource type="Texture2D" uid="uid://btefbo2xgwbra" path="res://assets/map/europe_map.png" id="1_3a4sh"]
+[ext_resource type="Script" uid="uid://c4fvq2g441bao" path="res://scripts/europe.gd" id="1_4o4n2"]
+[ext_resource type="FontFile" uid="uid://c4pe7v7qaoxgf" path="res://assets/fonts/Comfortaa-Bold.ttf" id="3_3a4sh"]
+
+[node name="Europe" type="Node2D"]
+script = ExtResource("1_4o4n2")
+
+[node name="Not_available_now" type="Window" parent="."]
+auto_translate_mode = 1
+title = "Attention"
+initial_position = 2
+size = Vector2i(300, 200)
+visible = false
+theme_override_colors/title_color = Color(1, 1, 1, 1)
+theme_override_fonts/title_font = ExtResource("3_3a4sh")
+theme_override_font_sizes/title_font_size = 20
+
+[node name="message_not_available" type="Label" parent="Not_available_now"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Cette zone n'est pas encore 
+disponible..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Europe" type="Node2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Europe"]
+offset_right = 98.0
+offset_bottom = 653.0
+color = Color(0.690196, 0.878431, 0.901961, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Europe"]
+offset_left = 1070.0
+offset_top = 465.0
+offset_right = 1168.0
+offset_bottom = 672.0
+color = Color(0.752941, 0.752941, 0.752941, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="Europe"]
+offset_left = 1073.0
+offset_top = -61.0
+offset_right = 1174.0
+offset_bottom = 52.0
+color = Color(0.941176, 0.901961, 0.54902, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="Europe"]
+offset_left = 1029.0
+offset_top = 370.0
+offset_right = 1126.0
+offset_bottom = 472.0
+color = Color(0.690196, 0.878431, 0.901961, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Europe"]
+offset_left = 1089.0
+offset_top = 52.0
+offset_right = 1220.0
+offset_bottom = 475.0
+color = Color(0.752941, 0.752941, 0.752941, 1)
+
+[node name="ColorRect7" type="ColorRect" parent="Europe"]
+offset_left = 1105.0
+offset_top = 441.0
+offset_right = 1163.0
+offset_bottom = 491.0
+rotation = 0.803895
+color = Color(0.752941, 0.752941, 0.752941, 1)
+
+[node name="ColorRect8" type="ColorRect" parent="Europe"]
+offset_left = 1105.0
+offset_top = 327.0
+offset_right = 1163.0
+offset_bottom = 377.0
+rotation = 0.803895
+color = Color(0.752941, 0.752941, 0.752941, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Europe"]
+position = Vector2(77, -99)
+scale = Vector2(0.39, 0.39)
+texture = ExtResource("1_3a4sh")
+centered = false
+
+[node name="ColorRect6" type="ColorRect" parent="Europe"]
+offset_left = 1071.0
+offset_top = 48.0
+offset_right = 1202.0
+offset_bottom = 368.0
+color = Color(0.752941, 0.752941, 0.752941, 1)
+
+[node name="Swiss_button" type="Button" parent="."]
+offset_left = 469.0
+offset_top = 439.0
+offset_right = 545.0
+offset_bottom = 470.0
+theme_override_fonts/font = ExtResource("3_3a4sh")
+theme_override_font_sizes/font_size = 20
+text = "Suisse"
+
+[node name="Italy_button" type="Button" parent="."]
+offset_left = 542.0
+offset_top = 527.0
+offset_right = 618.0
+offset_bottom = 558.0
+theme_override_fonts/font = ExtResource("3_3a4sh")
+theme_override_font_sizes/font_size = 20
+text = "Italie"
+
+[node name="Germany_button" type="Button" parent="."]
+offset_left = 472.0
+offset_top = 367.0
+offset_right = 590.0
+offset_bottom = 398.0
+theme_override_fonts/font = ExtResource("3_3a4sh")
+theme_override_font_sizes/font_size = 20
+text = "Allemagne"
+
+[node name="UK_button" type="Button" parent="."]
+offset_left = 296.0
+offset_top = 300.0
+offset_right = 443.0
+offset_bottom = 331.0
+theme_override_fonts/font = ExtResource("3_3a4sh")
+theme_override_font_sizes/font_size = 20
+text = "Royaume-Uni"
+
+[node name="France_button" type="Button" parent="."]
+offset_left = 361.0
+offset_top = 435.0
+offset_right = 442.0
+offset_bottom = 466.0
+theme_override_fonts/font = ExtResource("3_3a4sh")
+theme_override_font_sizes/font_size = 20
+text = "France"
+
+[node name="Spain_button" type="Button" parent="."]
+offset_left = 308.0
+offset_top = 557.0
+offset_right = 408.0
+offset_bottom = 588.0
+theme_override_fonts/font = ExtResource("3_3a4sh")
+theme_override_font_sizes/font_size = 20
+text = "Espagne"
+
+[node name="Norway_button" type="Button" parent="."]
+offset_left = 446.0
+offset_top = 183.0
+offset_right = 543.0
+offset_bottom = 214.0
+theme_override_fonts/font = ExtResource("3_3a4sh")
+theme_override_font_sizes/font_size = 20
+text = "Norvège"
+
+[node name="Portugal_button" type="Button" parent="."]
+offset_left = 170.0
+offset_top = 533.0
+offset_right = 268.0
+offset_bottom = 564.0
+theme_override_fonts/font = ExtResource("3_3a4sh")
+theme_override_font_sizes/font_size = 20
+text = "Portugal"
+
+[connection signal="close_requested" from="Not_available_now" to="." method="_on_not_available_now_close_requested"]
+[connection signal="pressed" from="Swiss_button" to="." method="_on_swiss_button_pressed"]
+[connection signal="pressed" from="Italy_button" to="." method="_on_italy_button_pressed"]
+[connection signal="pressed" from="Germany_button" to="." method="_on_germany_button_pressed"]
+[connection signal="pressed" from="UK_button" to="." method="_on_UK_button_pressed"]
+[connection signal="pressed" from="France_button" to="." method="_on_france_button_pressed"]
+[connection signal="pressed" from="Spain_button" to="." method="_on_spain_button_pressed"]
+[connection signal="pressed" from="Norway_button" to="." method="_on_norway_button_pressed"]
+[connection signal="pressed" from="Portugal_button" to="." method="_on_portugal_button_pressed"]

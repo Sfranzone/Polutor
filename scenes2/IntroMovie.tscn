@@ -1,0 +1,215 @@
+[gd_scene load_steps=15 format=3 uid="uid://cu4400ohxji6n"]
+
+[ext_resource type="Script" uid="uid://dgrp1ix286x5g" path="res://scripts2/IntroMovie.gd" id="1_aqn1q"]
+[ext_resource type="VideoStream" uid="uid://ck0c587pkxdpj" path="res://assets/videos/Polutor_intro1.ogv" id="1_hl4ks"]
+[ext_resource type="PackedScene" uid="uid://ne1mtcf1gjyd" path="res://scenes/scene_transition_animation.tscn" id="3_yu2wk"]
+[ext_resource type="AudioStream" uid="uid://q4qcy6jbpn6q" path="res://assets/musics/intro_music.mp3" id="4_xe7js"]
+[ext_resource type="FontFile" uid="uid://c4pe7v7qaoxgf" path="res://assets/fonts/Comfortaa-Bold.ttf" id="5_xydli"]
+
+[sub_resource type="Animation" id="Animation_xe7js"]
+resource_name = "FadeOutMusic"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -40.0]
+}
+
+[sub_resource type="Animation" id="Animation_xydli"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xydli"]
+_data = {
+&"FadeOutMusic": SubResource("Animation_xe7js"),
+&"RESET": SubResource("Animation_xydli")
+}
+
+[sub_resource type="Animation" id="Animation_uc0ho"]
+resource_name = "FadeIn"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ClickContinue:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ContinueLabel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ContinueLabel:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_7pq6s"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ClickContinue:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ContinueLabel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ContinueLabel:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pss78"]
+_data = {
+&"FadeIn": SubResource("Animation_uc0ho"),
+&"RESET": SubResource("Animation_7pq6s")
+}
+
+[sub_resource type="Animation" id="Animation_pss78"]
+resource_name = "Blinking"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ContinueLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_xxrgb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ContinueLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wesob"]
+_data = {
+&"Blinking": SubResource("Animation_pss78"),
+&"RESET": SubResource("Animation_xxrgb")
+}
+
+[node name="IntroMovie" type="Node2D"]
+script = ExtResource("1_aqn1q")
+
+[node name="BalckRect" type="ColorRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 1)
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+stream = ExtResource("1_hl4ks")
+autoplay = true
+
+[node name="Scene_transition_animation" parent="." instance=ExtResource("3_yu2wk")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_xe7js")
+bus = &"Music"
+
+[node name="FadeOutMusic" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_xydli")
+}
+
+[node name="ClickContinue" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="ContinueLabel" type="Label" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+theme_override_fonts/font = ExtResource("5_xydli")
+theme_override_font_sizes/font_size = 45
+text = "Cliquer pour continuer"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ContinueFadeIn" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_pss78")
+}
+
+[node name="ContinueBlinking" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_wesob")
+}
+
+[connection signal="pressed" from="ClickContinue" to="." method="_on_click_continue_pressed"]

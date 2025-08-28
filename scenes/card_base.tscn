@@ -1,0 +1,253 @@
+[gd_scene load_steps=15 format=3 uid="uid://dy2rcrpwi0ncq"]
+
+[ext_resource type="Script" uid="uid://cj04hqwc6ueds" path="res://scripts/card_base.gd" id="1_vk3we"]
+[ext_resource type="Texture2D" uid="uid://cggpk44i0cip5" path="res://assets/cards/card_border/border1.png" id="2_o584u"]
+[ext_resource type="Texture2D" uid="uid://b6uhoivhh5p8q" path="res://assets/background/black_bg.png" id="3_d0x7a"]
+[ext_resource type="FontFile" uid="uid://c4pe7v7qaoxgf" path="res://assets/fonts/Comfortaa-Bold.ttf" id="4_mcx3h"]
+[ext_resource type="Texture2D" uid="uid://c3aq2dkm2uc34" path="res://assets/cards/card_icons/yellow_gem.png" id="5_ta2nq"]
+[ext_resource type="Texture2D" uid="uid://cuiw4h2lxppew" path="res://assets/cards/card_icons/blue_gem.png" id="6_384ir"]
+[ext_resource type="Texture2D" uid="uid://8yag08n1egxs" path="res://assets/cards/card_icons/green_gem.png" id="7_jum37"]
+[ext_resource type="Texture2D" uid="uid://8h8upwjo3mju" path="res://assets/cards/card_icons/damage_icon.png" id="8_sj0va"]
+[ext_resource type="Texture2D" uid="uid://c7yitwjkm3x18" path="res://assets/cards/card_border/description_border.png" id="9_qbnyi"]
+[ext_resource type="Texture2D" uid="uid://c3tlgmp7qgfhw" path="res://assets/cards/empty_deck_texture.png" id="10_at1ol"]
+[ext_resource type="Texture2D" uid="uid://ckgnqsiv24qi5" path="res://assets/cards/backcard_texture.png" id="11_k0hgg"]
+
+[sub_resource type="Animation" id="Animation_082nl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_7iphw"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_quxbc"]
+_data = {
+&"RESET": SubResource("Animation_082nl"),
+&"fade_out": SubResource("Animation_7iphw")
+}
+
+[node name="card_base" type="MarginContainer"]
+offset_right = 250.0
+offset_bottom = 350.0
+pivot_offset = Vector2(125, 175)
+script = ExtResource("1_vk3we")
+
+[node name="Card" type="Sprite2D" parent="."]
+centered = false
+
+[node name="Border" type="Sprite2D" parent="."]
+texture = ExtResource("2_o584u")
+centered = false
+
+[node name="Bars" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="top_gap" type="MarginContainer" parent="Bars"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+
+[node name="top_bar" type="HBoxContainer" parent="Bars"]
+layout_mode = 2
+
+[node name="left_gap" type="MarginContainer" parent="Bars/top_bar"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+
+[node name="name" type="MarginContainer" parent="Bars/top_bar"]
+layout_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Bars/top_bar/name"]
+layout_mode = 2
+texture = ExtResource("3_d0x7a")
+
+[node name="CenterContainer" type="CenterContainer" parent="Bars/top_bar/name"]
+layout_mode = 2
+
+[node name="name" type="Label" parent="Bars/top_bar/name/CenterContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_mcx3h")
+theme_override_font_sizes/font_size = 17
+text = "Nom"
+
+[node name="mid_gap" type="MarginContainer" parent="Bars/top_bar"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="money_cost" type="MarginContainer" parent="Bars/top_bar"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Bars/top_bar/money_cost"]
+layout_mode = 2
+texture = ExtResource("5_ta2nq")
+
+[node name="CenterContainer" type="CenterContainer" parent="Bars/top_bar/money_cost"]
+layout_mode = 2
+
+[node name="money_cost" type="Label" parent="Bars/top_bar/money_cost/CenterContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_mcx3h")
+theme_override_font_sizes/font_size = 15
+text = "1"
+
+[node name="social_cost" type="MarginContainer" parent="Bars/top_bar"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Bars/top_bar/social_cost"]
+layout_mode = 2
+texture = ExtResource("6_384ir")
+
+[node name="CenterContainer" type="CenterContainer" parent="Bars/top_bar/social_cost"]
+layout_mode = 2
+
+[node name="social_cost" type="Label" parent="Bars/top_bar/social_cost/CenterContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_mcx3h")
+theme_override_font_sizes/font_size = 15
+text = "1"
+
+[node name="env_cost" type="MarginContainer" parent="Bars/top_bar"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Bars/top_bar/env_cost"]
+layout_mode = 2
+texture = ExtResource("7_jum37")
+
+[node name="CenterContainer" type="CenterContainer" parent="Bars/top_bar/env_cost"]
+layout_mode = 2
+
+[node name="env_cost" type="Label" parent="Bars/top_bar/env_cost/CenterContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_mcx3h")
+theme_override_font_sizes/font_size = 15
+text = "1"
+
+[node name="right_gap" type="MarginContainer" parent="Bars/top_bar"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+
+[node name="mid_gap" type="MarginContainer" parent="Bars"]
+custom_minimum_size = Vector2(0, 140)
+layout_mode = 2
+
+[node name="mid_bar" type="HBoxContainer" parent="Bars"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="left_gap" type="MarginContainer" parent="Bars/mid_bar"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="damage" type="MarginContainer" parent="Bars/mid_bar"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Bars/mid_bar/damage"]
+layout_mode = 2
+texture = ExtResource("8_sj0va")
+
+[node name="CenterContainer" type="CenterContainer" parent="Bars/mid_bar/damage"]
+layout_mode = 2
+
+[node name="damage" type="Label" parent="Bars/mid_bar/damage/CenterContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_mcx3h")
+theme_override_font_sizes/font_size = 15
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="bottom_bar" type="VBoxContainer" parent="Bars"]
+layout_mode = 2
+
+[node name="card_description" type="MarginContainer" parent="Bars/bottom_bar"]
+custom_minimum_size = Vector2(220, 115)
+layout_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Bars/bottom_bar/card_description"]
+layout_mode = 2
+texture = ExtResource("9_qbnyi")
+
+[node name="CenterContainer" type="CenterContainer" parent="Bars/bottom_bar/card_description"]
+custom_minimum_size = Vector2(220, 90)
+layout_mode = 2
+
+[node name="card_description" type="Label" parent="Bars/bottom_bar/card_description/CenterContainer"]
+custom_minimum_size = Vector2(220, 90)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_mcx3h")
+theme_override_font_sizes/font_size = 9
+text = "Voici la description de la carte"
+autowrap_mode = 2
+justification_flags = 171
+
+[node name="Focus" type="TextureButton" parent="."]
+layout_mode = 2
+texture_hover = ExtResource("10_at1ol")
+stretch_mode = 0
+
+[node name="Card_back" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("11_k0hgg")
+centered = false
+
+[node name="Fade_out" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_quxbc")
+}
+
+[connection signal="mouse_entered" from="Focus" to="." method="_on_focus_mouse_entered"]
+[connection signal="mouse_exited" from="Focus" to="." method="_on_focus_mouse_exited"]

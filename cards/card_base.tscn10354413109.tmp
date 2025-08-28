@@ -1,0 +1,158 @@
+[gd_scene load_steps=11 format=3 uid="uid://dy2rcrpwi0ncq"]
+
+[ext_resource type="Script" uid="uid://cj04hqwc6ueds" path="res://cards/card_base.gd" id="1_a7ghe"]
+[ext_resource type="Texture2D" uid="uid://cggpk44i0cip5" path="res://assets/cards/card_border/border1.png" id="2_lcsls"]
+[ext_resource type="Texture2D" uid="uid://b6uhoivhh5p8q" path="res://assets/background/black_bg.png" id="3_kf21w"]
+[ext_resource type="FontFile" uid="uid://c4pe7v7qaoxgf" path="res://assets/fonts/Comfortaa-Bold.ttf" id="4_fdfoh"]
+[ext_resource type="Texture2D" uid="uid://c7yitwjkm3x18" path="res://assets/cards/card_border/description_border.png" id="5_fdfoh"]
+[ext_resource type="Texture2D" uid="uid://8yag08n1egxs" path="res://assets/cards/card_icons/green_gem.png" id="5_tc2y7"]
+[ext_resource type="Texture2D" uid="uid://c3aq2dkm2uc34" path="res://assets/cards/card_icons/yellow_gem.png" id="5_vfk5x"]
+[ext_resource type="Texture2D" uid="uid://cuiw4h2lxppew" path="res://assets/cards/card_icons/blue_gem.png" id="6_bjxnp"]
+[ext_resource type="Texture2D" uid="uid://ckgnqsiv24qi5" path="res://assets/cards/backcard_texture.png" id="9_bjxnp"]
+[ext_resource type="Texture2D" uid="uid://c3tlgmp7qgfhw" path="res://assets/cards/empty_deck_texture.png" id="9_x5dh4"]
+
+[node name="card_base" type="MarginContainer"]
+offset_right = 250.0
+offset_bottom = 350.0
+pivot_offset = Vector2(125, 175)
+script = ExtResource("1_a7ghe")
+
+[node name="Card" type="Sprite2D" parent="."]
+centered = false
+
+[node name="Border" type="Sprite2D" parent="."]
+texture = ExtResource("2_lcsls")
+centered = false
+
+[node name="Bars" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="top_gap" type="MarginContainer" parent="Bars"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+
+[node name="top_bar" type="HBoxContainer" parent="Bars"]
+layout_mode = 2
+
+[node name="left_gap" type="MarginContainer" parent="Bars/top_bar"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+
+[node name="name" type="MarginContainer" parent="Bars/top_bar"]
+layout_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Bars/top_bar/name"]
+layout_mode = 2
+texture = ExtResource("3_kf21w")
+
+[node name="CenterContainer" type="CenterContainer" parent="Bars/top_bar/name"]
+layout_mode = 2
+
+[node name="name" type="Label" parent="Bars/top_bar/name/CenterContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_fdfoh")
+theme_override_font_sizes/font_size = 17
+text = "Nom"
+
+[node name="mid_gap" type="MarginContainer" parent="Bars/top_bar"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="money_cost" type="MarginContainer" parent="Bars/top_bar"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Bars/top_bar/money_cost"]
+layout_mode = 2
+texture = ExtResource("5_vfk5x")
+
+[node name="CenterContainer" type="CenterContainer" parent="Bars/top_bar/money_cost"]
+layout_mode = 2
+
+[node name="money_cost" type="Label" parent="Bars/top_bar/money_cost/CenterContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_fdfoh")
+theme_override_font_sizes/font_size = 15
+text = "1"
+
+[node name="social_cost" type="MarginContainer" parent="Bars/top_bar"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Bars/top_bar/social_cost"]
+layout_mode = 2
+texture = ExtResource("6_bjxnp")
+
+[node name="CenterContainer" type="CenterContainer" parent="Bars/top_bar/social_cost"]
+layout_mode = 2
+
+[node name="social_cost" type="Label" parent="Bars/top_bar/social_cost/CenterContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_fdfoh")
+theme_override_font_sizes/font_size = 15
+text = "1"
+
+[node name="env_cost" type="MarginContainer" parent="Bars/top_bar"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Bars/top_bar/env_cost"]
+layout_mode = 2
+texture = ExtResource("5_tc2y7")
+
+[node name="CenterContainer" type="CenterContainer" parent="Bars/top_bar/env_cost"]
+layout_mode = 2
+
+[node name="env_cost" type="Label" parent="Bars/top_bar/env_cost/CenterContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_fdfoh")
+theme_override_font_sizes/font_size = 15
+text = "1"
+
+[node name="right_gap" type="MarginContainer" parent="Bars/top_bar"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+
+[node name="mid_gap" type="MarginContainer" parent="Bars"]
+custom_minimum_size = Vector2(0, 180)
+layout_mode = 2
+
+[node name="bottom_bar" type="VBoxContainer" parent="Bars"]
+layout_mode = 2
+
+[node name="card_description" type="MarginContainer" parent="Bars/bottom_bar"]
+custom_minimum_size = Vector2(220, 115)
+layout_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Bars/bottom_bar/card_description"]
+layout_mode = 2
+texture = ExtResource("5_fdfoh")
+
+[node name="CenterContainer" type="CenterContainer" parent="Bars/bottom_bar/card_description"]
+custom_minimum_size = Vector2(220, 90)
+layout_mode = 2
+
+[node name="card_description" type="Label" parent="Bars/bottom_bar/card_description/CenterContainer"]
+custom_minimum_size = Vector2(220, 90)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_fdfoh")
+theme_override_font_sizes/font_size = 9
+text = "Voici la description de la carte"
+autowrap_mode = 2
+justification_flags = 171
+
+[node name="Focus" type="TextureButton" parent="."]
+layout_mode = 2
+texture_hover = ExtResource("9_x5dh4")
+stretch_mode = 0
+
+[node name="Card_back" type="Sprite2D" parent="."]
+texture = ExtResource("9_bjxnp")
+centered = false
+
+[connection signal="mouse_entered" from="Focus" to="." method="_on_focus_mouse_entered"]
+[connection signal="mouse_exited" from="Focus" to="." method="_on_focus_mouse_exited"]

@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://b3b4m4uodlg1d"]
+
+[node name="WinningScreen" type="Node2D"]

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://c4yn2irmrfokd"]
+
+[ext_resource type="AudioStream" uid="uid://cwybn5xq64mkc" path="res://assets/musics/combat_music.mp3" id="1_ubiq0"]
+
+[node name="Combat_music" type="AudioStreamPlayer"]
+stream = ExtResource("1_ubiq0")
+bus = &"Music"

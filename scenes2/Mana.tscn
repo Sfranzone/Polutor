@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://b3lr5g3qlghm6"]
+
+[ext_resource type="FontFile" uid="uid://c4pe7v7qaoxgf" path="res://assets/fonts/Comfortaa-Bold.ttf" id="1_7pxrk"]
+[ext_resource type="Script" uid="uid://f48ghpvcb8ml" path="res://scripts2/Mana.gd" id="1_vv3pe"]
+[ext_resource type="Texture2D" uid="uid://bxapr1ed6dtl" path="res://assets/GUI/black_mana.png" id="2_b8tlw"]
+[ext_resource type="Texture2D" uid="uid://tpxiryniwtt5" path="res://assets/GUI/blue_mana2.png" id="3_b8tlw"]
+
+[node name="Mana" type="Node2D"]
+script = ExtResource("1_vv3pe")
+
+[node name="ManaBar" type="TextureProgressBar" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -75.0
+offset_right = 175.0
+offset_bottom = 175.0
+grow_horizontal = 2
+grow_vertical = 2
+max_value = 10.0
+value = 10.0
+fill_mode = 3
+texture_under = ExtResource("2_b8tlw")
+texture_progress = ExtResource("3_b8tlw")
+
+[node name="ManaLabel" type="Label" parent="."]
+offset_left = -75.0
+offset_top = -75.0
+offset_right = 175.0
+offset_bottom = 175.0
+theme_override_fonts/font = ExtResource("1_7pxrk")
+theme_override_font_sizes/font_size = 55
+text = "10 / 10"
+horizontal_alignment = 1
+vertical_alignment = 1

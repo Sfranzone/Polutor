@@ -1,0 +1,755 @@
+[gd_scene load_steps=11 format=3 uid="uid://b2in0w1rxti75"]
+
+[ext_resource type="Script" uid="uid://4wb0a2enfi5u" path="res://scripts/tutorial.gd" id="1_4kmhl"]
+[ext_resource type="Texture2D" uid="uid://buvbndy4hkkqw" path="res://assets/cards/card_example.png" id="2_cq4me"]
+[ext_resource type="Texture2D" uid="uid://dt8kxwm0vp0ld" path="res://assets/GUI/red_arrow.png" id="3_6yjpi"]
+[ext_resource type="FontFile" uid="uid://c4pe7v7qaoxgf" path="res://assets/fonts/Comfortaa-Bold.ttf" id="4_gbqnl"]
+[ext_resource type="Texture2D" uid="uid://bakietkp5qajc" path="res://assets/tutorial/combat_scene2.png" id="5_cq4me"]
+[ext_resource type="PackedScene" uid="uid://ne1mtcf1gjyd" path="res://scenes/scene_transition_animation.tscn" id="6_6yjpi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5mrt3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rwowx"]
+bg_color = Color(0.687215, 0.687215, 0.687215, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hu44a"]
+bg_color = Color(0.509286, 0.509286, 0.509286, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0cr88"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[node name="Tutorial" type="Node2D"]
+script = ExtResource("1_4kmhl")
+
+[node name="Welcome" type="Node2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Welcome"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2.0
+offset_top = 1.0
+offset_right = 1153.0
+offset_bottom = 647.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.564962, 0.564962, 0.564962, 1)
+
+[node name="Message" type="Label" parent="Welcome/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -416.0
+offset_top = -149.5
+offset_right = 416.0
+offset_bottom = 149.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_gbqnl")
+theme_override_font_sizes/font_size = 25
+text = "Vous êtes suisse et désirez de gros changements pour cette
+planète en voie de destruction. Vous décidez de commencer
+par votre ville de naissance : Lausanne."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Next0" type="Button" parent="Welcome"]
+offset_left = 667.0
+offset_top = 579.0
+offset_right = 843.0
+offset_bottom = 614.0
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_gbqnl")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5mrt3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rwowx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hu44a")
+theme_override_styles/normal = SubResource("StyleBoxFlat_0cr88")
+text = "Suivant"
+
+[node name="Welcome" type="Label" parent="Welcome"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 326.5
+offset_top = 119.0
+offset_right = 824.5
+offset_bottom = 176.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_gbqnl")
+theme_override_font_sizes/font_size = 40
+text = "Bienvenue dans Polutor"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Cards_explanation" type="Node2D" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="Cards_explanation"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2.0
+offset_top = 1.0
+offset_right = 1153.0
+offset_bottom = 647.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.564962, 0.564962, 0.564962, 1)
+
+[node name="card_example" type="Sprite2D" parent="Cards_explanation/ColorRect"]
+position = Vector2(571, 397)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_cq4me")
+
+[node name="arrow_money" type="Sprite2D" parent="Cards_explanation"]
+position = Vector2(669, 255)
+rotation = -3.66519
+scale = Vector2(0.454921, 0.702855)
+texture = ExtResource("3_6yjpi")
+centered = false
+
+[node name="arrow_social" type="Sprite2D" parent="Cards_explanation"]
+position = Vector2(683, 293)
+rotation = 3.14159
+scale = Vector2(0.387722, 0.690227)
+texture = ExtResource("3_6yjpi")
+centered = false
+
+[node name="arrow_env" type="Sprite2D" parent="Cards_explanation"]
+position = Vector2(710, 337)
+rotation = -2.61799
+scale = Vector2(0.454921, 0.702855)
+texture = ExtResource("3_6yjpi")
+centered = false
+
+[node name="arrow_name" type="Sprite2D" parent="Cards_explanation"]
+position = Vector2(513, 198)
+rotation = -4.71239
+scale = Vector2(0.454921, 0.702855)
+texture = ExtResource("3_6yjpi")
+centered = false
+
+[node name="arrow_damage" type="Sprite2D" parent="Cards_explanation"]
+position = Vector2(695, 510)
+rotation = -2.0944
+scale = Vector2(0.454921, 0.702855)
+texture = ExtResource("3_6yjpi")
+centered = false
+
+[node name="arrow_description" type="Sprite2D" parent="Cards_explanation"]
+position = Vector2(439, 442)
+rotation = -5.49779
+scale = Vector2(0.454921, 0.702855)
+texture = ExtResource("3_6yjpi")
+centered = false
+
+[node name="name_card" type="Label" parent="Cards_explanation"]
+offset_left = 252.0
+offset_top = 193.0
+offset_right = 378.0
+offset_bottom = 216.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_gbqnl")
+theme_override_font_sizes/font_size = 15
+text = "Nom de la carte"
+
+[node name="money_cost" type="Label" parent="Cards_explanation"]
+offset_left = 479.0
+offset_top = 142.0
+offset_right = 605.0
+offset_bottom = 165.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_gbqnl")
+theme_override_font_sizes/font_size = 15
+text = "Coût en argent"
+
+[node name="social_cost" type="Label" parent="Cards_explanation"]
+offset_left = 672.0
+offset_top = 159.0
+offset_right = 798.0
+offset_bottom = 182.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_gbqnl")
+theme_override_font_sizes/font_size = 15
+text = "Coût social"
+
+[node name="env_cost" type="Label" parent="Cards_explanation"]
+offset_left = 764.0
+offset_top = 218.0
+offset_right = 890.0
+offset_bottom = 241.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_gbqnl")
+theme_override_font_sizes/font_size = 15
+text = "Coût environnemental"
+
+[node name="damage" type="Label" parent="Cards_explanation"]
+offset_left = 797.0
+offset_top = 431.0
+offset_right = 946.0
+offset_bottom = 454.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_gbqnl")
+theme_override_font_sizes/font_size = 15
+text = "Dommages infligés"
+
+[node name="description" type="Label" parent="Cards_explanation"]
+offset_left = 177.0
+offset_top = 529.0
+offset_right = 358.0
+offset_bottom = 552.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_gbqnl")
+theme_override_font_sizes/font_size = 15
+text = "Description de la carte"
+
+[node name="Next1" type="Button" parent="Cards_explanation"]
+offset_left = 667.0
+offset_top = 579.0
+offset_right = 843.0
+offset_bottom = 614.0
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_gbqnl")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5mrt3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rwowx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hu44a")
+theme_override_styles/normal = SubResource("StyleBoxFlat_0cr88")
+text = "Suivant"
+
+[node name="Exit" type="Button" parent="Cards_explanation"]
+offset_left = 321.0
+offset_top = 579.0
+offset_right = 497.0
+offset_bottom = 614.0
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_gbqnl")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5mrt3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rwowx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hu44a")
+theme_override_styles/normal = SubResource("StyleBoxFlat_0cr88")
+text = "Revenir"
+
+[node name="Card_explanation" type="Label" parent="Cards_explanation"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 400.0
+offset_top = 70.0
+offset_right = 750.0
+offset_bottom = 127.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_gbqnl")
+theme_override_font_sizes/font_size = 30
+text = "Explication des cartes"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Combat_explanation" type="Node2D" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="Combat_explanation"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2.0
+offset_top = 1.0
+offset_right = 1153.0
+offset_bottom = 647.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.564962, 0.564962, 0.564962, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Combat_explanation"]
+position = Vector2(579, 335)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("5_cq4me")
+
+[node name="Next2" type="Button" parent="Combat_explanation"]
+offset_left = 667.0
+offset_top = 579.0
+offset_right = 843.0
+offset_bottom = 614.0
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_gbqnl")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5mrt3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rwowx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hu44a")
+theme_override_styles/normal = SubResource("StyleBoxFlat_0cr88")
+text = "Suivant"
+
+[node name="Previous1" type="Button" parent="Combat_explanation"]
+offset_left = 321.0
+offset_top = 579.0
+offset_right = 497.0
+offset_bottom = 614.0
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_gbqnl")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5mrt3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rwowx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hu44a")
+theme_override_styles/normal = SubResource("StyleBoxFlat_0cr88")
+text = "Précédent"
+
+[node name="Combat_explanation" type="Label" parent="Combat_explanation"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 400.0
+offset_top = 70.0
+offset_right = 786.0
+offset_bottom = 127.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_gbqnl")
+theme_override_font_sizes/font_size = 30
+text = "Explication des combats"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Arrows" type="Node2D" parent="Combat_explanation"]
+
+[node name="arrow_monster" type="Sprite2D" parent="Combat_explanation/Arrows"]
+position = Vector2(646, 276)
+rotation = 3.66519
+scale = Vector2(0.454921, 0.702855)
+texture = ExtResource("3_6yjpi")
+centered = false
+
+[node name="arrow_discard" type="Sprite2D" parent="Combat_explanation/Arrows"]
+position = Vector2(872, 283)
+rotation = 3.66519
+scale = Vector2(0.454921, 0.702855)
+texture = ExtResource("3_6yjpi")
+centered = false
+
+[node name="arrow_deck" type="Sprite2D" parent="Combat_explanation/Arrows"]
+position = Vector2(876, 473)
+rotation = 3.66519
+scale = Vector2(0.454921, 0.702855)
+texture = ExtResource("3_6yjpi")
+centered = false
+
+[node name="arrow_hand" type="Sprite2D" parent="Combat_explanation/Arrows"]
+position = Vector2(599, 542)
+rotation = 4.71238
+scale = Vector2(0.454921, 0.702855)
+texture = ExtResource("3_6yjpi")
+centered = false
+
+[node name="arrow_gauges" type="Sprite2D" parent="Combat_explanation/Arrows"]
+position = Vector2(265, 170)
+rotation = 6.80677
+scale = Vector2(0.454921, 0.702855)
+texture = ExtResource("3_6yjpi")
+centered = false
+
+[node name="Monster" type="Label" parent="Combat_explanation/Arrows"]
+offset_left = 606.0
+offset_top = 139.0
+offset_right = 817.0
+offset_bottom = 173.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_gbqnl")
+theme_override_font_sizes/font_size = 15
+text = "Monstre et ces HP en jaune"
+
+[node name="Discard_pile" type="Label" parent="Combat_explanation/Arrows"]
+offset_left = 926.0
+offset_top = 167.0
+offset_right = 1142.0
+offset_bottom = 201.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_gbqnl")
+theme_override_font_sizes/font_size = 15
+text = "Pile de défausse"
+
+[node name="Deck_pile" type="Label" parent="Combat_explanation/Arrows"]
+offset_left = 929.0
+offset_top = 357.0
+offset_right = 1145.0
+offset_bottom = 391.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_gbqnl")
+theme_override_font_sizes/font_size = 15
+text = "Pile du deck"
+
+[node name="Player_hand" type="Label" parent="Combat_explanation/Arrows"]
+offset_left = 724.0
+offset_top = 523.0
+offset_right = 940.0
+offset_bottom = 557.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_gbqnl")
+theme_override_font_sizes/font_size = 15
+text = "Main du joueur"
+
+[node name="Gauges" type="Label" parent="Combat_explanation/Arrows"]
+offset_left = 46.0
+offset_top = 287.0
+offset_right = 266.0
+offset_bottom = 326.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_gbqnl")
+theme_override_font_sizes/font_size = 15
+text = "Jauge d'argent, jauge social
+et jauge environnemental"
+horizontal_alignment = 2
+
+[node name="Rules_explanation" type="Node2D" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="Rules_explanation"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2.0
+offset_top = 1.0
+offset_right = 1153.0
+offset_bottom = 647.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.564962, 0.564962, 0.564962, 1)
+
+[node name="Rules_explanation2" type="Label" parent="Rules_explanation/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -368.0
+offset_top = -164.5
+offset_right = 368.0
+offset_bottom = 164.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_gbqnl")
+theme_override_font_sizes/font_size = 25
+text = "- Votre but est d'utiliser les 	différentes cartes à votre
+disposition pour éliminer le monstre en face de vous.
+
+- Chaque carte possède un coût en argent,
+social et environnemental qui fera diminuer vos jauges
+en haut à gauche de votre écran.
+
+- Si les jauges dépassent un certain seuil, des effets
+négatifs seront ressentis sur le prochain combat"
+
+[node name="Next4" type="Button" parent="Rules_explanation"]
+offset_left = 667.0
+offset_top = 579.0
+offset_right = 843.0
+offset_bottom = 614.0
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_gbqnl")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5mrt3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rwowx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hu44a")
+theme_override_styles/normal = SubResource("StyleBoxFlat_0cr88")
+text = "Suivant"
+
+[node name="Previous2" type="Button" parent="Rules_explanation"]
+offset_left = 321.0
+offset_top = 579.0
+offset_right = 497.0
+offset_bottom = 614.0
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_gbqnl")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5mrt3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rwowx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hu44a")
+theme_override_styles/normal = SubResource("StyleBoxFlat_0cr88")
+text = "Précédent"
+
+[node name="Rules_explanation" type="Label" parent="Rules_explanation"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 400.0
+offset_top = 70.0
+offset_right = 750.0
+offset_bottom = 127.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_gbqnl")
+theme_override_font_sizes/font_size = 30
+text = "Explications"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Rules_explanation2" type="Node2D" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="Rules_explanation2"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2.0
+offset_top = 1.0
+offset_right = 1153.0
+offset_bottom = 647.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.564962, 0.564962, 0.564962, 1)
+
+[node name="Rules_explanation2" type="Label" parent="Rules_explanation2/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -368.0
+offset_top = -164.5
+offset_right = 368.0
+offset_bottom = 164.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_gbqnl")
+theme_override_font_sizes/font_size = 25
+text = "- Si la jauge d'argent arrive à 0, vous ne pouvez tout
+simplement plus jouer de carte et vous perdrez
+
+- Si la jauge social arrive en dessous de ?%, ...
+
+- Si la jauge environnemental arrive en dessous de ?%,
+..."
+
+[node name="Next5" type="Button" parent="Rules_explanation2"]
+offset_left = 667.0
+offset_top = 579.0
+offset_right = 843.0
+offset_bottom = 614.0
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_gbqnl")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5mrt3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rwowx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hu44a")
+theme_override_styles/normal = SubResource("StyleBoxFlat_0cr88")
+text = "Terminer"
+
+[node name="Previous3" type="Button" parent="Rules_explanation2"]
+offset_left = 321.0
+offset_top = 579.0
+offset_right = 497.0
+offset_bottom = 614.0
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_gbqnl")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5mrt3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rwowx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hu44a")
+theme_override_styles/normal = SubResource("StyleBoxFlat_0cr88")
+text = "Précédent"
+
+[node name="Rules_explanation" type="Label" parent="Rules_explanation2"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 400.0
+offset_top = 70.0
+offset_right = 750.0
+offset_bottom = 127.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_gbqnl")
+theme_override_font_sizes/font_size = 30
+text = "Explications"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Fin_tuto" type="Node2D" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="Fin_tuto"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2.0
+offset_top = 1.0
+offset_right = 1153.0
+offset_bottom = 647.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.564962, 0.564962, 0.564962, 1)
+
+[node name="Message" type="Label" parent="Fin_tuto/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -416.0
+offset_top = -149.5
+offset_right = 416.0
+offset_bottom = 149.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_gbqnl")
+theme_override_font_sizes/font_size = 25
+text = "Vous êtes fin prêt pour aller délivrer notre monde des monstres
+de polution !
+Bonne chance durant votre aventure pour rendre notre monde
+plus propre que jamais"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="End_tuto" type="Button" parent="Fin_tuto"]
+offset_left = 667.0
+offset_top = 579.0
+offset_right = 843.0
+offset_bottom = 614.0
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_gbqnl")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5mrt3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rwowx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hu44a")
+theme_override_styles/normal = SubResource("StyleBoxFlat_0cr88")
+text = "C'est parti!"
+
+[node name="Previous5" type="Button" parent="Fin_tuto"]
+offset_left = 321.0
+offset_top = 579.0
+offset_right = 497.0
+offset_bottom = 614.0
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_gbqnl")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5mrt3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rwowx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hu44a")
+theme_override_styles/normal = SubResource("StyleBoxFlat_0cr88")
+text = "Précédent"
+
+[node name="End" type="Label" parent="Fin_tuto"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 326.5
+offset_top = 119.0
+offset_right = 824.5
+offset_bottom = 176.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_gbqnl")
+theme_override_font_sizes/font_size = 40
+text = "Fin du tutoriel"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Tutorial" type="Label" parent="."]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 476.0
+offset_top = 9.0
+offset_right = 675.0
+offset_bottom = 66.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_gbqnl")
+theme_override_font_sizes/font_size = 50
+text = "Tutoriel"
+
+[node name="Scene_transition_animation" parent="." instance=ExtResource("6_6yjpi")]
+
+[connection signal="pressed" from="Welcome/Next0" to="." method="_on_next_0_pressed"]
+[connection signal="pressed" from="Cards_explanation/Next1" to="." method="_on_next_1_pressed"]
+[connection signal="pressed" from="Cards_explanation/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Combat_explanation/Next2" to="." method="_on_next_2_pressed"]
+[connection signal="pressed" from="Combat_explanation/Previous1" to="." method="_on_previous_1_pressed"]
+[connection signal="pressed" from="Rules_explanation/Next4" to="." method="_on_next_4_pressed"]
+[connection signal="pressed" from="Rules_explanation/Previous2" to="." method="_on_previous_2_pressed"]
+[connection signal="pressed" from="Rules_explanation2/Next5" to="." method="_on_next5_pressed"]
+[connection signal="pressed" from="Rules_explanation2/Previous3" to="." method="_on_previous_3_pressed"]
+[connection signal="pressed" from="Fin_tuto/End_tuto" to="." method="_on_end_tuto_pressed"]
+[connection signal="pressed" from="Fin_tuto/Previous5" to="." method="_on_previous_5_pressed"]

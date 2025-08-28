@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://cx1mg4bd0jghh"]
+
+[ext_resource type="Script" uid="uid://qom1kbhbyp47" path="res://scripts2/PlayerHealth.gd" id="1_u8qmq"]
+[ext_resource type="Texture2D" uid="uid://bxapr1ed6dtl" path="res://assets/GUI/black_mana.png" id="2_6ryk1"]
+[ext_resource type="Texture2D" uid="uid://brqo6b4pd664v" path="res://assets/GUI/red_health2.png" id="3_6ryk1"]
+[ext_resource type="FontFile" uid="uid://c4pe7v7qaoxgf" path="res://assets/fonts/Comfortaa-Bold.ttf" id="4_b0w8s"]
+[ext_resource type="PackedScene" uid="uid://ne1mtcf1gjyd" path="res://scenes/scene_transition_animation.tscn" id="5_t0wf6"]
+
+[node name="PlayerHealth" type="Node2D"]
+script = ExtResource("1_u8qmq")
+
+[node name="PlayerHealthBar" type="TextureProgressBar" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+max_value = 10.0
+value = 10.0
+fill_mode = 3
+texture_under = ExtResource("2_6ryk1")
+texture_progress = ExtResource("3_6ryk1")
+
+[node name="PlayerHealthLabel" type="Label" parent="."]
+offset_right = 250.0
+offset_bottom = 250.0
+theme_override_fonts/font = ExtResource("4_b0w8s")
+theme_override_font_sizes/font_size = 55
+text = "50 / 50"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Scene_transition_animation" parent="." instance=ExtResource("5_t0wf6")]

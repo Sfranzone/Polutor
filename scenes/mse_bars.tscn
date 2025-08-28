@@ -1,0 +1,229 @@
+[gd_scene load_steps=9 format=3 uid="uid://cf528wevww2fr"]
+
+[ext_resource type="Script" uid="uid://c74eh8p0ba6sx" path="res://scripts/mse_bars.gd" id="1_o551n"]
+[ext_resource type="FontFile" uid="uid://c4pe7v7qaoxgf" path="res://assets/fonts/Comfortaa-Bold.ttf" id="2_ygstr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rtgwb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vlaya"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ldpex"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+shadow_size = 2
+shadow_offset = Vector2(3, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e37ki"]
+bg_color = Color(1, 1, 0.282353, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+shadow_size = 2
+shadow_offset = Vector2(3, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8x4i4"]
+bg_color = Color(0, 0, 0.745098, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+shadow_size = 2
+shadow_offset = Vector2(3, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_76fgl"]
+bg_color = Color(0, 1, 0.101961, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+shadow_size = 2
+shadow_offset = Vector2(3, 0)
+
+[node name="MSE_bars" type="Panel"]
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 400.0
+offset_bottom = 251.0
+scale = Vector2(0.5, 0.5)
+theme_override_styles/panel = SubResource("StyleBoxEmpty_rtgwb")
+script = ExtResource("1_o551n")
+
+[node name="Money_bar" type="Panel" parent="."]
+layout_mode = 1
+offset_right = 296.0
+offset_bottom = 69.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_vlaya")
+
+[node name="Name" type="Label" parent="Money_bar"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 3.0
+offset_top = -29.5
+offset_right = 110.0
+offset_bottom = 0.5
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_ygstr")
+theme_override_font_sizes/font_size = 20
+text = "Argent"
+
+[node name="Money_bar" type="ProgressBar" parent="Money_bar"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -31.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_ygstr")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/background = SubResource("StyleBoxFlat_ldpex")
+theme_override_styles/fill = SubResource("StyleBoxFlat_e37ki")
+step = 1.0
+value = 50.0
+show_percentage = false
+
+[node name="Number" type="Label" parent="Money_bar"]
+layout_mode = 0
+offset_left = 220.0
+offset_top = -10.0
+offset_right = 296.0
+offset_bottom = 41.0
+theme_override_fonts/font = ExtResource("2_ygstr")
+theme_override_font_sizes/font_size = 20
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Social_bar" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -34.5
+offset_right = 296.0
+offset_bottom = 34.5
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_vlaya")
+
+[node name="Name" type="Label" parent="Social_bar"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 3.0
+offset_top = -29.5
+offset_right = 110.0
+offset_bottom = 0.5
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_ygstr")
+theme_override_font_sizes/font_size = 20
+text = "Social"
+
+[node name="Social_bar" type="ProgressBar" parent="Social_bar"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -31.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_ygstr")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/background = SubResource("StyleBoxFlat_ldpex")
+theme_override_styles/fill = SubResource("StyleBoxFlat_8x4i4")
+step = 1.0
+value = 50.0
+show_percentage = false
+
+[node name="Number" type="Label" parent="Social_bar"]
+layout_mode = 0
+offset_left = 220.0
+offset_top = -10.0
+offset_right = 296.0
+offset_bottom = 41.0
+theme_override_fonts/font = ExtResource("2_ygstr")
+theme_override_font_sizes/font_size = 20
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Env_bar" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -69.0
+offset_right = 296.0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_vlaya")
+
+[node name="Name" type="Label" parent="Env_bar"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 3.0
+offset_top = -29.5
+offset_right = 110.0
+offset_bottom = 0.5
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_ygstr")
+theme_override_font_sizes/font_size = 20
+text = "Environnement"
+
+[node name="Env_bar" type="ProgressBar" parent="Env_bar"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -31.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_ygstr")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/background = SubResource("StyleBoxFlat_ldpex")
+theme_override_styles/fill = SubResource("StyleBoxFlat_76fgl")
+step = 1.0
+value = 50.0
+show_percentage = false
+
+[node name="Number" type="Label" parent="Env_bar"]
+layout_mode = 0
+offset_left = 220.0
+offset_top = -8.0
+offset_right = 296.0
+offset_bottom = 43.0
+theme_override_fonts/font = ExtResource("2_ygstr")
+theme_override_font_sizes/font_size = 20
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1

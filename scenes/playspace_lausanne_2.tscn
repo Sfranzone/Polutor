@@ -1,0 +1,64 @@
+[gd_scene load_steps=12 format=3 uid="uid://drkm800t44wca"]
+
+[ext_resource type="PackedScene" uid="uid://p8g3lkyeiuit" path="res://scenes/enemy.tscn" id="1_4spyk"]
+[ext_resource type="Script" uid="uid://oubhohwhwmri" path="res://scripts/playspace_lausanne_2.gd" id="1_i2t47"]
+[ext_resource type="Texture2D" uid="uid://bsiblmvksr5go" path="res://assets/villains/gaz/enemy_gaz.png" id="2_i2t47"]
+[ext_resource type="Script" uid="uid://c12ei6tmxe7nj" path="res://scripts/enemy_laus2.gd" id="3_tub3j"]
+[ext_resource type="Texture2D" uid="uid://ckgnqsiv24qi5" path="res://assets/cards/backcard_texture.png" id="4_tub3j"]
+[ext_resource type="Texture2D" uid="uid://c3tlgmp7qgfhw" path="res://assets/cards/empty_deck_texture.png" id="5_smv2j"]
+[ext_resource type="Texture2D" uid="uid://o8qdph7cbos3" path="res://assets/background/background_laus2.png" id="5_wv7ex"]
+[ext_resource type="Script" uid="uid://ci2cojth16j3m" path="res://scripts/deck_draw.gd" id="6_xg1ly"]
+[ext_resource type="Script" uid="uid://dr0a5cbtntbde" path="res://scripts/discard_pile.gd" id="7_1rjwx"]
+[ext_resource type="PackedScene" uid="uid://cf528wevww2fr" path="res://scenes/mse_bars.tscn" id="9_rxs8p"]
+[ext_resource type="PackedScene" uid="uid://ne1mtcf1gjyd" path="res://scenes/scene_transition_animation.tscn" id="12_tub3j"]
+
+[node name="Playspace_lausanne2" type="Node2D"]
+script = ExtResource("1_i2t47")
+
+[node name="Enemies" type="Node" parent="."]
+
+[node name="Enemy" parent="Enemies" instance=ExtResource("1_4spyk")]
+visible = false
+script = ExtResource("3_tub3j")
+
+[node name="Image" parent="Enemies/Enemy/VBoxContainer/Image_Container" index="0"]
+texture = ExtResource("2_i2t47")
+
+[node name="Cards" type="Node" parent="."]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(575, 335)
+scale = Vector2(0.32, 0.32)
+texture = ExtResource("5_wv7ex")
+
+[node name="Deck" type="Node2D" parent="."]
+
+[node name="Deck_draw" type="TextureButton" parent="Deck"]
+offset_left = 1001.0
+offset_top = 431.0
+offset_right = 1251.0
+offset_bottom = 781.0
+texture_normal = ExtResource("4_tub3j")
+texture_pressed = ExtResource("4_tub3j")
+texture_hover = ExtResource("4_tub3j")
+texture_disabled = ExtResource("5_smv2j")
+script = ExtResource("6_xg1ly")
+
+[node name="Discard" type="Node2D" parent="."]
+
+[node name="Discard_pile" type="TextureButton" parent="Discard"]
+offset_left = 1003.0
+offset_top = 29.0
+offset_right = 1253.0
+offset_bottom = 379.0
+texture_normal = ExtResource("4_tub3j")
+texture_pressed = ExtResource("4_tub3j")
+texture_hover = ExtResource("4_tub3j")
+texture_disabled = ExtResource("5_smv2j")
+script = ExtResource("7_1rjwx")
+
+[node name="MSE_bars" parent="." instance=ExtResource("9_rxs8p")]
+
+[node name="Scene_transition_animation" parent="." instance=ExtResource("12_tub3j")]
+
+[editable path="Enemies/Enemy"]
