@@ -1,8 +1,8 @@
 extends Node2D
 
-var MAX_GAUGE = 50
+var MAX_GAUGE = 100
 
-var gauge_value = MAX_GAUGE / 2
+#var gauge_value = MAX_GAUGE / 2
 
 
 func _ready() -> void:
@@ -11,11 +11,11 @@ func _ready() -> void:
 
 
 func set_gauge_bar():
-	$EnvSocProgressBar.value = gauge_value
+	$EnvSocProgressBar.value = Global.env_soc_gauge
 
 
 func change_gauge_value(env_cost, soc_cost):
-	gauge_value += env_cost - soc_cost
+	Global.env_soc_gauge += env_cost - soc_cost
 	set_gauge_bar()
 
 

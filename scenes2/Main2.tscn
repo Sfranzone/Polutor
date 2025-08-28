@@ -1,17 +1,18 @@
-[gd_scene load_steps=19 format=3 uid="uid://b03rb3xn06wdt"]
+[gd_scene load_steps=20 format=3 uid="uid://b03rb3xn06wdt"]
 
 [ext_resource type="Texture2D" uid="uid://c7x5uaf23veqn" path="res://assets/background/background_laus3.jpg" id="1_hh2pn"]
-[ext_resource type="Script" uid="uid://dhryot31mkwoo" path="res://scripts2/CardManager.gd" id="2_mi7a0"]
+[ext_resource type="Script" uid="uid://cc7ysxw6fjins" path="res://scripts2/Main2.gd" id="1_mi7a0"]
+[ext_resource type="Script" uid="uid://l6ni1thqj2rc" path="res://scripts2/CardManager2.gd" id="2_hh2pn"]
 [ext_resource type="Script" uid="uid://brvcjdgdrtuuj" path="res://scripts2/PlayerHand.gd" id="3_rt2qh"]
-[ext_resource type="Script" uid="uid://bfpfwl8ef4cm4" path="res://scripts2/Deck.gd" id="4_qp0d8"]
 [ext_resource type="Texture2D" uid="uid://ckgnqsiv24qi5" path="res://assets/cards/backcard_texture.png" id="5_kbxn7"]
-[ext_resource type="Script" uid="uid://b3r6vegpn230" path="res://scripts2/InputManager.gd" id="6_kar4o"]
+[ext_resource type="Script" uid="uid://4xw5qpaqkox7" path="res://scripts2/Deck2.gd" id="5_mi7a0"]
 [ext_resource type="FontFile" uid="uid://c4pe7v7qaoxgf" path="res://assets/fonts/Comfortaa-Bold.ttf" id="7_0hday"]
+[ext_resource type="Script" uid="uid://cwl8tk4iegf8" path="res://scripts2/InputManager2.gd" id="7_mi7a0"]
 [ext_resource type="PackedScene" uid="uid://b0jyw0dskbw1m" path="res://scenes2/Enemy2.tscn" id="8_hh2pn"]
 [ext_resource type="PackedScene" uid="uid://b3lr5g3qlghm6" path="res://scenes2/Mana.tscn" id="9_pnuyh"]
 [ext_resource type="PackedScene" uid="uid://cx1mg4bd0jghh" path="res://scenes2/PlayerHealth.tscn" id="10_4yr0x"]
 [ext_resource type="PackedScene" uid="uid://bmxpd3d64j602" path="res://scenes2/EnvSocGauge.tscn" id="11_r80hs"]
-[ext_resource type="Script" uid="uid://c8vja52mm8ck8" path="res://scripts2/BattleManager.gd" id="12_t0bs7"]
+[ext_resource type="Script" uid="uid://b5hltnykd4y4q" path="res://scripts2/BattleManager2.gd" id="12_hh2pn"]
 [ext_resource type="PackedScene" uid="uid://ne1mtcf1gjyd" path="res://scenes/scene_transition_animation.tscn" id="13_euqgl"]
 [ext_resource type="PackedScene" uid="uid://h3dwx6rdsu7d" path="res://scenes/menu_map.tscn" id="14_bfg1n"]
 
@@ -55,6 +56,7 @@ corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
 [node name="Main2" type="Node2D"]
+script = ExtResource("1_mi7a0")
 
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -10
@@ -62,30 +64,30 @@ position = Vector2(960, 540)
 scale = Vector2(1.55, 1.55)
 texture = ExtResource("1_hh2pn")
 
-[node name="CardManager" type="Node2D" parent="."]
-script = ExtResource("2_mi7a0")
+[node name="CardManager2" type="Node2D" parent="."]
+script = ExtResource("2_hh2pn")
 
 [node name="PlayerHand" type="Node2D" parent="."]
 script = ExtResource("3_rt2qh")
 
-[node name="Deck" type="Node2D" parent="."]
+[node name="Deck2" type="Node2D" parent="."]
 position = Vector2(150, 890)
-script = ExtResource("4_qp0d8")
+script = ExtResource("5_mi7a0")
 
-[node name="Sprite2D" type="Sprite2D" parent="Deck"]
+[node name="Sprite2D" type="Sprite2D" parent="Deck2"]
 z_index = -2
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("5_kbxn7")
 
-[node name="Area2D" type="Area2D" parent="Deck"]
+[node name="Area2D" type="Area2D" parent="Deck2"]
 collision_layer = 4
 collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Deck/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Deck2/Area2D"]
 shape = SubResource("RectangleShape2D_xyrrl")
 disabled = true
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Deck"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Deck2"]
 modulate = Color(0, 0, 0, 1)
 z_index = -2
 offset_left = -9.0
@@ -95,8 +97,8 @@ offset_bottom = 12.0
 scale = Vector2(2, 2)
 text = "0"
 
-[node name="InputManager" type="Node2D" parent="."]
-script = ExtResource("6_kar4o")
+[node name="InputManager2" type="Node2D" parent="."]
+script = ExtResource("7_mi7a0")
 
 [node name="EndTurnButton" type="Button" parent="."]
 offset_left = 1650.0
@@ -125,8 +127,8 @@ scale = Vector2(0.75, 0.75)
 [node name="EnvSocGauge" parent="." instance=ExtResource("11_r80hs")]
 position = Vector2(150, 125)
 
-[node name="BattleManager" type="Node" parent="."]
-script = ExtResource("12_t0bs7")
+[node name="BattleManager2" type="Node" parent="."]
+script = ExtResource("12_hh2pn")
 
 [node name="BattleTimer1" type="Timer" parent="."]
 
@@ -139,3 +141,5 @@ script = ExtResource("12_t0bs7")
 [node name="Scene_transition_animation" parent="." instance=ExtResource("13_euqgl")]
 
 [node name="Menu_map" parent="." instance=ExtResource("14_bfg1n")]
+
+[connection signal="pressed" from="EndTurnButton" to="BattleManager2" method="_on_end_turn_button_pressed"]
