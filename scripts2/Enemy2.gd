@@ -26,5 +26,9 @@ func set_health_bar() -> void:
 func damage(dmg) -> void:
 	health -= dmg
 	if health < 0:
-		health = MAX_HEALTH
+		enemy_death()
 	update_health_ui()
+
+
+func enemy_death() -> void:
+	$EnemyDeath/EnemyDeath.play("EnemyDeath")

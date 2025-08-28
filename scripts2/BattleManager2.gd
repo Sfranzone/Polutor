@@ -53,14 +53,20 @@ func monster_basic_attack():
 	$"../Enemy2/BasicAttack/BasicAttackMove".play("AttackMove")
 	battle_timer1s.start()
 	await battle_timer1s.timeout
-	$"../PlayerHealth".health_damage(5)
+	if Global.env_soc_gauge < 25 or Global.env_soc_gauge > 75:
+		$"../PlayerHealth".health_damage(10)
+	else:
+		$"../PlayerHealth".health_damage(5)
 
 
 func monster_big_attack():
 	$"../Enemy2/BigAttack/BigAttackMove".play("BigAttack")
 	battle_timer3s.start()
 	await battle_timer3s.timeout
-	$"../PlayerHealth".health_damage(15)
+	if Global.monster_buff:
+		$"../PlayerHealth".health_damage(25)
+	else:
+		$"../PlayerHealth".health_damage(15)
 
 
 func end_monster_turn():
