@@ -1182,6 +1182,9 @@ z_index = -10
 position = Vector2(960, 540)
 texture = ExtResource("2_mf030")
 
+[node name="Menu_map" parent="." instance=ExtResource("18_mf030")]
+visible = false
+
 [node name="CardManager" type="Node2D" parent="."]
 script = ExtResource("1_nbxl4")
 
@@ -1257,6 +1260,7 @@ script = ExtResource("10_7ymo5")
 [node name="BattleTimer3" type="Timer" parent="."]
 
 [node name="Tutorial" type="Control" parent="."]
+visible = false
 visibility_layer = 2
 layout_mode = 3
 anchors_preset = 0
@@ -1602,8 +1606,6 @@ offset_bottom = 1080.0
 [node name="Next8" type="AnimationPlayer" parent="Tutorial/Control/Tuto8"]
 
 [node name="Scene_transition_animation" parent="." instance=ExtResource("12_eifcl")]
-
-[node name="Menu_map" parent="." instance=ExtResource("18_mf030")]
 
 [connection signal="pressed" from="EndTurnButton" to="BattleManager" method="_on_end_turn_button_pressed"]
 [connection signal="pressed" from="Tutorial/Control/Tuto1/ContinueButton1" to="Tutorial" method="_on_continue_button_1_pressed"]

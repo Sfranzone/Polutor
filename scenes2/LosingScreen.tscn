@@ -1,13 +1,103 @@
-[gd_scene load_steps=4 format=3 uid="uid://nb1u2034y1p1"]
+[gd_scene load_steps=8 format=3 uid="uid://nb1u2034y1p1"]
 
 [ext_resource type="FontFile" uid="uid://c4pe7v7qaoxgf" path="res://assets/fonts/Comfortaa-Bold.ttf" id="1_fu10x"]
 [ext_resource type="Script" uid="uid://mgcahfixir3o" path="res://scripts2/LosingScreen.gd" id="1_xtduv"]
+[ext_resource type="Texture2D" uid="uid://dpyj0le8khpv2" path="res://assets/background/background_loose.png" id="2_iegpn"]
 [ext_resource type="PackedScene" uid="uid://ne1mtcf1gjyd" path="res://scenes/scene_transition_animation.tscn" id="3_4pysh"]
+
+[sub_resource type="Animation" id="Animation_iegpn"]
+resource_name = "3dots"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("3dots:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("3dots2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("3dots3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_fdjoa"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("3dots:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("3dots2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("3dots3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_apuya"]
+_data = {
+&"3dots": SubResource("Animation_iegpn"),
+&"RESET": SubResource("Animation_fdjoa")
+}
 
 [node name="LosingScreen" type="Node2D"]
 script = ExtResource("1_xtduv")
 
 [node name="BackgroundDeath" type="Sprite2D" parent="."]
+position = Vector2(960, 450)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("2_iegpn")
 
 [node name="Restart" type="Button" parent="."]
 anchors_preset = 8
@@ -16,9 +106,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 460.0
-offset_top = 750.0
+offset_top = 500.0
 offset_right = 860.0
-offset_bottom = 850.0
+offset_bottom = 600.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_fu10x")
@@ -32,32 +122,77 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 1060.0
-offset_top = 750.0
+offset_top = 500.0
 offset_right = 1460.0
-offset_bottom = 850.0
+offset_bottom = 600.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_fu10x")
 theme_override_font_sizes/font_size = 40
 text = "Menu principal"
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
+[node name="YouDeadLabel" type="Label" parent="."]
 offset_left = 460.0
 offset_top = 250.0
 offset_right = 1460.0
 offset_bottom = 450.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/normal_font = ExtResource("1_fu10x")
-theme_override_font_sizes/normal_font_size = 100
-text = "Tu es mort..."
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("1_fu10x")
+theme_override_font_sizes/font_size = 100
+text = "Tu es mort"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="3dots" type="Label" parent="."]
+offset_left = 750.0
+offset_top = 250.0
+offset_right = 1750.0
+offset_bottom = 450.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("1_fu10x")
+theme_override_font_sizes/font_size = 100
+text = "."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="3dots2" type="Label" parent="."]
+visible = false
+offset_left = 775.0
+offset_top = 250.0
+offset_right = 1775.0
+offset_bottom = 450.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("1_fu10x")
+theme_override_font_sizes/font_size = 100
+text = "."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="3dots3" type="Label" parent="."]
+visible = false
+offset_left = 800.0
+offset_top = 250.0
+offset_right = 1800.0
+offset_bottom = 450.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("1_fu10x")
+theme_override_font_sizes/font_size = 100
+text = "."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="3dots4" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_apuya")
+}
 
 [node name="Scene_transition_animation" parent="." instance=ExtResource("3_4pysh")]
 

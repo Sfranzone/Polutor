@@ -64,6 +64,8 @@ position = Vector2(960, 540)
 scale = Vector2(1.55, 1.55)
 texture = ExtResource("1_hh2pn")
 
+[node name="Menu_map" parent="." instance=ExtResource("14_bfg1n")]
+
 [node name="CardManager2" type="Node2D" parent="."]
 script = ExtResource("2_hh2pn")
 
@@ -139,7 +141,5 @@ script = ExtResource("12_hh2pn")
 [node name="BattleTimer3" type="Timer" parent="."]
 
 [node name="Scene_transition_animation" parent="." instance=ExtResource("13_euqgl")]
-
-[node name="Menu_map" parent="." instance=ExtResource("14_bfg1n")]
 
 [connection signal="pressed" from="EndTurnButton" to="BattleManager2" method="_on_end_turn_button_pressed"]

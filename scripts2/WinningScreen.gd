@@ -7,12 +7,9 @@ extends Node2D
 func _ready() -> void:
 	scene_transition_animation.play("fade_out")
 	await get_tree().create_timer(0.5).timeout
-	$"3dots4".play("3dots")
-
-func _on_restart_pressed() -> void:
-	scene_transition_animation.play("fade_in")
-	await get_tree().create_timer(0.5).timeout
-	get_tree().change_scene_to_file("res://scenes2/Main.tscn")
+	$ExclamationPoint4.play("ExclamationPoint4")
+	$HappyFox/FoxJump.play("FoxJump")
+	VictoryMusic.play()
 
 
 func _on_to_main_menu_pressed() -> void:

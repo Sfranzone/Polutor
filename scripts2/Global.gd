@@ -2,7 +2,7 @@ extends Node
 
 
 var tutorial_done = true
-var intro_movie_seen = false
+var intro_movie_seen = true
 var monster_buff = false
 
 

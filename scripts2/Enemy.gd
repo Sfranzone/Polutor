@@ -26,6 +26,7 @@ func set_health_bar() -> void:
 
 
 func damage(dmg) -> void:
+	$Hit_sound.play()
 	health -= dmg
 	if health < 0:
 		enemy_death()
@@ -33,6 +34,8 @@ func damage(dmg) -> void:
 
 
 func enemy_death() -> void:
+	$Monster_death.play()
+	await get_tree().create_timer(1).timeout
 	$EnemyDeath/EnemyDeath.play("EnemyDeath")
 	await get_tree().create_timer(4).timeout
 	if Global.env_soc_gauge < 25 or Global.env_soc_gauge > 75:
