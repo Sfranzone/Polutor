@@ -1,7 +1,7 @@
 extends Node
 
 
-var tutorial_done = true
+var tutorial_done = false
 var intro_movie_seen = true
 var monster_buff = false
 
