@@ -1,6 +1,9 @@
 extends Node
 
 
+const starting_hand_size = 4
+
+
 var tutorial_done = false
 var intro_movie_seen = true
 var monster_buff = false

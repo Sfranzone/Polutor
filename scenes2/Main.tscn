@@ -22,42 +22,6 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tu7ba"]
 size = Vector2(150, 210)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mf030"]
-bg_color = Color(0.60933, 0.60933, 0.60933, 1)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0vw4w"]
-bg_color = Color(0, 0, 0, 1)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3e7p2"]
-bg_color = Color(1, 1, 1, 1)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-
 [sub_resource type="Animation" id="Animation_yefou"]
 length = 0.001
 tracks/0/type = "value"
@@ -1174,19 +1138,50 @@ _data = {
 &"RESET": SubResource("Animation_2wsct")
 }
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mf030"]
+bg_color = Color(0.60933, 0.60933, 0.60933, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0vw4w"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3e7p2"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
 [node name="Main" type="Node2D"]
 script = ExtResource("1_whado")
 
 [node name="Background" type="Sprite2D" parent="."]
+show_behind_parent = true
 z_index = -10
 position = Vector2(960, 540)
 texture = ExtResource("2_mf030")
-
-[node name="Menu_map" parent="." instance=ExtResource("18_mf030")]
-visible = false
-
-[node name="CardManager" type="Node2D" parent="."]
-script = ExtResource("1_nbxl4")
 
 [node name="PlayerHand" type="Node2D" parent="."]
 script = ExtResource("2_nbxl4")
@@ -1221,20 +1216,6 @@ text = "0"
 [node name="InputManager" type="Node2D" parent="."]
 script = ExtResource("5_r6w5h")
 
-[node name="EndTurnButton" type="Button" parent="."]
-offset_left = 1650.0
-offset_top = 850.0
-offset_right = 1850.0
-offset_bottom = 950.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("6_tu7ba")
-theme_override_font_sizes/font_size = 35
-theme_override_styles/hover = SubResource("StyleBoxFlat_mf030")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_0vw4w")
-theme_override_styles/normal = SubResource("StyleBoxFlat_3e7p2")
-text = "End Turn"
-
 [node name="Enemy" parent="." instance=ExtResource("7_tydlu")]
 
 [node name="Mana" parent="." instance=ExtResource("8_nn3pv")]
@@ -1260,7 +1241,6 @@ script = ExtResource("10_7ymo5")
 [node name="BattleTimer3" type="Timer" parent="."]
 
 [node name="Tutorial" type="Control" parent="."]
-visibility_layer = 2
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1920.0
@@ -1606,7 +1586,25 @@ offset_bottom = 1080.0
 
 [node name="Scene_transition_animation" parent="." instance=ExtResource("12_eifcl")]
 
-[connection signal="pressed" from="EndTurnButton" to="BattleManager" method="_on_end_turn_button_pressed"]
+[node name="Menu_map" parent="." instance=ExtResource("18_mf030")]
+
+[node name="CardManager" type="Node2D" parent="."]
+script = ExtResource("1_nbxl4")
+
+[node name="EndTurnButton" type="Button" parent="."]
+offset_left = 1650.0
+offset_top = 850.0
+offset_right = 1850.0
+offset_bottom = 950.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_tu7ba")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/hover = SubResource("StyleBoxFlat_mf030")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0vw4w")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3e7p2")
+text = "End Turn"
+
 [connection signal="pressed" from="Tutorial/Control/Tuto1/ContinueButton1" to="Tutorial" method="_on_continue_button_1_pressed"]
 [connection signal="pressed" from="Tutorial/Control/Tuto2/ContinueButton2" to="Tutorial" method="_on_continue_button_2_pressed"]
 [connection signal="pressed" from="Tutorial/Control/Tuto3/ContinueButton3" to="Tutorial" method="_on_continue_button_3_pressed"]
@@ -1615,3 +1613,4 @@ offset_bottom = 1080.0
 [connection signal="pressed" from="Tutorial/Control/Tuto6/ContinueButton6" to="Tutorial" method="_on_continue_button_6_pressed"]
 [connection signal="pressed" from="Tutorial/Control/Tuto7/ContinueButton7" to="Tutorial" method="_on_continue_button_7_pressed"]
 [connection signal="pressed" from="Tutorial/Control/Tuto8/ContinueButton8" to="Tutorial" method="_on_continue_button_8_pressed"]
+[connection signal="pressed" from="EndTurnButton" to="BattleManager" method="_on_end_turn_button_pressed"]

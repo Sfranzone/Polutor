@@ -24,6 +24,7 @@ func set_health_bar() -> void:
 
 
 func damage(dmg) -> void:
+	$Hit_sound.play()
 	health -= dmg
 	if health < 0:
 		enemy_death()
@@ -32,3 +33,7 @@ func damage(dmg) -> void:
 
 func enemy_death() -> void:
 	$EnemyDeath/EnemyDeath.play("EnemyDeath")
+	await get_tree().create_timer(0.5).timeout
+	$Monster_death.play()
+	await get_tree().create_timer(4).timeout
+	get_tree().change_scene_to_file("res://scenes2/WinningScreen.tscn")

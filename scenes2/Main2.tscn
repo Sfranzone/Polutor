@@ -64,11 +64,6 @@ position = Vector2(960, 540)
 scale = Vector2(1.55, 1.55)
 texture = ExtResource("1_hh2pn")
 
-[node name="Menu_map" parent="." instance=ExtResource("14_bfg1n")]
-
-[node name="CardManager2" type="Node2D" parent="."]
-script = ExtResource("2_hh2pn")
-
 [node name="PlayerHand" type="Node2D" parent="."]
 script = ExtResource("3_rt2qh")
 
@@ -102,20 +97,6 @@ text = "0"
 [node name="InputManager2" type="Node2D" parent="."]
 script = ExtResource("7_mi7a0")
 
-[node name="EndTurnButton" type="Button" parent="."]
-offset_left = 1650.0
-offset_top = 850.0
-offset_right = 1850.0
-offset_bottom = 950.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("7_0hday")
-theme_override_font_sizes/font_size = 35
-theme_override_styles/hover = SubResource("StyleBoxFlat_mf653")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_6fgie")
-theme_override_styles/normal = SubResource("StyleBoxFlat_pnibb")
-text = "End Turn"
-
 [node name="Enemy2" parent="." instance=ExtResource("8_hh2pn")]
 
 [node name="Mana" parent="." instance=ExtResource("9_pnuyh")]
@@ -141,5 +122,24 @@ script = ExtResource("12_hh2pn")
 [node name="BattleTimer3" type="Timer" parent="."]
 
 [node name="Scene_transition_animation" parent="." instance=ExtResource("13_euqgl")]
+
+[node name="Menu_map" parent="." instance=ExtResource("14_bfg1n")]
+
+[node name="CardManager2" type="Node2D" parent="."]
+script = ExtResource("2_hh2pn")
+
+[node name="EndTurnButton" type="Button" parent="."]
+offset_left = 1650.0
+offset_top = 850.0
+offset_right = 1850.0
+offset_bottom = 950.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_0hday")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/hover = SubResource("StyleBoxFlat_mf653")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6fgie")
+theme_override_styles/normal = SubResource("StyleBoxFlat_pnibb")
+text = "End Turn"
 
 [connection signal="pressed" from="EndTurnButton" to="BattleManager2" method="_on_end_turn_button_pressed"]

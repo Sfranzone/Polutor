@@ -22,10 +22,7 @@ func _ready() -> void:
 
 
 func _on_end_turn_button_pressed() -> void:
-	$"../InteractionsBlock".visible = true
 	monster_turn()
-	$"../InteractionsBlock".visible = false
-	#get_tree().change_scene_to_file("res://scenes2/Main2.tscn")
 
 
 func monster_turn():

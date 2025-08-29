@@ -2,7 +2,7 @@ extends Node2D
 
 const CARD_SCENE_PATH = "res://scenes2/Card.tscn"
 const CARD_DRAW_SPEED = 1
-const STARTING_HAND_SIZE = 3
+const STARTING_HAND_SIZE = Global.starting_hand_size
 
 
 var player_deck = ["Eolapino", "Nuclearo", "Barrachat", "Thermhibou", "Panolero", "Amigo Tri", "Nuclearo Destructo", "Taxito Gratuito", "Climato Froido", "Eolapino", "Nuclearo", "Barrachat", "Thermhibou", "Panolero", "Amigo Tri", "Nuclearo Destructo", "Taxito Gratuito", "Climato Froido"]

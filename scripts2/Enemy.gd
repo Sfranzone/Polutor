@@ -34,9 +34,9 @@ func damage(dmg) -> void:
 
 
 func enemy_death() -> void:
-	$Monster_death.play()
-	await get_tree().create_timer(1).timeout
 	$EnemyDeath/EnemyDeath.play("EnemyDeath")
+	await get_tree().create_timer(0.5).timeout
+	$Monster_death.play()
 	await get_tree().create_timer(4).timeout
 	if Global.env_soc_gauge < 25 or Global.env_soc_gauge > 75:
 		Global.monster_buff = true

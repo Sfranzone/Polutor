@@ -71,8 +71,12 @@ func monster_big_attack():
 
 func end_monster_turn():
 	# End monster turn
-	$"../Deck".draw_card()
+	$"../Deck2".draw_card()
 	$"../Mana".reset_mana()
 	await get_tree().create_timer(1).timeout
 	$"../EndTurnButton".disabled = false
 	$"../EndTurnButton".visible = true
+
+
+func _on_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
