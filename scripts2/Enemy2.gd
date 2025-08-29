@@ -16,7 +16,7 @@ func update_health_ui() -> void:
 
 
 func set_health_label() -> void:
-	$HealthLabel.text = "Grabage: %s" % health
+	$HealthLabel.text = "Gazo: %s" % health
 
 
 func set_health_bar() -> void:
