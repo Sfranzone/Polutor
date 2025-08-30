@@ -237,7 +237,7 @@ offset_right = 40.0
 offset_bottom = 23.0
 theme_override_fonts/font = ExtResource("3_jk1qb")
 theme_override_font_sizes/font_size = 20
-text = "Music"
+text = "Musique"
 
 [node name="Audio_control_sfx" type="HSlider" parent="Options_panel"]
 layout_mode = 1
@@ -267,9 +267,10 @@ offset_right = 40.0
 offset_bottom = 23.0
 theme_override_fonts/font = ExtResource("3_jk1qb")
 theme_override_font_sizes/font_size = 20
-text = "SFX"
+text = "Effets sonores"
 
 [node name="Fullscreen_control" type="CheckButton" parent="Options_panel"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

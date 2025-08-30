@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://4lmt1jixyj1u"]
+[gd_scene load_steps=67 format=3 uid="uid://4lmt1jixyj1u"]
 
 [ext_resource type="Script" uid="uid://dhryot31mkwoo" path="res://scripts2/CardManager.gd" id="1_nbxl4"]
 [ext_resource type="Script" uid="uid://c5mxs7onr2mlc" path="res://scripts2/Main.gd" id="1_whado"]
@@ -21,6 +21,42 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tu7ba"]
 size = Vector2(150, 210)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mf030"]
+bg_color = Color(0.60933, 0.60933, 0.60933, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0vw4w"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3e7p2"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [sub_resource type="Animation" id="Animation_yefou"]
 length = 0.001
@@ -83,6 +119,18 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Control/SkipTuto2:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_v3at8"]
@@ -147,6 +195,18 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Control/SkipTuto2:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8ajrv"]
@@ -1138,41 +1198,77 @@ _data = {
 &"RESET": SubResource("Animation_2wsct")
 }
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mf030"]
-bg_color = Color(0.60933, 0.60933, 0.60933, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7n8ub"]
+bg_color = Color(0.423651, 0.423651, 0.423651, 1)
 border_width_left = 5
 border_width_top = 5
 border_width_right = 5
 border_width_bottom = 5
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
+border_color = Color(0.8, 0.258824, 0, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0vw4w"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_41hke"]
 bg_color = Color(0, 0, 0, 1)
 border_width_left = 5
 border_width_top = 5
 border_width_right = 5
 border_width_bottom = 5
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
+border_color = Color(0.8, 0.258824, 0, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3e7p2"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a2uni"]
 bg_color = Color(1, 1, 1, 1)
 border_width_left = 5
 border_width_top = 5
 border_width_right = 5
 border_width_bottom = 5
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
+border_color = Color(0.8, 0.258824, 0, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7u8nh"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mf030"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xy3v0"]
+bg_color = Color(0.687215, 0.687215, 0.687215, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_enxmv"]
+bg_color = Color(0.509286, 0.509286, 0.509286, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2rplc"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_whado")
@@ -1240,6 +1336,27 @@ script = ExtResource("10_7ymo5")
 
 [node name="BattleTimer3" type="Timer" parent="."]
 
+[node name="Scene_transition_animation" parent="." instance=ExtResource("12_eifcl")]
+
+[node name="Menu_map" parent="." instance=ExtResource("18_mf030")]
+
+[node name="CardManager" type="Node2D" parent="."]
+script = ExtResource("1_nbxl4")
+
+[node name="EndTurnButton" type="Button" parent="."]
+offset_left = 1650.0
+offset_top = 850.0
+offset_right = 1850.0
+offset_bottom = 950.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_tu7ba")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/hover = SubResource("StyleBoxFlat_mf030")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0vw4w")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3e7p2")
+text = "End Turn"
+
 [node name="Tutorial" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -1258,13 +1375,6 @@ root_node = NodePath("../..")
 libraries = {
 &"": SubResource("AnimationLibrary_8ajrv")
 }
-
-[node name="ColorRect" type="ColorRect" parent="Tutorial/Control"]
-visible = false
-layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
-color = Color(0, 0, 0, 0)
 
 [node name="TextureRect" type="TextureRect" parent="Tutorial/Control"]
 modulate = Color(1, 1, 1, 0)
@@ -1341,7 +1451,7 @@ offset_right = 1825.0
 offset_bottom = 490.0
 theme_override_fonts/font = ExtResource("6_tu7ba")
 theme_override_font_sizes/font_size = 25
-text = "Voici votre premier combat contre un monstre né de la pollution. Le but sera de venir à bout de lui, mais attention ! Gérez bien votre jauge environnemental et social en haut à droite de l'écran pour ne pas avoir de pénalité !"
+text = "Voici votre premier combat contre un monstre né de la pollution. Le but sera de venir à bout de lui, mais attention ! Gérez bien votre jauge environnemental et social en haut à droite de l'écran pour ne pas avoir de pénalités !"
 horizontal_alignment = 1
 autowrap_mode = 3
 
@@ -1387,7 +1497,7 @@ offset_right = 1825.0
 offset_bottom = 490.0
 theme_override_fonts/font = ExtResource("6_tu7ba")
 theme_override_font_sizes/font_size = 25
-text = "Cette jauge changera en fonction des 2 numéro en bleu clair (Baisse la jauge) et vert (Augmente la jauge) sur les cartes. Celui en bleu clair indique l'impacte social qu'aura celle-ci si elle est jouée, c'est-à-dire l'influence sur la société humaine (plus le chiffre est grand, moins bien est l'impact social de cette carte)."
+text = "Cette jauge changera en fonction des deux numéros en bleu clair (Baisse la jauge) et vert (Augmente la jauge) sur les cartes. Le numéro en bleu clair indique l'impact social qu'aura la carte si elle est jouée, c'est-à-dire l'influence sur la société humaine (plus le chiffre est grand, moins bien est l'impact social de cette carte)."
 horizontal_alignment = 1
 autowrap_mode = 3
 
@@ -1418,7 +1528,7 @@ offset_right = 1825.0
 offset_bottom = 490.0
 theme_override_fonts/font = ExtResource("6_tu7ba")
 theme_override_font_sizes/font_size = 25
-text = "Le chiffre de couleur vert est là pour indiquer l'impacte environnemental que cette carte aura sur la planète lorsqu'elle est jouée (plus c'est petit, moins cela a de répercussions). Le but sera donc, en plus de gagner le combat, de garder un équilibre sur cette jauge pour qu'elle reste dans les zones rouges."
+text = "Le chiffre de couleur vert indique l'impact environnemental que cette carte aura sur la planète lorsqu'elle est jouée (plus le chiffre est petit, moins cela a de répercussions). Le but sera donc, en plus de gagner le combat, de garder un équilibre sur cette jauge pour qu'elle reste dans les zones rouges."
 horizontal_alignment = 1
 autowrap_mode = 3
 
@@ -1449,7 +1559,7 @@ offset_right = 1825.0
 offset_bottom = 490.0
 theme_override_fonts/font = ExtResource("6_tu7ba")
 theme_override_font_sizes/font_size = 25
-text = "Passons maintenant aux cartes. Nous avons déjà vu que chaque carte possède un coût social et environnemental. En plus de ceci, elle requiert un certain nombre de mana pour être jouée. Ce coût en mana est représenter par le chiffre en bleu foncé en haut à gauche des cartes. Votre maximum de mana par tour est 10."
+text = "Passons maintenant aux cartes. Nous avons déjà vu que chaque carte possède un coût social et environnemental. En plus de ceci, elle requiert un certain nombre de mana pour être jouée. Ce coût en mana est représenté par le chiffre en bleu foncé en haut à gauche des cartes. Votre maximum de mana par tour est 10."
 horizontal_alignment = 1
 autowrap_mode = 3
 
@@ -1494,7 +1604,7 @@ offset_right = 1825.0
 offset_bottom = 490.0
 theme_override_fonts/font = ExtResource("6_tu7ba")
 theme_override_font_sizes/font_size = 25
-text = "Vous pouvez laisser appuyer la souris sur une carte pour la prendre et la glisser sur le monstre pour la jouer. Celle-ci sera alors détruite et fera des dégâts au monstre en fonction du chiffre en rouge en haut à droite de la carte."
+text = "Vous pouvez laisser appuyé la souris sur une carte pour la prendre et la relâcher sur le monstre pour la jouer. Celle-ci sera alors détruite et fera des dégâts au monstre en fonction du chiffre en rouge en haut à droite de la carte."
 horizontal_alignment = 1
 autowrap_mode = 3
 
@@ -1525,7 +1635,7 @@ offset_right = 1825.0
 offset_bottom = 490.0
 theme_override_fonts/font = ExtResource("6_tu7ba")
 theme_override_font_sizes/font_size = 25
-text = "Vous verrez où la flèche clignote la barre de vie du monstre descendre à chaque fois que vous jouerez une carte. Le but étant de la descendre jusqu'à 0 pour tuer le monstre."
+text = "Vous voyez où la flèche clignote la barre de vie du monstre descendre à chaque fois que vous jouerez une carte. Le but étant de la descendre jusqu'à 0 pour tuer le monstre."
 horizontal_alignment = 1
 autowrap_mode = 3
 
@@ -1570,7 +1680,7 @@ offset_right = 1825.0
 offset_bottom = 490.0
 theme_override_fonts/font = ExtResource("6_tu7ba")
 theme_override_font_sizes/font_size = 25
-text = "En revanche, si le monstre parvient à réduire vos propres points de vie à 0, vous perdrez le combat ! Jouez stratégiquement vos cartes pour garder votre jauge saine tout en tuant le montre sans vous faire tuer. Bonne découverte et bonne chance !"
+text = "En revanche, si le monstre parvient à réduire vos propres points de vie à 0, vous perdrez le combat ! Jouez stratégiquement vos cartes pour garder votre jauge saine tout en éliminant le montre sans vous faire tuer. Bonne découverte et bonne chance !"
 horizontal_alignment = 1
 autowrap_mode = 3
 
@@ -1584,27 +1694,108 @@ offset_bottom = 1080.0
 
 [node name="Next8" type="AnimationPlayer" parent="Tutorial/Control/Tuto8"]
 
-[node name="Scene_transition_animation" parent="." instance=ExtResource("12_eifcl")]
+[node name="SkipTuto2" type="Control" parent="Tutorial/Control"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="Menu_map" parent="." instance=ExtResource("18_mf030")]
+[node name="SkipTuto" type="Button" parent="Tutorial/Control/SkipTuto2"]
+layout_mode = 0
+offset_left = 1500.0
+offset_top = 100.0
+offset_right = 1800.0
+offset_bottom = 150.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_tu7ba")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/hover = SubResource("StyleBoxFlat_7n8ub")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_41hke")
+theme_override_styles/normal = SubResource("StyleBoxFlat_a2uni")
+text = "Passer le tutoriel"
 
-[node name="CardManager" type="Node2D" parent="."]
-script = ExtResource("1_nbxl4")
+[node name="ConfirmSkipTutoBG" type="Panel" parent="Tutorial/Control/SkipTuto2"]
+visible = false
+top_level = true
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
 
-[node name="EndTurnButton" type="Button" parent="."]
-offset_left = 1650.0
-offset_top = 850.0
-offset_right = 1850.0
-offset_bottom = 950.0
+[node name="Panel" type="Panel" parent="Tutorial/Control/SkipTuto2/ConfirmSkipTutoBG"]
+layout_mode = 0
+offset_left = 560.0
+offset_top = 350.0
+offset_right = 1360.0
+offset_bottom = 650.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_7u8nh")
+
+[node name="ConfirmSkip" type="Label" parent="Tutorial/Control/SkipTuto2/ConfirmSkipTutoBG"]
+layout_mode = 0
+offset_left = 610.0
+offset_top = 400.0
+offset_right = 1310.0
+offset_bottom = 450.0
+theme_override_fonts/font = ExtResource("6_tu7ba")
+theme_override_font_sizes/font_size = 30
+text = "Êtes-vous sûr de vouloir passer le tutoriel ?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Yes" type="Button" parent="Tutorial/Control/SkipTuto2/ConfirmSkipTutoBG"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -185.0
+offset_top = -555.0
+offset_right = -85.0
+offset_bottom = -505.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("6_tu7ba")
-theme_override_font_sizes/font_size = 35
-theme_override_styles/hover = SubResource("StyleBoxFlat_mf030")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_0vw4w")
-theme_override_styles/normal = SubResource("StyleBoxFlat_3e7p2")
-text = "End Turn"
+theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxEmpty_mf030")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xy3v0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_enxmv")
+theme_override_styles/normal = SubResource("StyleBoxFlat_2rplc")
+text = "Oui
+"
 
+[node name="No" type="Button" parent="Tutorial/Control/SkipTuto2/ConfirmSkipTutoBG"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 65.0
+offset_top = -555.0
+offset_right = 165.0
+offset_bottom = -505.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_tu7ba")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxEmpty_mf030")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xy3v0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_enxmv")
+theme_override_styles/normal = SubResource("StyleBoxFlat_2rplc")
+text = "Non
+"
+
+[connection signal="pressed" from="EndTurnButton" to="BattleManager" method="_on_end_turn_button_pressed"]
 [connection signal="pressed" from="Tutorial/Control/Tuto1/ContinueButton1" to="Tutorial" method="_on_continue_button_1_pressed"]
 [connection signal="pressed" from="Tutorial/Control/Tuto2/ContinueButton2" to="Tutorial" method="_on_continue_button_2_pressed"]
 [connection signal="pressed" from="Tutorial/Control/Tuto3/ContinueButton3" to="Tutorial" method="_on_continue_button_3_pressed"]
@@ -1613,4 +1804,6 @@ text = "End Turn"
 [connection signal="pressed" from="Tutorial/Control/Tuto6/ContinueButton6" to="Tutorial" method="_on_continue_button_6_pressed"]
 [connection signal="pressed" from="Tutorial/Control/Tuto7/ContinueButton7" to="Tutorial" method="_on_continue_button_7_pressed"]
 [connection signal="pressed" from="Tutorial/Control/Tuto8/ContinueButton8" to="Tutorial" method="_on_continue_button_8_pressed"]
-[connection signal="pressed" from="EndTurnButton" to="BattleManager" method="_on_end_turn_button_pressed"]
+[connection signal="pressed" from="Tutorial/Control/SkipTuto2/SkipTuto" to="Tutorial" method="_on_skip_tuto_pressed"]
+[connection signal="pressed" from="Tutorial/Control/SkipTuto2/ConfirmSkipTutoBG/Yes" to="Tutorial" method="_on_yes_pressed"]
+[connection signal="pressed" from="Tutorial/Control/SkipTuto2/ConfirmSkipTutoBG/No" to="Tutorial" method="_on_no_pressed"]

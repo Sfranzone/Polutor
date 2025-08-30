@@ -103,3 +103,16 @@ func _on_continue_button_8_pressed() -> void:
 	$Control/Tuto8/ContinueButton8.visible = false
 	Global.tutorial_done = true
 	$".".visible = false
+
+
+func _on_yes_pressed() -> void:
+	$".".visible = false
+	Global.tutorial_done = true
+
+
+func _on_no_pressed() -> void:
+	$Control/SkipTuto2/ConfirmSkipTutoBG.visible = false
+
+
+func _on_skip_tuto_pressed() -> void:
+	$Control/SkipTuto2/ConfirmSkipTutoBG.visible = true

@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var scene_transition_animation = $Scene_transition_animation/AnimationPlayer
 
-const MAX_HEALTH = 100
+const MAX_HEALTH = 50
 
 var health = MAX_HEALTH
 
@@ -29,6 +29,7 @@ func damage(dmg) -> void:
 	$Hit_sound.play()
 	health -= dmg
 	if health < 0:
+		health = 0
 		enemy_death()
 	update_health_ui()
 

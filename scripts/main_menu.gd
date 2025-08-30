@@ -4,8 +4,8 @@ extends Control
 @onready var options_panel: Panel = $Options_panel
 @onready var scene_transition_animation = $Scene_transition_animation/AnimationPlayer
 
-var intro_not = 1
-var intro = 0
+#var intro_not = 1
+#var intro = 0
 
 func _ready():
 	main_buttons.visible = true
@@ -21,7 +21,7 @@ func _on_start_game_pressed():
 		scene_transition_animation.play("fade_in")
 		await get_tree().create_timer(0.5).timeout
 		get_tree().change_scene_to_file("res://scenes2/IntroMovie.tscn")
-		intro_not = 0
+		#intro_not = 0
 	else:
 		scene_transition_animation.play("fade_in")
 		await get_tree().create_timer(0.5).timeout

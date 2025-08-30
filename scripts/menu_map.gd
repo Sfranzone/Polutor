@@ -40,4 +40,4 @@ func _on_options_pressed() -> void:
 func _on_help_pressed() -> void:
 	scene_transition_animation.play("fade_in")
 	await get_tree().create_timer(0.5).timeout
-	get_tree().change_scene_to_file("res://scenes/help.tscn")
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")

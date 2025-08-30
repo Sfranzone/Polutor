@@ -9,6 +9,7 @@ func _ready() -> void:
 	await get_tree().create_timer(0.5).timeout
 	$ExclamationPoint4.play("ExclamationPoint4")
 	$HappyFox/FoxJump.play("FoxJump")
+	CombatMusic.stop()
 	VictoryMusic.play()
 
 

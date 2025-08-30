@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://b0jyw0dskbw1m"]
+[gd_scene load_steps=18 format=3 uid="uid://b0jyw0dskbw1m"]
 
 [ext_resource type="Texture2D" uid="uid://c7fo25dkewytj" path="res://assets/GUI/black_oval.png" id="1_eqfua"]
 [ext_resource type="Script" uid="uid://7w1ww4sd88ts" path="res://scripts2/Enemy2.gd" id="1_xi612"]
@@ -8,6 +8,7 @@
 [ext_resource type="FontFile" uid="uid://c4pe7v7qaoxgf" path="res://assets/fonts/Comfortaa-Bold.ttf" id="5_6olpu"]
 [ext_resource type="AudioStream" uid="uid://2q8bt48w73ap" path="res://assets/sound_effects/monster_death.mp3" id="7_ffjv4"]
 [ext_resource type="AudioStream" uid="uid://b8q28jf45ioh" path="res://assets/sound_effects/hit_sound.mp3" id="8_6olpu"]
+[ext_resource type="PackedScene" uid="uid://ne1mtcf1gjyd" path="res://scenes/scene_transition_animation.tscn" id="9_6olpu"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_24nr5"]
 radius = 135.0
@@ -381,3 +382,5 @@ stream = ExtResource("7_ffjv4")
 
 [node name="Hit_sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_6olpu")
+
+[node name="Scene_transition_animation" parent="." instance=ExtResource("9_6olpu")]
