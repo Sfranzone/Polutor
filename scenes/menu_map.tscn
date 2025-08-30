@@ -51,15 +51,10 @@ corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_do5im"]
 bg_color = Color(0, 0, 0, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wiolc"]
 
@@ -173,7 +168,6 @@ text = "Quitter
 "
 
 [node name="Help" type="Button" parent="Map_menu"]
-visible = false
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -518,6 +512,71 @@ theme_override_font_sizes/font_size = 20
 text = "Pleine écran"
 script = ExtResource("4_2jlr0")
 
+[node name="Cards_explanation" type="Panel" parent="."]
+visible = false
+top_level = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Cards_explanation"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -850.0
+offset_top = -440.0
+offset_right = 850.0
+offset_bottom = 460.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_do5im")
+
+[node name="Label" type="Label" parent="Cards_explanation/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -84.5
+offset_right = 84.5
+offset_bottom = 92.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_jlpd4")
+theme_override_font_sizes/font_size = 40
+text = "Explication des cartes"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Back_cards_explanation" type="Button" parent="Cards_explanation/Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -61.0
+offset_top = -91.0
+offset_right = 61.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_jlpd4")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wiolc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rq3gr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ym255")
+theme_override_styles/normal = SubResource("StyleBoxFlat_4v1jg")
+text = "Retour"
+
 [node name="Scene_transition_animation" parent="." instance=ExtResource("5_2jlr0")]
 
 [connection signal="pressed" from="Map_menu/Main_menu" to="." method="_on_main_menu_pressed"]
@@ -532,3 +591,4 @@ script = ExtResource("4_2jlr0")
 [connection signal="value_changed" from="Options_panel/Panel/Audio_control_music" to="Options_panel/Panel/Audio_control_music" method="_on_value_changed"]
 [connection signal="value_changed" from="Options_panel/Panel/Audio_control_sfx" to="Options_panel/Panel/Audio_control_sfx" method="_on_value_changed"]
 [connection signal="toggled" from="Options_panel/Panel/Fullscreen_control" to="Options_panel/Panel/Fullscreen_control" method="_on_toggled"]
+[connection signal="pressed" from="Cards_explanation/Panel/Back_cards_explanation" to="." method="_on_back_cards_explanation_pressed"]

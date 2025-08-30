@@ -5,6 +5,7 @@ extends Node2D
 
 
 func _ready() -> void:
+	TransitionMusic.stop()
 	scene_transition_animation.play("fade_out")
 	await get_tree().create_timer(0.5).timeout
 	CombatMusic.playing = true

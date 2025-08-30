@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var scene_transition_animation = $Scene_transition_animation/AnimationPlayer
 
-const MAX_HEALTH = 50
+const MAX_HEALTH = 100
 
 var health = MAX_HEALTH
 

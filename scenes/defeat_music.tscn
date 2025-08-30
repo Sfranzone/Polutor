@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgaytldw88ssv"]
+
+[ext_resource type="AudioStream" uid="uid://s8wktmhaspol" path="res://assets/musics/defeat_sound.mp3" id="1_5ekdc"]
+
+[node name="Defeat_music" type="AudioStreamPlayer"]
+stream = ExtResource("1_5ekdc")
+bus = &"Music"
+parameters/looping = true

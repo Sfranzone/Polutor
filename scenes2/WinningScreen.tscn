@@ -1,10 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://b3b4m4uodlg1d"]
+[gd_scene load_steps=24 format=3 uid="uid://b3b4m4uodlg1d"]
 
 [ext_resource type="Script" uid="uid://cecp7of361k2n" path="res://scripts2/WinningScreen.gd" id="1_rjmuv"]
 [ext_resource type="FontFile" uid="uid://c4pe7v7qaoxgf" path="res://assets/fonts/Comfortaa-Bold.ttf" id="1_x2pdc"]
 [ext_resource type="Texture2D" uid="uid://bnc0rnex61qm0" path="res://assets/background/background_win.png" id="2_wmuaa"]
 [ext_resource type="Texture2D" uid="uid://q3gwrdlm0bad" path="res://assets/characters/happy_fox.png" id="3_qcamx"]
+[ext_resource type="Texture2D" uid="uid://crh1ulv62t8lg" path="res://assets/characters/happy_cat.png" id="4_0s3hi"]
 [ext_resource type="PackedScene" uid="uid://ne1mtcf1gjyd" path="res://scenes/scene_transition_animation.tscn" id="4_qcamx"]
+[ext_resource type="Texture2D" uid="uid://d22bgkd34ools" path="res://assets/characters/happy_rabbit.png" id="5_xe6a3"]
+[ext_resource type="Texture2D" uid="uid://cb4r17divgnan" path="res://assets/characters/happy_frog-removebg-preview.png" id="6_lna6o"]
 
 [sub_resource type="Animation" id="Animation_qcamx"]
 resource_name = "FoxJump"
@@ -42,6 +45,120 @@ tracks/0/keys = {
 _data = {
 &"FoxJump": SubResource("Animation_qcamx"),
 &"RESET": SubResource("Animation_0s3hi")
+}
+
+[sub_resource type="Animation" id="Animation_xe6a3"]
+resource_name = "CatJump"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HappyCat:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1147, 895), Vector2(1147, 865), Vector2(1147, 895), Vector2(1147, 865), Vector2(1147, 895), Vector2(1147, 865), Vector2(1147, 895)]
+}
+
+[sub_resource type="Animation" id="Animation_lna6o"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HappyCat:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1147, 895)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lna6o"]
+_data = {
+&"CatJump": SubResource("Animation_xe6a3"),
+&"RESET": SubResource("Animation_lna6o")
+}
+
+[sub_resource type="Animation" id="Animation_ropol"]
+resource_name = "RabbitJump"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HappyRabbit:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(158, 920), Vector2(158, 890), Vector2(158, 920), Vector2(158, 890), Vector2(158, 920), Vector2(158, 890), Vector2(158, 920)]
+}
+
+[sub_resource type="Animation" id="Animation_jxfx7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HappyRabbit:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(158, 920)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2vkv5"]
+_data = {
+&"RESET": SubResource("Animation_jxfx7"),
+&"RabbitJump": SubResource("Animation_ropol")
+}
+
+[sub_resource type="Animation" id="Animation_2vkv5"]
+resource_name = "FrogJump"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HappyFrog:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(861, 1030), Vector2(861, 995), Vector2(861, 1030), Vector2(861, 995), Vector2(861, 1030), Vector2(861, 995), Vector2(861, 1030)]
+}
+
+[sub_resource type="Animation" id="Animation_c640e"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HappyFrog:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(861, 1030)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ore6t"]
+_data = {
+&"FrogJump": SubResource("Animation_2vkv5"),
+&"RESET": SubResource("Animation_c640e")
 }
 
 [sub_resource type="Animation" id="Animation_wmuaa"]
@@ -148,6 +265,42 @@ texture = ExtResource("3_qcamx")
 [node name="FoxJump" type="AnimationPlayer" parent="HappyFox"]
 libraries = {
 &"": SubResource("AnimationLibrary_xe6a3")
+}
+
+[node name="HappyCat" type="Node2D" parent="."]
+
+[node name="HappyCat" type="Sprite2D" parent="HappyCat"]
+position = Vector2(1147, 895)
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("4_0s3hi")
+
+[node name="CatJump" type="AnimationPlayer" parent="HappyCat"]
+libraries = {
+&"": SubResource("AnimationLibrary_lna6o")
+}
+
+[node name="HappyRabbit" type="Node2D" parent="."]
+
+[node name="HappyRabbit" type="Sprite2D" parent="HappyRabbit"]
+position = Vector2(158, 920)
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("5_xe6a3")
+
+[node name="RabbitJump" type="AnimationPlayer" parent="HappyRabbit"]
+libraries = {
+&"": SubResource("AnimationLibrary_2vkv5")
+}
+
+[node name="HappyFrog" type="Node2D" parent="."]
+
+[node name="HappyFrog" type="Sprite2D" parent="HappyFrog"]
+position = Vector2(861, 1030)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("6_lna6o")
+
+[node name="FrogJump" type="AnimationPlayer" parent="HappyFrog"]
+libraries = {
+&"": SubResource("AnimationLibrary_ore6t")
 }
 
 [node name="ToMainMenu" type="Button" parent="."]

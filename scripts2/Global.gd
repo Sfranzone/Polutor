@@ -1,7 +1,7 @@
 extends Node
 
 
-const starting_hand_size = 4
+const starting_hand_size = 6
 
 
 var tutorial_done = false

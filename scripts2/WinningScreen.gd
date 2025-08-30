@@ -9,6 +9,12 @@ func _ready() -> void:
 	await get_tree().create_timer(0.5).timeout
 	$ExclamationPoint4.play("ExclamationPoint4")
 	$HappyFox/FoxJump.play("FoxJump")
+	await get_tree().create_timer(0.5).timeout
+	$HappyCat/CatJump.play("CatJump")
+	await get_tree().create_timer(0.5).timeout
+	$HappyRabbit/RabbitJump.play("RabbitJump")
+	await get_tree().create_timer(0.5).timeout
+	$HappyFrog/FrogJump.play("FrogJump")
 	CombatMusic.stop()
 	VictoryMusic.play()
 

@@ -10,6 +10,7 @@ func _ready() -> void:
 		$Control/Tuto6/Text6.visible = false
 		$Control/Tuto7/Text7.visible = false
 		$Control/Tuto8/Text8.visible = false
+		$Control/Tuto6bis/Text6Bis.visible = false
 		$Control/Tuto1/ClickToContinue.visible = false
 		await get_tree().create_timer(1).timeout
 		$Control/TutoStart.play("TutoStart")
@@ -81,10 +82,10 @@ func _on_continue_button_6_pressed() -> void:
 	$Control/Tuto1/Blinking.stop()
 	$Control/Tuto6/Next6.play("Next6")
 	await get_tree().create_timer(3).timeout
-	$Control/Tuto7/PointingArrow4.play("PointingArrow4")
+	$Control/Tuto6bis/PointingArrow5.play("PointingArrow5")
 	await get_tree().create_timer(2).timeout
 	$Control/Tuto1/Blinking.play("ContinueBlink")
-	$Control/Tuto7/ContinueButton7.visible = true
+	$Control/Tuto6bis/ContinueButton6Bis.visible = true
 
 
 
@@ -92,6 +93,7 @@ func _on_continue_button_7_pressed() -> void:
 	$Control/Tuto7/ContinueButton7.visible = false
 	$Control/Tuto1/Blinking.stop()
 	$Control/Tuto7/PointingArrow4.stop()
+	$Control/Tuto7/RedArrow4.visible = false
 	$Control/Tuto7/Next7.play("Next7")
 	await get_tree().create_timer(5).timeout
 	$Control/Tuto1/Blinking.play("ContinueBlink")
@@ -116,3 +118,16 @@ func _on_no_pressed() -> void:
 
 func _on_skip_tuto_pressed() -> void:
 	$Control/SkipTuto2/ConfirmSkipTutoBG.visible = true
+
+
+func _on_continue_button_6_bis_pressed() -> void:
+	$Control/Tuto6bis/PointingArrow5.stop()
+	$Control/Tuto6bis/RedArrow5.visible = false
+	$Control/Tuto6bis/ContinueButton6Bis.visible = false
+	$Control/Tuto1/Blinking.stop()
+	$Control/Tuto6bis/Next6Bis.play("Next6Bis")
+	await get_tree().create_timer(3).timeout
+	$Control/Tuto7/PointingArrow4.play("PointingArrow4")
+	await get_tree().create_timer(2).timeout
+	$Control/Tuto1/Blinking.play("ContinueBlink")
+	$Control/Tuto7/ContinueButton7.visible = true

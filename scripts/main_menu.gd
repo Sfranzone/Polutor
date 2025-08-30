@@ -8,6 +8,9 @@ extends Control
 #var intro = 0
 
 func _ready():
+	VictoryMusic.stop()
+	DefeatMusic.stop()
+	CombatMusic.stop()
 	main_buttons.visible = true
 	options_panel.visible = false
 	scene_transition_animation.play("fade_out")

@@ -9,6 +9,7 @@ func _ready() -> void:
 	await get_tree().create_timer(0.5).timeout
 	$"3dots4".play("3dots")
 	CombatMusic.stop()
+	DefeatMusic.playing = true
 
 func _on_restart_pressed() -> void:
 	scene_transition_animation.play("fade_in")
