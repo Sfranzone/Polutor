@@ -85,6 +85,21 @@ _data = {
 &"RESET": SubResource("Animation_lna6o")
 }
 
+[sub_resource type="Animation" id="Animation_jxfx7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HappyRabbit:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(158, 920)]
+}
+
 [sub_resource type="Animation" id="Animation_ropol"]
 resource_name = "RabbitJump"
 length = 2.0
@@ -100,21 +115,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(158, 920), Vector2(158, 890), Vector2(158, 920), Vector2(158, 890), Vector2(158, 920), Vector2(158, 890), Vector2(158, 920)]
-}
-
-[sub_resource type="Animation" id="Animation_jxfx7"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("HappyRabbit:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(158, 920)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2vkv5"]

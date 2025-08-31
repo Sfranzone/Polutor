@@ -1,10 +1,11 @@
-[gd_scene load_steps=37 format=3 uid="uid://1c8ba7nd80cu"]
+[gd_scene load_steps=38 format=3 uid="uid://1c8ba7nd80cu"]
 
 [ext_resource type="Script" uid="uid://dcarktp0wwpys" path="res://scripts2/WinningTransition.gd" id="1_3robt"]
 [ext_resource type="Texture2D" uid="uid://c7x5uaf23veqn" path="res://assets/background/background_laus3.jpg" id="1_jf1sx"]
 [ext_resource type="FontFile" uid="uid://c4pe7v7qaoxgf" path="res://assets/fonts/Comfortaa-Bold.ttf" id="3_3robt"]
 [ext_resource type="Texture2D" uid="uid://bw5t0grfjeqc7" path="res://assets/GUI/white_arrow_down.png" id="4_06vh4"]
 [ext_resource type="PackedScene" uid="uid://ne1mtcf1gjyd" path="res://scenes/scene_transition_animation.tscn" id="5_g6oqx"]
+[ext_resource type="PackedScene" uid="uid://h3dwx6rdsu7d" path="res://scenes/menu_map.tscn" id="6_on63h"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_06vh4"]
 bg_color = Color(0, 0, 0, 0.615686)
@@ -817,6 +818,8 @@ libraries = {
 }
 
 [node name="Scene_transition_animation" parent="." instance=ExtResource("5_g6oqx")]
+
+[node name="Menu_map" parent="." instance=ExtResource("6_on63h")]
 
 [connection signal="pressed" from="Text1/TextButton1" to="." method="_on_text_button_1_pressed"]
 [connection signal="pressed" from="Text2/TextButton2" to="." method="_on_text_button_2_pressed"]
