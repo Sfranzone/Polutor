@@ -27,6 +27,8 @@ Les musiques et effets sonores de ce projet ont été téléchargées depuis [pi
 
 Trois images en libre accès ont été utilisées dans ce projet sans avoir été générées par des intelligences artificielles, ce sont l'image fond du menu principal et les deux images de fond des deux combats qui sont tirée de [opengameart.org](https://opengameart.org/content/simple-nature-pixel-background-for-video-game), de [bonyvxl sur reddit](https://www.reddit.com/r/PixelArt/comments/1ddogvb/snow_and_pollution_im_new_in_pixelart_what_do_you/?tl=fr) et de [John Paul](https://polonaise.artstation.com/projects/RYaN1r).
 
+Les images d'interface sont des images sans droits d'auteur récupérées sur [Google Image](https://www.google.com/imghp?hl=en&authuser=1&ogbl)
+
 ## Intelligences Artificiels (ChatGPT)
 
 Durant ce projet, une seule intelligence artificielle, [ChatGPT](https://chatgpt.com/), a été utilisée. La principale fonction pour laquelle elle a été utilisée est la correction de code. En précisant le type de langage que c'est, il est très facile de demander où se situe une erreur ou comment la corriger en demandant simplement à ChatGPT et en lui envoyant le code. ChatGPT a également été sollicité, mais cette fois-ci que de manière minimale pour la rédaction du code. En effet, il est difficile d'utiliser ChatGPT pour la rédaction de code dans un programme comme Godot avec un langage spécifique à lui-même, c'est pourquoi il a été utilisé que de manière minimale.
