@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://b0jyw0dskbw1m"]
+[gd_scene load_steps=20 format=3 uid="uid://b0jyw0dskbw1m"]
 
 [ext_resource type="Texture2D" uid="uid://c7fo25dkewytj" path="res://assets/GUI/black_oval.png" id="1_eqfua"]
 [ext_resource type="Script" uid="uid://7w1ww4sd88ts" path="res://scripts2/Enemy2.gd" id="1_xi612"]
@@ -153,6 +153,18 @@ _data = {
 &"BigAttack": SubResource("Animation_kld86"),
 &"RESET": SubResource("Animation_ayafi")
 }
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_24nr5"]
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6olpu"]
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [sub_resource type="Animation" id="Animation_inn5n"]
 resource_name = "EnemyDeath"
@@ -324,17 +336,20 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -424.0
-offset_top = -23.0
-offset_right = 424.0
-offset_bottom = 23.0
+offset_left = -500.0
+offset_top = -30.0
+offset_right = 500.0
+offset_bottom = 70.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_6olpu")
 theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_24nr5")
 text = "Le monstre vous frappe avec ses poings de fumée !"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="BigAttack" type="Node2D" parent="."]
 position = Vector2(960, 150)
@@ -352,17 +367,20 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -152.0
-offset_top = -11.5
-offset_right = 152.0
-offset_bottom = 11.5
+offset_left = -500.0
+offset_top = -30.0
+offset_right = 500.0
+offset_bottom = 70.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_6olpu")
 theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_6olpu")
 text = "Le monstre crache une fumée toxic que vous inhalez !"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="EnemyDeath" type="Node2D" parent="."]
 

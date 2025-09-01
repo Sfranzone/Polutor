@@ -1495,7 +1495,7 @@ position = Vector2(175, 550)
 scale = Vector2(0.75, 0.75)
 
 [node name="EnvSocGauge" parent="." instance=ExtResource("12_v3at8")]
-position = Vector2(150, 125)
+position = Vector2(200, 125)
 
 [node name="BattleManager" type="Node" parent="."]
 script = ExtResource("10_7ymo5")
@@ -1621,7 +1621,7 @@ offset_right = 1825.0
 offset_bottom = 490.0
 theme_override_fonts/font = ExtResource("6_tu7ba")
 theme_override_font_sizes/font_size = 25
-text = "Voici votre premier combat contre un monstre né de la pollution. Le but sera de venir à bout de lui, mais attention ! Gérez bien votre jauge environnemental et social en haut à gauche de l'écran pour ne pas avoir de pénalités !"
+text = "Voici votre premier combat contre un monstre né de la pollution. Le but sera de venir à bout de lui, mais attention ! Gérez bien votre jauge environnementale et sociale en haut à gauche de l'écran pour ne pas avoir de pénalités !"
 horizontal_alignment = 1
 autowrap_mode = 3
 
@@ -1698,7 +1698,7 @@ offset_right = 1825.0
 offset_bottom = 490.0
 theme_override_fonts/font = ExtResource("6_tu7ba")
 theme_override_font_sizes/font_size = 25
-text = "Le chiffre de couleur vert indique l'impact environnemental que cette carte aura sur la planète lorsqu'elle est jouée (plus le chiffre est petit, moins cela a de répercussions). Le but sera donc, en plus de gagner le combat, de garder un équilibre sur cette jauge pour qu'elle reste dans les zones rouges."
+text = "Le chiffre de couleur vert indique l'impact environnemental que cette carte aura sur la planète lorsqu'elle est jouée (plus le chiffre est grand, plus cela a de répercussions). Le but sera donc, en plus de gagner le combat, de garder un équilibre sur cette jauge pour qu'elle reste dans les zones rouges."
 horizontal_alignment = 1
 autowrap_mode = 3
 
@@ -1774,7 +1774,7 @@ offset_right = 1825.0
 offset_bottom = 490.0
 theme_override_fonts/font = ExtResource("6_tu7ba")
 theme_override_font_sizes/font_size = 25
-text = "Vous pouvez laisser appuyé la souris sur une carte pour la prendre et la relâcher sur le monstre pour la jouer. Celle-ci sera alors détruite et fera des dégâts au monstre en fonction du chiffre en rouge en haut à droite de la carte. Votre maximum de carte en main est 7."
+text = "Vous pouvez laisser appuyé la souris sur une carte pour la prendre et la relâcher sur le monstre pour la jouer. Celle-ci sera alors détruite et fera des dégâts au monstre en fonction du chiffre en rouge en haut à droite de la carte. Votre maximum de cartes en main est 7."
 horizontal_alignment = 1
 autowrap_mode = 3
 
@@ -1805,7 +1805,7 @@ offset_right = 1825.0
 offset_bottom = 490.0
 theme_override_fonts/font = ExtResource("6_tu7ba")
 theme_override_font_sizes/font_size = 25
-text = "Vous pouvez consulter toutes les cartes de votre deck et leurs effets en cliquant sur l'icône \"?\" indiqué par la flèche qui clignotte."
+text = "Vous pouvez consulter toutes les cartes de votre deck et leurs effets en cliquant sur l'icône \"?\" indiquée par la flèche qui clignote."
 horizontal_alignment = 1
 autowrap_mode = 3
 
@@ -1895,7 +1895,7 @@ offset_right = 1825.0
 offset_bottom = 490.0
 theme_override_fonts/font = ExtResource("6_tu7ba")
 theme_override_font_sizes/font_size = 25
-text = "En revanche, si le monstre parvient à réduire vos propres points de vie à 0, vous perdrez le combat ! Jouez stratégiquement vos cartes pour garder votre jauge saine tout en éliminant le monstre sans vous faire tuer. Bonne découverte et bonne chance !"
+text = "En revanche, si le monstre parvient à réduire vos propres points de vie à 0, vous perdrez le combat ! Attention, lorsque vous mourez, vous devrez tout recommencer ! Jouez stratégiquement vos cartes pour garder votre jauge saine tout en éliminant le monstre sans vous faire tuer. Bonne chance !"
 horizontal_alignment = 1
 autowrap_mode = 3
 

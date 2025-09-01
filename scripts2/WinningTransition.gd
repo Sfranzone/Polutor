@@ -4,7 +4,7 @@ extends Node2D
 
 
 func _ready() -> void:
-	CombatMusic.stop()
+	Global.stop_music()
 	TransitionMusic.playing = true
 	$ClickToContinueLabel.visible = false
 	scene_transition_animation.play("fade_out")

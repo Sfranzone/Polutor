@@ -8,18 +8,13 @@ extends Control
 #var intro = 0
 
 func _ready():
-	CombatMusic2.stop()
-	TransitionMusic.stop()
-	VictoryMusic.stop()
-	DefeatMusic.stop()
-	CombatMusic.stop()
+	Global.stop_music()
 	main_buttons.visible = true
 	options_panel.visible = false
 	scene_transition_animation.play("fade_out")
 	await get_tree().create_timer(0.5).timeout
 	#scene_transition_animation.get_parent().get_node("ColorRect").color.a = 255
 	#scene_transition_animation.play("fade_out")
-	MapMusic
 
 func _on_start_game_pressed():
 	if Global.intro_movie_seen == false:

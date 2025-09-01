@@ -1,10 +1,21 @@
-[gd_scene load_steps=19 format=3 uid="uid://h3dwx6rdsu7d"]
+[gd_scene load_steps=30 format=3 uid="uid://h3dwx6rdsu7d"]
 
 [ext_resource type="Script" uid="uid://bxmohgm5h6lys" path="res://scripts/menu_map.gd" id="1_held2"]
 [ext_resource type="FontFile" uid="uid://c4pe7v7qaoxgf" path="res://assets/fonts/Comfortaa-Bold.ttf" id="2_jlpd4"]
 [ext_resource type="Script" uid="uid://jnrk70xdn47a" path="res://scripts/audio_control.gd" id="3_esglo"]
 [ext_resource type="Script" uid="uid://bq1wsj1562bfb" path="res://scripts/fullscreen_control.gd" id="4_2jlr0"]
 [ext_resource type="PackedScene" uid="uid://ne1mtcf1gjyd" path="res://scenes/scene_transition_animation.tscn" id="5_2jlr0"]
+[ext_resource type="Texture2D" uid="uid://bbwjd3fatpsg3" path="res://assets/cards/Eolapino.png" id="5_wiolc"]
+[ext_resource type="Texture2D" uid="uid://2gmkei86r161" path="res://assets/cards/Barrachat.png" id="6_4v1jg"]
+[ext_resource type="Texture2D" uid="uid://dsmj1dgqjnkod" path="res://assets/cards/Thermhibou.png" id="7_do5im"]
+[ext_resource type="Texture2D" uid="uid://bwxxhy8hfrvtw" path="res://assets/cards/Nuclearo.png" id="8_dxeoi"]
+[ext_resource type="Texture2D" uid="uid://b0254u07orcd6" path="res://assets/cards/Panolero.png" id="9_mip5h"]
+[ext_resource type="Texture2D" uid="uid://dswrhiv4oon10" path="res://assets/cards/Amigo Tri.png" id="10_x0bsj"]
+[ext_resource type="Texture2D" uid="uid://cwhyjm1hsbafv" path="res://assets/cards/Nuclearo Destructo.png" id="11_5kjn3"]
+[ext_resource type="Texture2D" uid="uid://bta0xq8bqdv7d" path="res://assets/cards/Taxito Gratuito.png" id="12_016om"]
+[ext_resource type="Texture2D" uid="uid://d3fioytud7mrx" path="res://assets/cards/Climato Froido.png" id="13_5kjn3"]
+[ext_resource type="Texture2D" uid="uid://dewlauuoadhut" path="res://assets/cards/Foresto Anouvo.png" id="14_016om"]
+[ext_resource type="Texture2D" uid="uid://c5rfb2my406et" path="res://assets/GUI/right_arrow.png" id="15_016om"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jlpd4"]
 
@@ -548,7 +559,7 @@ offset_bottom = 92.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("2_jlpd4")
 theme_override_font_sizes/font_size = 40
-text = "Explication des cartes"
+text = "Explications des cartes"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -578,6 +589,641 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_ym255")
 theme_override_styles/normal = SubResource("StyleBoxFlat_4v1jg")
 text = "Retour"
 
+[node name="Page1" type="Node2D" parent="Cards_explanation/Panel"]
+
+[node name="Eolapino" type="Node2D" parent="Cards_explanation/Panel/Page1"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Cards_explanation/Panel/Page1/Eolapino"]
+position = Vector2(200, 250)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("5_wiolc")
+
+[node name="Description" type="Label" parent="Cards_explanation/Panel/Page1/Eolapino"]
+offset_left = 323.0
+offset_top = 255.0
+offset_right = 823.0
+offset_bottom = 405.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_jlpd4")
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 2
+
+[node name="Dmg" type="Label" parent="Cards_explanation/Panel/Page1/Eolapino"]
+offset_left = 323.0
+offset_top = 120.0
+offset_right = 398.0
+offset_bottom = 170.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_jlpd4")
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 2
+
+[node name="Mana" type="Label" parent="Cards_explanation/Panel/Page1/Eolapino"]
+offset_left = 323.0
+offset_top = 185.0
+offset_right = 398.0
+offset_bottom = 235.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_jlpd4")
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 2
+
+[node name="SocCost" type="Label" parent="Cards_explanation/Panel/Page1/Eolapino"]
+offset_left = 430.0
+offset_top = 120.0
+offset_right = 505.0
+offset_bottom = 170.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_jlpd4")
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 2
+
+[node name="EnvCost" type="Label" parent="Cards_explanation/Panel/Page1/Eolapino"]
+offset_left = 430.0
+offset_top = 185.0
+offset_right = 505.0
+offset_bottom = 235.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_jlpd4")
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 2
+
+[node name="Barrachat" type="Node2D" parent="Cards_explanation/Panel/Page1"]
+position = Vector2(825, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Cards_explanation/Panel/Page1/Barrachat"]
+position = Vector2(200, 250)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("6_4v1jg")
+
+[node name="Description" type="Label" parent="Cards_explanation/Panel/Page1/Barrachat"]
+offset_left = 323.0
+offset_top = 255.0
+offset_right = 823.0
+offset_bottom = 405.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_jlpd4")
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 2
+
+[node name="Dmg" type="Label" parent="Cards_explanation/Panel/Page1/Barrachat"]
+offset_left = 323.0
+offset_top = 120.0
+offset_right = 398.0
+offset_bottom = 170.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_jlpd4")
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 2
+
+[node name="Mana" type="Label" parent="Cards_explanation/Panel/Page1/Barrachat"]
+offset_left = 323.0
+offset_top = 185.0
+offset_right = 398.0
+offset_bottom = 235.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_jlpd4")
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 2
+
+[node name="SocCost" type="Label" parent="Cards_explanation/Panel/Page1/Barrachat"]
+offset_left = 430.0
+offset_top = 120.0
+offset_right = 505.0
+offset_bottom = 170.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_jlpd4")
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 2
+
+[node name="EnvCost" type="Label" parent="Cards_explanation/Panel/Page1/Barrachat"]
+offset_left = 430.0
+offset_top = 185.0
+offset_right = 505.0
+offset_bottom = 235.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_jlpd4")
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 2
+
+[node name="Thermhibou" type="Node2D" parent="Cards_explanation/Panel/Page1"]
+position = Vector2(0, 375)
+
+[node name="Sprite2D" type="Sprite2D" parent="Cards_explanation/Panel/Page1/Thermhibou"]
+position = Vector2(200, 250)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("7_do5im")
+
+[node name="Description" type="Label" parent="Cards_explanation/Panel/Page1/Thermhibou"]
+offset_left = 323.0
+offset_top = 255.0
+offset_right = 823.0
+offset_bottom = 405.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_jlpd4")
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 2
+
+[node name="Dmg" type="Label" parent="Cards_explanation/Panel/Page1/Thermhibou"]
+offset_left = 323.0
+offset_top = 120.0
+offset_right = 398.0
+offset_bottom = 170.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_jlpd4")
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 2
+
+[node name="Mana" type="Label" parent="Cards_explanation/Panel/Page1/Thermhibou"]
+offset_left = 323.0
+offset_top = 185.0
+offset_right = 398.0
+offset_bottom = 235.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_jlpd4")
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 2
+
+[node name="SocCost" type="Label" parent="Cards_explanation/Panel/Page1/Thermhibou"]
+offset_left = 430.0
+offset_top = 120.0
+offset_right = 505.0
+offset_bottom = 170.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_jlpd4")
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 2
+
+[node name="EnvCost" type="Label" parent="Cards_explanation/Panel/Page1/Thermhibou"]
+offset_left = 430.0
+offset_top = 185.0
+offset_right = 505.0
+offset_bottom = 235.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_jlpd4")
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 2
+
+[node name="Nuclearo" type="Node2D" parent="Cards_explanation/Panel/Page1"]
+position = Vector2(825, 375)
+
+[node name="Sprite2D" type="Sprite2D" parent="Cards_explanation/Panel/Page1/Nuclearo"]
+position = Vector2(200, 250)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("8_dxeoi")
+
+[node name="Description" type="Label" parent="Cards_explanation/Panel/Page1/Nuclearo"]
+offset_left = 323.0
+offset_top = 255.0
+offset_right = 823.0
+offset_bottom = 405.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_jlpd4")
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 2
+
+[node name="Dmg" type="Label" parent="Cards_explanation/Panel/Page1/Nuclearo"]
+offset_left = 323.0
+offset_top = 120.0
+offset_right = 398.0
+offset_bottom = 170.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_jlpd4")
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 2
+
+[node name="Mana" type="Label" parent="Cards_explanation/Panel/Page1/Nuclearo"]
+offset_left = 323.0
+offset_top = 185.0
+offset_right = 398.0
+offset_bottom = 235.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_jlpd4")
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 2
+
+[node name="SocCost" type="Label" parent="Cards_explanation/Panel/Page1/Nuclearo"]
+offset_left = 430.0
+offset_top = 120.0
+offset_right = 505.0
+offset_bottom = 170.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_jlpd4")
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 2
+
+[node name="EnvCost" type="Label" parent="Cards_explanation/Panel/Page1/Nuclearo"]
+offset_left = 430.0
+offset_top = 185.0
+offset_right = 505.0
+offset_bottom = 235.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_jlpd4")
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 2
+
+[node name="Page2" type="Node2D" parent="Cards_explanation/Panel"]
+visible = false
+
+[node name="Panolero" type="Node2D" parent="Cards_explanation/Panel/Page2"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Cards_explanation/Panel/Page2/Panolero"]
+position = Vector2(200, 250)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("9_mip5h")
+
+[node name="Description" type="Label" parent="Cards_explanation/Panel/Page2/Panolero"]
+offset_left = 323.0
+offset_top = 255.0
+offset_right = 823.0
+offset_bottom = 405.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_jlpd4")
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 2
+
+[node name="Dmg" type="Label" parent="Cards_explanation/Panel/Page2/Panolero"]
+offset_left = 323.0
+offset_top = 120.0
+offset_right = 398.0
+offset_bottom = 170.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_jlpd4")
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 2
+
+[node name="Mana" type="Label" parent="Cards_explanation/Panel/Page2/Panolero"]
+offset_left = 323.0
+offset_top = 185.0
+offset_right = 398.0
+offset_bottom = 235.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_jlpd4")
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 2
+
+[node name="SocCost" type="Label" parent="Cards_explanation/Panel/Page2/Panolero"]
+offset_left = 430.0
+offset_top = 120.0
+offset_right = 505.0
+offset_bottom = 170.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_jlpd4")
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 2
+
+[node name="EnvCost" type="Label" parent="Cards_explanation/Panel/Page2/Panolero"]
+offset_left = 430.0
+offset_top = 185.0
+offset_right = 505.0
+offset_bottom = 235.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_jlpd4")
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 2
+
+[node name="AmigoTri" type="Node2D" parent="Cards_explanation/Panel/Page2"]
+position = Vector2(825, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Cards_explanation/Panel/Page2/AmigoTri"]
+position = Vector2(200, 250)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("10_x0bsj")
+
+[node name="Description" type="Label" parent="Cards_explanation/Panel/Page2/AmigoTri"]
+offset_left = 323.0
+offset_top = 255.0
+offset_right = 823.0
+offset_bottom = 405.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_jlpd4")
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 2
+
+[node name="Dmg" type="Label" parent="Cards_explanation/Panel/Page2/AmigoTri"]
+offset_left = 323.0
+offset_top = 120.0
+offset_right = 398.0
+offset_bottom = 170.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_jlpd4")
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 2
+
+[node name="Mana" type="Label" parent="Cards_explanation/Panel/Page2/AmigoTri"]
+offset_left = 323.0
+offset_top = 185.0
+offset_right = 398.0
+offset_bottom = 235.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_jlpd4")
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 2
+
+[node name="SocCost" type="Label" parent="Cards_explanation/Panel/Page2/AmigoTri"]
+offset_left = 430.0
+offset_top = 120.0
+offset_right = 505.0
+offset_bottom = 170.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_jlpd4")
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 2
+
+[node name="EnvCost" type="Label" parent="Cards_explanation/Panel/Page2/AmigoTri"]
+offset_left = 430.0
+offset_top = 185.0
+offset_right = 505.0
+offset_bottom = 235.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_jlpd4")
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 2
+
+[node name="NuclearoDestructo" type="Node2D" parent="Cards_explanation/Panel/Page2"]
+position = Vector2(0, 375)
+
+[node name="Sprite2D" type="Sprite2D" parent="Cards_explanation/Panel/Page2/NuclearoDestructo"]
+position = Vector2(200, 250)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("11_5kjn3")
+
+[node name="Description" type="Label" parent="Cards_explanation/Panel/Page2/NuclearoDestructo"]
+offset_left = 323.0
+offset_top = 255.0
+offset_right = 823.0
+offset_bottom = 405.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_jlpd4")
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 2
+
+[node name="Dmg" type="Label" parent="Cards_explanation/Panel/Page2/NuclearoDestructo"]
+offset_left = 323.0
+offset_top = 120.0
+offset_right = 398.0
+offset_bottom = 170.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_jlpd4")
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 2
+
+[node name="Mana" type="Label" parent="Cards_explanation/Panel/Page2/NuclearoDestructo"]
+offset_left = 323.0
+offset_top = 185.0
+offset_right = 398.0
+offset_bottom = 235.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_jlpd4")
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 2
+
+[node name="SocCost" type="Label" parent="Cards_explanation/Panel/Page2/NuclearoDestructo"]
+offset_left = 430.0
+offset_top = 120.0
+offset_right = 505.0
+offset_bottom = 170.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_jlpd4")
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 2
+
+[node name="EnvCost" type="Label" parent="Cards_explanation/Panel/Page2/NuclearoDestructo"]
+offset_left = 430.0
+offset_top = 185.0
+offset_right = 505.0
+offset_bottom = 235.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_jlpd4")
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 2
+
+[node name="TaxitoGratuito" type="Node2D" parent="Cards_explanation/Panel/Page2"]
+position = Vector2(825, 375)
+
+[node name="Sprite2D" type="Sprite2D" parent="Cards_explanation/Panel/Page2/TaxitoGratuito"]
+position = Vector2(200, 250)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("12_016om")
+
+[node name="Description" type="Label" parent="Cards_explanation/Panel/Page2/TaxitoGratuito"]
+offset_left = 323.0
+offset_top = 255.0
+offset_right = 823.0
+offset_bottom = 405.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_jlpd4")
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 2
+
+[node name="Dmg" type="Label" parent="Cards_explanation/Panel/Page2/TaxitoGratuito"]
+offset_left = 323.0
+offset_top = 120.0
+offset_right = 398.0
+offset_bottom = 170.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_jlpd4")
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 2
+
+[node name="Mana" type="Label" parent="Cards_explanation/Panel/Page2/TaxitoGratuito"]
+offset_left = 323.0
+offset_top = 185.0
+offset_right = 398.0
+offset_bottom = 235.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_jlpd4")
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 2
+
+[node name="SocCost" type="Label" parent="Cards_explanation/Panel/Page2/TaxitoGratuito"]
+offset_left = 430.0
+offset_top = 120.0
+offset_right = 505.0
+offset_bottom = 170.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_jlpd4")
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 2
+
+[node name="EnvCost" type="Label" parent="Cards_explanation/Panel/Page2/TaxitoGratuito"]
+offset_left = 430.0
+offset_top = 185.0
+offset_right = 505.0
+offset_bottom = 235.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_jlpd4")
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 2
+
+[node name="Page3" type="Node2D" parent="Cards_explanation/Panel"]
+visible = false
+
+[node name="ClimatoFroido" type="Node2D" parent="Cards_explanation/Panel/Page3"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Cards_explanation/Panel/Page3/ClimatoFroido"]
+position = Vector2(200, 250)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("13_5kjn3")
+
+[node name="Description" type="Label" parent="Cards_explanation/Panel/Page3/ClimatoFroido"]
+offset_left = 323.0
+offset_top = 255.0
+offset_right = 823.0
+offset_bottom = 405.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_jlpd4")
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 2
+
+[node name="Dmg" type="Label" parent="Cards_explanation/Panel/Page3/ClimatoFroido"]
+offset_left = 323.0
+offset_top = 120.0
+offset_right = 398.0
+offset_bottom = 170.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_jlpd4")
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 2
+
+[node name="Mana" type="Label" parent="Cards_explanation/Panel/Page3/ClimatoFroido"]
+offset_left = 323.0
+offset_top = 185.0
+offset_right = 398.0
+offset_bottom = 235.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_jlpd4")
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 2
+
+[node name="SocCost" type="Label" parent="Cards_explanation/Panel/Page3/ClimatoFroido"]
+offset_left = 430.0
+offset_top = 120.0
+offset_right = 505.0
+offset_bottom = 170.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_jlpd4")
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 2
+
+[node name="EnvCost" type="Label" parent="Cards_explanation/Panel/Page3/ClimatoFroido"]
+offset_left = 430.0
+offset_top = 185.0
+offset_right = 505.0
+offset_bottom = 235.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_jlpd4")
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 2
+
+[node name="ForestoAnouvo" type="Node2D" parent="Cards_explanation/Panel/Page3"]
+position = Vector2(825, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Cards_explanation/Panel/Page3/ForestoAnouvo"]
+position = Vector2(200, 250)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("14_016om")
+
+[node name="Description" type="Label" parent="Cards_explanation/Panel/Page3/ForestoAnouvo"]
+offset_left = 323.0
+offset_top = 255.0
+offset_right = 823.0
+offset_bottom = 405.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_jlpd4")
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 2
+
+[node name="Dmg" type="Label" parent="Cards_explanation/Panel/Page3/ForestoAnouvo"]
+offset_left = 323.0
+offset_top = 120.0
+offset_right = 398.0
+offset_bottom = 170.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_jlpd4")
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 2
+
+[node name="Mana" type="Label" parent="Cards_explanation/Panel/Page3/ForestoAnouvo"]
+offset_left = 323.0
+offset_top = 185.0
+offset_right = 398.0
+offset_bottom = 235.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_jlpd4")
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 2
+
+[node name="SocCost" type="Label" parent="Cards_explanation/Panel/Page3/ForestoAnouvo"]
+offset_left = 430.0
+offset_top = 120.0
+offset_right = 505.0
+offset_bottom = 170.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_jlpd4")
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 2
+
+[node name="EnvCost" type="Label" parent="Cards_explanation/Panel/Page3/ForestoAnouvo"]
+offset_left = 430.0
+offset_top = 185.0
+offset_right = 505.0
+offset_bottom = 235.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_jlpd4")
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 2
+
+[node name="RightPage1" type="TextureButton" parent="Cards_explanation/Panel"]
+offset_left = 940.0
+offset_top = 810.0
+offset_right = 1181.0
+offset_bottom = 1202.0
+scale = Vector2(0.15, 0.15)
+texture_normal = ExtResource("15_016om")
+texture_pressed = ExtResource("15_016om")
+texture_hover = ExtResource("15_016om")
+texture_disabled = ExtResource("15_016om")
+texture_focused = ExtResource("15_016om")
+
+[node name="RightPage2" type="TextureButton" parent="Cards_explanation/Panel"]
+offset_left = 940.0
+offset_top = 810.0
+offset_right = 1181.0
+offset_bottom = 1202.0
+scale = Vector2(0.15, 0.15)
+texture_normal = ExtResource("15_016om")
+texture_pressed = ExtResource("15_016om")
+texture_hover = ExtResource("15_016om")
+texture_disabled = ExtResource("15_016om")
+texture_focused = ExtResource("15_016om")
+
+[node name="LeftPage2" type="TextureButton" parent="Cards_explanation/Panel"]
+offset_left = 720.0
+offset_top = 810.0
+offset_right = 961.0
+offset_bottom = 1202.0
+scale = Vector2(0.15, 0.15)
+texture_normal = ExtResource("15_016om")
+texture_pressed = ExtResource("15_016om")
+texture_hover = ExtResource("15_016om")
+texture_disabled = ExtResource("15_016om")
+texture_focused = ExtResource("15_016om")
+flip_h = true
+
+[node name="LeftPage3" type="TextureButton" parent="Cards_explanation/Panel"]
+offset_left = 720.0
+offset_top = 810.0
+offset_right = 961.0
+offset_bottom = 1202.0
+scale = Vector2(0.15, 0.15)
+texture_normal = ExtResource("15_016om")
+texture_pressed = ExtResource("15_016om")
+texture_hover = ExtResource("15_016om")
+texture_disabled = ExtResource("15_016om")
+texture_focused = ExtResource("15_016om")
+flip_h = true
+
 [node name="Scene_transition_animation" parent="." instance=ExtResource("5_2jlr0")]
 
 [connection signal="pressed" from="Map_menu/Main_menu" to="." method="_on_main_menu_pressed"]
@@ -593,3 +1239,7 @@ text = "Retour"
 [connection signal="value_changed" from="Options_panel/Panel/Audio_control_sfx" to="Options_panel/Panel/Audio_control_sfx" method="_on_value_changed"]
 [connection signal="toggled" from="Options_panel/Panel/Fullscreen_control" to="Options_panel/Panel/Fullscreen_control" method="_on_toggled"]
 [connection signal="pressed" from="Cards_explanation/Panel/Back_cards_explanation" to="." method="_on_back_cards_explanation_pressed"]
+[connection signal="pressed" from="Cards_explanation/Panel/RightPage1" to="." method="_on_right_page_1_pressed"]
+[connection signal="pressed" from="Cards_explanation/Panel/RightPage2" to="." method="_on_right_page_2_pressed"]
+[connection signal="pressed" from="Cards_explanation/Panel/LeftPage2" to="." method="_on_left_page_2_pressed"]
+[connection signal="pressed" from="Cards_explanation/Panel/LeftPage3" to="." method="_on_left_page_3_pressed"]

@@ -5,6 +5,8 @@ extends Node2D
 
 
 func _ready() -> void:
+	Global.stop_music()
+	VictoryMusic.play()
 	scene_transition_animation.play("fade_out")
 	await get_tree().create_timer(0.5).timeout
 	$ExclamationPoint4.play("ExclamationPoint4")
@@ -15,11 +17,13 @@ func _ready() -> void:
 	$HappyRabbit/RabbitJump.play("RabbitJump")
 	await get_tree().create_timer(0.5).timeout
 	$HappyFrog/FrogJump.play("FrogJump")
-	CombatMusic.stop()
-	VictoryMusic.play()
 
 
 func _on_to_main_menu_pressed() -> void:
 	scene_transition_animation.play("fade_in")
 	await get_tree().create_timer(0.5).timeout
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+
+
+func _on_exit_game_pressed() -> void:
+	get_tree().quit()

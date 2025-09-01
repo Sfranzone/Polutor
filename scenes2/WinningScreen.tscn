@@ -319,6 +319,22 @@ theme_override_fonts/font = ExtResource("1_x2pdc")
 theme_override_font_sizes/font_size = 40
 text = "Menu principal"
 
+[node name="ExitGame" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 760.0
+offset_top = 700.0
+offset_right = 1160.0
+offset_bottom = 800.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_x2pdc")
+theme_override_font_sizes/font_size = 40
+text = "Quitter"
+
 [node name="Victory" type="Label" parent="."]
 offset_left = 610.0
 offset_top = 250.0
@@ -386,3 +402,4 @@ libraries = {
 [node name="Scene_transition_animation" parent="." instance=ExtResource("4_qcamx")]
 
 [connection signal="pressed" from="ToMainMenu" to="." method="_on_to_main_menu_pressed"]
+[connection signal="pressed" from="ExitGame" to="." method="_on_exit_game_pressed"]

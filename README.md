@@ -29,7 +29,7 @@ Les musiques et effets sonores de ce projet ont été téléchargées depuis [pi
 
 ### Images sans droits d'auteur
 
-Trois images en libre accès ont été utilisées dans ce projet sans avoir été générées par des intelligences artificielles, ce sont l'image fond du menu principal et les deux images de fond des deux combats qui sont tirée de [opengameart.org](https://opengameart.org/content/simple-nature-pixel-background-for-video-game), de [bonyvxl sur reddit](https://www.reddit.com/r/PixelArt/comments/1ddogvb/snow_and_pollution_im_new_in_pixelart_what_do_you/?tl=fr) et de [John Paul](https://polonaise.artstation.com/projects/RYaN1r).
+Trois images en libre accès ont été utilisées dans ce projet sans avoir été générées par des intelligences artificielles, ce sont l'image fond du menu principal et les deux images de fond des deux combats qui sont tirée de [opengameart.org](https://opengameart.org/content/simple-nature-pixel-background-for-video-game) et de [John Paul](https://polonaise.artstation.com/projects/RYaN1r).
 
 Les images d'interface sont des images sans droits d'auteur récupérées sur [Google Image](https://www.google.com/imghp?hl=en&authuser=1&ogbl)
 
@@ -54,3 +54,4 @@ Ceci est une idée qui est apparu très récemment dans les possibilités pour u
 
 - Le zoom sur les cartes ne se fait plus après le tutoriel (qu'il soit fait au complet ou passé)
 - Cartes légérement floutées quand on zoom dessus
+- Les cartes apparaissent au-dessus de tout le reste et peuvent empêcher certains cliques dans les options

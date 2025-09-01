@@ -9,6 +9,15 @@ var intro_movie_seen = true
 var monster_buff = false
 
 
-
 # EnvSoc gauge management
+var env_soc_gauge_default = 50
 var env_soc_gauge = 50
+
+
+func stop_music():
+	CombatMusic.stop()
+	CombatMusic2.stop()
+	TransitionMusic.stop()
+	MapMusic.stop()
+	DefeatMusic.stop()
+	VictoryMusic.stop()

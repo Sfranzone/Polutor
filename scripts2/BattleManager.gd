@@ -34,16 +34,28 @@ func monster_turn():
 	battle_timer1s.start()
 	await battle_timer1s.timeout
 	
-	if randf() < 0.7:
-		# Monster basic attack
-		monster_basic_attack()
-		battle_timer2s.start()
-		await battle_timer2s.timeout
+	if Global.env_soc_gauge > 25 or Global.env_soc_gauge > 75:
+		if randf() < 0.1:
+			# Monster basic attack
+			monster_basic_attack()
+			battle_timer2s.start()
+			await battle_timer2s.timeout
+		else:
+			# Monster big atack
+			monster_big_attack()
+			battle_timer4s.start()
+			await battle_timer4s.timeout
 	else:
-		# Monster big atack
-		monster_big_attack()
-		battle_timer4s.start()
-		await battle_timer4s.timeout
+		if randf() < 0.7:
+			# Monster basic attack
+			monster_basic_attack()
+			battle_timer2s.start()
+			await battle_timer2s.timeout
+		else:
+			# Monster big atack
+			monster_big_attack()
+			battle_timer4s.start()
+			await battle_timer4s.timeout
 	
 	
 	end_monster_turn()

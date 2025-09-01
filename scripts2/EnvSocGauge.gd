@@ -15,7 +15,8 @@ func set_gauge_bar():
 
 
 func change_gauge_value(env_cost, soc_cost):
-	Global.env_soc_gauge += env_cost - soc_cost
+	Global.env_soc_gauge -= env_cost
+	Global.env_soc_gauge += soc_cost
 	set_gauge_bar()
 
 

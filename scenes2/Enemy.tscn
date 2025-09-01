@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dg6holjks5443"]
+[gd_scene load_steps=20 format=3 uid="uid://dg6holjks5443"]
 
 [ext_resource type="Texture2D" uid="uid://ccr7rdh6xrsq" path="res://assets/villains/Garbage.png" id="1_il5ij"]
 [ext_resource type="Script" uid="uid://c8ee0okw6m0sm" path="res://scripts2/Enemy.gd" id="1_km8uc"]
@@ -153,6 +153,18 @@ _data = {
 &"BigAttack": SubResource("Animation_kld86"),
 &"RESET": SubResource("Animation_ayafi")
 }
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_28wf5"]
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3rxyu"]
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [sub_resource type="Animation" id="Animation_inn5n"]
 resource_name = "EnemyDeath"
@@ -324,17 +336,20 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -424.0
-offset_top = -23.0
-offset_right = 424.0
-offset_bottom = 23.0
+offset_left = -500.0
+offset_top = -30.0
+offset_right = 500.0
+offset_bottom = 70.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_0v4sl")
 theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_28wf5")
 text = "Le monstre vous frappe avec un déchet !"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="BigAttack" type="Node2D" parent="."]
 position = Vector2(960, 150)
@@ -352,17 +367,20 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -152.0
-offset_top = -11.5
-offset_right = 152.0
-offset_bottom = 11.5
+offset_left = -500.0
+offset_top = -30.0
+offset_right = 500.0
+offset_bottom = 70.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_0v4sl")
 theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_3rxyu")
 text = "Le monstre prend deux poubelles dans ces bras et vous frappe avec !"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="EnemyDeath" type="Node2D" parent="."]
 

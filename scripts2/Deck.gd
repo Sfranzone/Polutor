@@ -14,7 +14,8 @@ var player_deck = [
 	"Amigo Tri", 
 	"Nuclearo Destructo", 
 	"Taxito Gratuito", 
-	"Climato Froido"
+	"Climato Froido",
+	"Foresto Anouvo"
 	]
 var card_database_reference
 var draw_card_this_turn = false

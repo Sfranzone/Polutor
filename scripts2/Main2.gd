@@ -7,7 +7,7 @@ extends Node2D
 func _ready() -> void:
 	scene_transition_animation.play("fade_out")
 	await get_tree().create_timer(0.5).timeout
-	DefeatMusic.stop()
+	Global.stop_music()
 	if CombatMusic2.playing == true:
 		pass
 	else:
