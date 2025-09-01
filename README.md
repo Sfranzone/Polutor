@@ -1,4 +1,4 @@
-# [Polutor](./assets/background/titre.png)
+# ![Polutor](./assets/background/titre.png)
 
 ## Présentation du jeu et inspiration
 
