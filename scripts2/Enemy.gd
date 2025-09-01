@@ -28,7 +28,7 @@ func set_health_bar() -> void:
 func damage(dmg) -> void:
 	$Hit_sound.play()
 	health -= dmg
-	if health < 0:
+	if health <= 0:
 		health = 0
 		enemy_death()
 	update_health_ui()

@@ -5,7 +5,17 @@ const CARD_DRAW_SPEED = 1
 const STARTING_HAND_SIZE = Global.starting_hand_size
 
 
-var player_deck = ["Eolapino", "Nuclearo", "Barrachat", "Thermhibou", "Panolero", "Amigo Tri", "Nuclearo Destructo", "Taxito Gratuito", "Climato Froido", "Eolapino", "Nuclearo", "Barrachat", "Thermhibou", "Panolero"]
+var player_deck = [
+	"Eolapino","Eolapino", 
+	"Nuclearo", "Nuclearo", 
+	"Barrachat", "Barrachat", 
+	"Thermhibou", "Thermhibou", 
+	"Panolero", "Panolero", 
+	"Amigo Tri", 
+	"Nuclearo Destructo", 
+	"Taxito Gratuito", 
+	"Climato Froido"
+	]
 var card_database_reference
 var draw_card_this_turn = false
 

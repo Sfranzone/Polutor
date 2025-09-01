@@ -67,6 +67,8 @@ func end_monster_turn():
 	# End monster turn
 	$"../Deck".draw_card()
 	$"../Mana".reset_mana()
+	await get_tree().create_timer(0.5).timeout
+	$"../Deck".draw_card()
 	await get_tree().create_timer(1).timeout
 	$"../EndTurnButton".disabled = false
 	$"../EndTurnButton".visible = true
