@@ -1471,15 +1471,18 @@ collision_mask = 4
 shape = SubResource("RectangleShape2D_tu7ba")
 disabled = true
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Deck"]
-modulate = Color(0, 0, 0, 1)
-z_index = -2
-offset_left = -9.0
-offset_top = -28.0
-offset_right = 31.0
-offset_bottom = 12.0
-scale = Vector2(2, 2)
+[node name="Label" type="Label" parent="Deck"]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 15.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_tu7ba")
+theme_override_font_sizes/font_size = 25
 text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="InputManager" type="Node2D" parent="."]
 script = ExtResource("5_r6w5h")

@@ -5,14 +5,25 @@ const CARD_DRAW_SPEED = 1
 const STARTING_HAND_SIZE = Global.starting_hand_size
 
 
-var player_deck = ["Eolapino", "Nuclearo", "Barrachat", "Thermhibou", "Panolero", "Amigo Tri", "Nuclearo Destructo", "Taxito Gratuito", "Climato Froido", "Eolapino", "Nuclearo", "Barrachat", "Thermhibou", "Panolero", "Amigo Tri", "Nuclearo Destructo", "Taxito Gratuito", "Climato Froido"]
+var player_deck = [
+	"Eolapino","Eolapino", 
+	"Nuclearo", "Nuclearo", 
+	"Barrachat", "Barrachat", 
+	"Thermhibou", "Thermhibou", 
+	"Panolero", "Panolero", 
+	"Amigo Tri", 
+	"Nuclearo Destructo", 
+	"Taxito Gratuito", 
+	"Climato Froido",
+	"Foresto Anouvo"
+	]
 var card_database_reference
 var draw_card_this_turn = false
 
 
 func _ready() -> void:
 	player_deck.shuffle()
-	$RichTextLabel.text = str(player_deck.size())
+	$Label.text = str(player_deck.size())
 	card_database_reference = preload("res://scripts2/CardDatabase.gd")
 	for i in range(STARTING_HAND_SIZE):
 		draw_card()
@@ -31,12 +42,12 @@ func draw_card():
 	if player_deck.size() == 0:
 		$Area2D/CollisionShape2D.disabled = true
 		$Sprite2D.visible = false
-		$RichTextLabel.visible = false
+		$Label.visible = false
 		return
 	
 	var card_drawn_name = player_deck[0]
 	player_deck.erase(card_drawn_name)
-	$RichTextLabel.text = str(player_deck.size())
+	$Label.text = str(player_deck.size())
 	var card_scene = preload(CARD_SCENE_PATH)
 	var new_card = card_scene.instantiate()
 	var card_image_path = str("res://assets/cards/" + card_drawn_name + ".png")
