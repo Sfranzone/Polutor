@@ -1175,6 +1175,7 @@ theme_override_font_sizes/font_size = 20
 autowrap_mode = 2
 
 [node name="RightPage1" type="TextureButton" parent="Cards_explanation/Panel"]
+layout_mode = 0
 offset_left = 940.0
 offset_top = 810.0
 offset_right = 1181.0
@@ -1187,6 +1188,7 @@ texture_disabled = ExtResource("15_016om")
 texture_focused = ExtResource("15_016om")
 
 [node name="RightPage2" type="TextureButton" parent="Cards_explanation/Panel"]
+layout_mode = 0
 offset_left = 940.0
 offset_top = 810.0
 offset_right = 1181.0
@@ -1199,6 +1201,7 @@ texture_disabled = ExtResource("15_016om")
 texture_focused = ExtResource("15_016om")
 
 [node name="LeftPage2" type="TextureButton" parent="Cards_explanation/Panel"]
+layout_mode = 0
 offset_left = 720.0
 offset_top = 810.0
 offset_right = 961.0
@@ -1212,6 +1215,7 @@ texture_focused = ExtResource("15_016om")
 flip_h = true
 
 [node name="LeftPage3" type="TextureButton" parent="Cards_explanation/Panel"]
+layout_mode = 0
 offset_left = 720.0
 offset_top = 810.0
 offset_right = 961.0
