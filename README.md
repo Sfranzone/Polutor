@@ -11,7 +11,7 @@ Lien de téléchargement du jeu : [itch.io](https://tatsumakyy.itch.io/polutor)
 
 Polutor est un jeu de carte inspiré de [Slay the Spire](https://store.steampowered.com/app/646570/Slay_the_Spire/) et [Daybreak](https://www.daybreakgame.org/). Ce jeu est développé sur [Godot Engine](https://godotengine.org/). C'est un tour par tour où vous piochez deux cartes à chaque début de tour. Le but est de venir à bout des monstres apparus à cause de la pollution en utilisant votre deck de cartes déjà fait pour non seulement réduire à 0 les points de vie du monstre, mais également de gérer une jauge environnementale et sociale sous forme de rond/donut pour qu'elle reste dans un certain équilibre. Cette jauge change en fonction des cartes jouées qui ont toutes une influence sociale et environnementale. Si après avoir tué le monstre cette jauge n'est pas en équilibre, cela donne de gros bonus au prochain monstre, ce qui va rendre le combat beaucoup plus difficile.
 
-### Scène de combat :
+### Exemple de scène de combat :
 
 ![Scène de combat](./assets/ReadMe/scene_combat.png)
 
