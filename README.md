@@ -6,7 +6,7 @@ Polutor est un jeu de carte inspiré de [Slay the Spire](https://store.steampowe
 
 ### Une scène de combat :
 
-![Scène de combat](../polutor/assets/ReadMe/scene_combat.png)
+![Scène de combat](./assets/ReadMe/scene_combat.png)
 
 ## Médiation
 
