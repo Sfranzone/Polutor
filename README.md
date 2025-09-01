@@ -17,7 +17,7 @@ Ce jeu est réalisé par Sébastien Franzone dans le cadre d'un projet de semest
 
 ### Exemple de scène de combat
 
-![Scène de combat](./assets/ReadMe/scene_combat.png)
+![Scène de combat](./assets/ReadMe/scene_combat2.png)
 
 ## Médiation
 
