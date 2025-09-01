@@ -1,4 +1,7 @@
-# ![Polutor](./assets/background/titre.png)
+# ![Polutor](./assets/background/titre.png)(https://tatsumakyy.itch.io/polutor)
+
+Lien de téléchargement du jeu : [itch.io](https://tatsumakyy.itch.io/polutor)
+
 
 ## Présentation du jeu et inspiration
 
@@ -55,3 +58,11 @@ Ceci est une idée qui est apparu très récemment dans les possibilités pour u
 - Le zoom sur les cartes ne se fait plus après le tutoriel (qu'il soit fait au complet ou passé)
 - Cartes légérement floutées quand on zoom dessus
 - Les cartes apparaissent au-dessus de tout le reste et peuvent empêcher certains cliques dans les options
+
+
+
+Auteur :
+Sébastien Franzone
+
+Superviseur : Isaac Pante
+Expert : Yannick Rochat
