@@ -1,4 +1,4 @@
-# ![Polutor](./assets/background/titre.png)(https://tatsumakyy.itch.io/polutor)
+# ![Polutor](./assets/background/titre.png)
 
 Lien de téléchargement du jeu : [itch.io](https://tatsumakyy.itch.io/polutor)
 
