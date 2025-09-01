@@ -4,7 +4,7 @@ Lien de téléchargement du jeu : [itch.io](https://tatsumakyy.itch.io/polutor)
 
 - Installez le fichier en fonction de votre OS (Windows et MacOS disponible uniquement)
 - Windows : Lancez le ficher polutor.exe
-- MacOS : Extraire les fichiers à l'endroit de votre choix et lancer le fichier Polutor
+- MacOS : Extraire les fichiers à l'endroit de votre choix, lancer le fichier Polutor. S'il n'est pas possible d'ouvrir le fichier Polutor, rendez-vous dans vos paramètres MacOS de Confidentialité et Sécurité pour "Ouvrir quand même" le fichier Polutor.
 
 
 ## Présentation du jeu et inspiration
