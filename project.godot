@@ -17,12 +17,13 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-MapMusic="*res://scenes/map_music.tscn"
-CombatMusic="*res://scenes/combat_music.tscn"
-VictoryMusic="*res://scenes/victory_music.tscn"
+MapMusic="*res://scenes/music_map.tscn"
+CombatMusic="*res://scenes/music_combat.tscn"
+VictoryMusic="*res://scenes/music_victory.tscn"
 Global="*res://scripts2/Global.gd"
-DefeatMusic="*res://scenes/defeat_music.tscn"
-TransitionMusic="*res://scenes/transition_music.tscn"
+DefeatMusic="*res://scenes/music_defeat.tscn"
+TransitionMusic="*res://scenes/music_transition.tscn"
+CombatMusic2="*res://scenes/music_combat2.tscn"
 
 [display]
 

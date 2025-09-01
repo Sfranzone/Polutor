@@ -8,6 +8,8 @@ extends Control
 #var intro = 0
 
 func _ready():
+	CombatMusic2.stop()
+	TransitionMusic.stop()
 	VictoryMusic.stop()
 	DefeatMusic.stop()
 	CombatMusic.stop()

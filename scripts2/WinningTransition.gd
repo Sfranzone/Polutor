@@ -55,6 +55,8 @@ func _on_text_button_3_pressed() -> void:
 	$WhiteArrow/ArrowBlinking.stop()
 	$WhiteArrow/WhiteArrowDown.visible = false
 	$Text4/Text4FadeIn.play("Text4FadeIn")
+	TransitionMusic.stop()
+	CombatMusic2.playing = true
 	await get_tree().create_timer(1).timeout
 	$WhiteArrow/ArrowFadeIn.play("ArrowFadeIn")
 	await get_tree().create_timer(0.5).timeout

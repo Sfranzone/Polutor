@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=3 uid="uid://4lmt1jixyj1u"]
+[gd_scene load_steps=75 format=3 uid="uid://4lmt1jixyj1u"]
 
 [ext_resource type="Script" uid="uid://dhryot31mkwoo" path="res://scripts2/CardManager.gd" id="1_nbxl4"]
 [ext_resource type="Script" uid="uid://c5mxs7onr2mlc" path="res://scripts2/Main.gd" id="1_whado"]
@@ -18,6 +18,8 @@
 [ext_resource type="Texture2D" uid="uid://cyg4kv0ytenuj" path="res://assets/tutorial/rectangle_dialogue2.webp" id="15_yefou"]
 [ext_resource type="Texture2D" uid="uid://dt8kxwm0vp0ld" path="res://assets/GUI/red_arrow.png" id="17_3e7p2"]
 [ext_resource type="PackedScene" uid="uid://h3dwx6rdsu7d" path="res://scenes/menu_map.tscn" id="18_mf030"]
+[ext_resource type="AudioStream" uid="uid://bmciahdlcib36" path="res://assets/musics/monster_attack2.mp3" id="19_a2uni"]
+[ext_resource type="AudioStream" uid="uid://br72mhdca51n1" path="res://assets/musics/monster_attack.mp3" id="20_7u8nh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tu7ba"]
 size = Vector2(150, 210)
@@ -1619,7 +1621,7 @@ offset_right = 1825.0
 offset_bottom = 490.0
 theme_override_fonts/font = ExtResource("6_tu7ba")
 theme_override_font_sizes/font_size = 25
-text = "Voici votre premier combat contre un monstre né de la pollution. Le but sera de venir à bout de lui, mais attention ! Gérez bien votre jauge environnemental et social en haut à droite de l'écran pour ne pas avoir de pénalités !"
+text = "Voici votre premier combat contre un monstre né de la pollution. Le but sera de venir à bout de lui, mais attention ! Gérez bien votre jauge environnemental et social en haut à gauche de l'écran pour ne pas avoir de pénalités !"
 horizontal_alignment = 1
 autowrap_mode = 3
 
@@ -1772,7 +1774,7 @@ offset_right = 1825.0
 offset_bottom = 490.0
 theme_override_fonts/font = ExtResource("6_tu7ba")
 theme_override_font_sizes/font_size = 25
-text = "Vous pouvez laisser appuyé la souris sur une carte pour la prendre et la relâcher sur le monstre pour la jouer. Celle-ci sera alors détruite et fera des dégâts au monstre en fonction du chiffre en rouge en haut à droite de la carte."
+text = "Vous pouvez laisser appuyé la souris sur une carte pour la prendre et la relâcher sur le monstre pour la jouer. Celle-ci sera alors détruite et fera des dégâts au monstre en fonction du chiffre en rouge en haut à droite de la carte. Votre maximum de carte en main est 7."
 horizontal_alignment = 1
 autowrap_mode = 3
 
@@ -1803,7 +1805,7 @@ offset_right = 1825.0
 offset_bottom = 490.0
 theme_override_fonts/font = ExtResource("6_tu7ba")
 theme_override_font_sizes/font_size = 25
-text = "Vous pouvez consulter toutes les cartes de votre deck et leurs effets en cliquant sur l'icône \"?\" indiquer par la flèche qui clignotte."
+text = "Vous pouvez consulter toutes les cartes de votre deck et leurs effets en cliquant sur l'icône \"?\" indiqué par la flèche qui clignotte."
 horizontal_alignment = 1
 autowrap_mode = 3
 
@@ -1848,7 +1850,7 @@ offset_right = 1825.0
 offset_bottom = 490.0
 theme_override_fonts/font = ExtResource("6_tu7ba")
 theme_override_font_sizes/font_size = 25
-text = "Vous voyez où la flèche clignote la barre de vie du monstre descendre à chaque fois que vous jouerez une carte. Le but étant de la descendre jusqu'à 0 pour tuer le monstre."
+text = "Où la flèche clignote, vous voyez la barre de vie du monstre descendre à chaque fois que vous jouerez une carte. Le but étant de la descendre jusqu'à 0 pour tuer le monstre."
 horizontal_alignment = 1
 autowrap_mode = 3
 
@@ -1893,7 +1895,7 @@ offset_right = 1825.0
 offset_bottom = 490.0
 theme_override_fonts/font = ExtResource("6_tu7ba")
 theme_override_font_sizes/font_size = 25
-text = "En revanche, si le monstre parvient à réduire vos propres points de vie à 0, vous perdrez le combat ! Jouez stratégiquement vos cartes pour garder votre jauge saine tout en éliminant le montre sans vous faire tuer. Bonne découverte et bonne chance !"
+text = "En revanche, si le monstre parvient à réduire vos propres points de vie à 0, vous perdrez le combat ! Jouez stratégiquement vos cartes pour garder votre jauge saine tout en éliminant le monstre sans vous faire tuer. Bonne découverte et bonne chance !"
 horizontal_alignment = 1
 autowrap_mode = 3
 
@@ -2009,6 +2011,14 @@ text = "Non
 "
 
 [node name="Menu_map" parent="." instance=ExtResource("18_mf030")]
+
+[node name="MonsterBaseAttack" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("19_a2uni")
+bus = &"SFX"
+
+[node name="MonsterBigAttack" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_7u8nh")
+bus = &"SFX"
 
 [connection signal="pressed" from="EndTurnButton" to="BattleManager" method="_on_end_turn_button_pressed"]
 [connection signal="pressed" from="Tutorial/Control/Tuto1/ContinueButton1" to="Tutorial" method="_on_continue_button_1_pressed"]

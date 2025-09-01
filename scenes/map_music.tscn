@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cp4lrqrrcohil"]
-
-[ext_resource type="AudioStream" uid="uid://cmvmtl0vyqqto" path="res://assets/musics/game_music3.mp3" id="1_t6th2"]
-
-[node name="Map_music" type="AudioStreamPlayer"]
-stream = ExtResource("1_t6th2")
-bus = &"Music"

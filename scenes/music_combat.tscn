@@ -5,3 +5,4 @@
 [node name="Combat_music" type="AudioStreamPlayer"]
 stream = ExtResource("1_ubiq0")
 bus = &"Music"
+parameters/looping = true

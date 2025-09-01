@@ -51,8 +51,10 @@ func monster_turn():
 
 func monster_basic_attack():
 	$"../Enemy2/BasicAttack/BasicAttackMove".play("AttackMove")
-	battle_timer1s.start()
-	await battle_timer1s.timeout
+	await get_tree().create_timer(1).timeout
+	$"../MonsterBaseAttack".play()
+	#battle_timer1s.start()
+	#await battle_timer1s.timeout
 	if Global.env_soc_gauge < 25 or Global.env_soc_gauge > 75:
 		$"../PlayerHealth".health_damage(10)
 	else:
@@ -61,8 +63,11 @@ func monster_basic_attack():
 
 func monster_big_attack():
 	$"../Enemy2/BigAttack/BigAttackMove".play("BigAttack")
-	battle_timer3s.start()
-	await battle_timer3s.timeout
+	await get_tree().create_timer(2).timeout
+	$"../MonsterBigAttack".play()
+	await get_tree().create_timer(1).timeout
+	#battle_timer3s.start()
+	#await battle_timer3s.timeout
 	if Global.monster_buff:
 		$"../PlayerHealth".health_damage(25)
 	else:
@@ -71,8 +76,16 @@ func monster_big_attack():
 
 func end_monster_turn():
 	# End monster turn
-	$"../Deck2".draw_card()
+	if $"../PlayerHand".player_hand.size() > 6:
+		pass
+	else:
+		$"../Deck2".draw_card()
 	$"../Mana".reset_mana()
+	await get_tree().create_timer(0.5).timeout
+	if $"../PlayerHand".player_hand.size() > 6:
+		pass
+	else:
+		$"../Deck2".draw_card()
 	await get_tree().create_timer(1).timeout
 	$"../EndTurnButton".disabled = false
 	$"../EndTurnButton".visible = true

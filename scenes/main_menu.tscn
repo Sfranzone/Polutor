@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://dphxqg6iudgvm"]
 
 [ext_resource type="Script" uid="uid://bu260e1fhhyax" path="res://scripts/main_menu.gd" id="1_oa1go"]
-[ext_resource type="Texture2D" uid="uid://8hu8yqpkxn2t" path="res://assets/background/menu_background.png" id="2_tbmy8"]
+[ext_resource type="Texture2D" uid="uid://d17aln2rw8b6g" path="res://assets/background/titre.png" id="2_oa1go"]
 [ext_resource type="FontFile" uid="uid://c4pe7v7qaoxgf" path="res://assets/fonts/Comfortaa-Bold.ttf" id="3_jk1qb"]
 [ext_resource type="AudioStream" uid="uid://ck2ia5w6f8atu" path="res://assets/musics/menu_music.mp3" id="4_5dd4i"]
 [ext_resource type="Script" uid="uid://jnrk70xdn47a" path="res://scripts/audio_control.gd" id="5_lgwnu"]
@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://ne1mtcf1gjyd" path="res://scenes/scene_transition_animation.tscn" id="7_rcqid"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fu7sn"]
-texture = ExtResource("2_tbmy8")
+texture = ExtResource("2_oa1go")
 modulate_color = Color(0.544974, 0.544974, 0.544974, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7vrkn"]
@@ -130,6 +130,7 @@ text = "Quitter
 "
 
 [node name="Label" type="Label" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

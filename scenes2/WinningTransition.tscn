@@ -661,7 +661,7 @@ offset_right = 1710.0
 offset_bottom = 950.0
 theme_override_fonts/font = ExtResource("3_3robt")
 theme_override_font_sizes/font_size = 40
-text = "Félicitation ! Vous venez de vaincre Garbage, le monstre de déchets !"
+text = "Félicitations ! Vous venez de vaincre Garbage, le monstre de déchets !"
 autowrap_mode = 2
 
 [node name="Text1FadeIn" type="AnimationPlayer" parent="Text1"]
@@ -711,7 +711,7 @@ offset_right = 1710.0
 offset_bottom = 740.0
 theme_override_fonts/font = ExtResource("3_3robt")
 theme_override_font_sizes/font_size = 40
-text = "Maintenant que vous proche de la rivière, il vous faut faire très attention à ce qu'il peut se passer."
+text = "Maintenant que vous êtes proche de la rivière, il vous faut faire très attention à ce qu'il peut se passer."
 autowrap_mode = 2
 
 [node name="Text3FadeIn" type="AnimationPlayer" parent="Text3"]

@@ -41,8 +41,9 @@ func reset_health():
 
 
 func player_dead():
-	$"../BattleManager".battle_timer1s.start()
-	await $"../BattleManager".battle_timer1s.timeout
+	#$"../BattleManager".battle_timer1s.start()
+	#await $"../BattleManager".battle_timer1s.timeout
+	await get_tree().create_timer(1).timeout
 	scene_transition_animation.play("fade_in")
 	await get_tree().create_timer(0.5).timeout
 	get_tree().change_scene_to_file("res://scenes2/LosingScreen.tscn")

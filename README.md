@@ -49,3 +49,8 @@ Il y a plusieurs possibilités pour étendre ce jeu en implémentant de nouvelle
 ### Tower Defense
 
 Ceci est une idée qui est apparu très récemment dans les possibilités pour une amélioration de jeu et de la médiation : transformer ce jeu en [Tower Defense](https://fr.wikipedia.org/wiki/Tower_defense). L'aspect des cartes de "construction" m'a fait penser qu'une adaptation de ce thème de jeu en Tower Defense pourrait une option très intéressante a considéré.
+
+## Bugs connus
+
+- Le zoom sur les cartes ne se fait plus après le tutoriel (qu'il soit fait au complet ou passé)
+- Cartes légérement floutées quand on zoom dessus

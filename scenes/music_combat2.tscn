@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dnl1flanegk72"]
+
+[ext_resource type="AudioStream" uid="uid://b56bv8jgrpofd" path="res://assets/musics/fight2_music.mp3" id="1_g3jh5"]
+
+[node name="Music_fight2" type="AudioStreamPlayer"]
+stream = ExtResource("1_g3jh5")
+parameters/looping = true
