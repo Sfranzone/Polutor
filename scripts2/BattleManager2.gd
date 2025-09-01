@@ -67,10 +67,7 @@ func monster_basic_attack():
 	$"../MonsterBaseAttack".play()
 	#battle_timer1s.start()
 	#await battle_timer1s.timeout
-	if Global.monster_buff:
-		$"../PlayerHealth".health_damage(10)
-	else:
-		$"../PlayerHealth".health_damage(5)
+	$"../PlayerHealth".health_damage(5)
 
 
 func monster_big_attack():
@@ -80,10 +77,7 @@ func monster_big_attack():
 	await get_tree().create_timer(1).timeout
 	#battle_timer3s.start()
 	#await battle_timer3s.timeout
-	if Global.monster_buff:
-		$"../PlayerHealth".health_damage(25)
-	else:
-		$"../PlayerHealth".health_damage(15)
+	$"../PlayerHealth".health_damage(15)
 
 
 func end_monster_turn():

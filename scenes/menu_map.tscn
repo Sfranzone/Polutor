@@ -611,7 +611,7 @@ autowrap_mode = 2
 [node name="Dmg" type="Label" parent="Cards_explanation/Panel/Page1/Eolapino"]
 offset_left = 323.0
 offset_top = 120.0
-offset_right = 398.0
+offset_right = 423.0
 offset_bottom = 170.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_jlpd4")
@@ -669,7 +669,7 @@ autowrap_mode = 2
 [node name="Dmg" type="Label" parent="Cards_explanation/Panel/Page1/Barrachat"]
 offset_left = 323.0
 offset_top = 120.0
-offset_right = 398.0
+offset_right = 423.0
 offset_bottom = 170.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_jlpd4")
@@ -727,7 +727,7 @@ autowrap_mode = 2
 [node name="Dmg" type="Label" parent="Cards_explanation/Panel/Page1/Thermhibou"]
 offset_left = 323.0
 offset_top = 120.0
-offset_right = 398.0
+offset_right = 423.0
 offset_bottom = 170.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_jlpd4")
@@ -785,7 +785,7 @@ autowrap_mode = 2
 [node name="Dmg" type="Label" parent="Cards_explanation/Panel/Page1/Nuclearo"]
 offset_left = 323.0
 offset_top = 120.0
-offset_right = 398.0
+offset_right = 423.0
 offset_bottom = 170.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_jlpd4")
@@ -845,7 +845,7 @@ autowrap_mode = 2
 [node name="Dmg" type="Label" parent="Cards_explanation/Panel/Page2/Panolero"]
 offset_left = 323.0
 offset_top = 120.0
-offset_right = 398.0
+offset_right = 423.0
 offset_bottom = 170.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_jlpd4")
@@ -903,7 +903,7 @@ autowrap_mode = 2
 [node name="Dmg" type="Label" parent="Cards_explanation/Panel/Page2/AmigoTri"]
 offset_left = 323.0
 offset_top = 120.0
-offset_right = 398.0
+offset_right = 423.0
 offset_bottom = 170.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_jlpd4")
@@ -961,7 +961,7 @@ autowrap_mode = 2
 [node name="Dmg" type="Label" parent="Cards_explanation/Panel/Page2/NuclearoDestructo"]
 offset_left = 323.0
 offset_top = 120.0
-offset_right = 398.0
+offset_right = 423.0
 offset_bottom = 170.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_jlpd4")
@@ -1019,7 +1019,7 @@ autowrap_mode = 2
 [node name="Dmg" type="Label" parent="Cards_explanation/Panel/Page2/TaxitoGratuito"]
 offset_left = 323.0
 offset_top = 120.0
-offset_right = 398.0
+offset_right = 423.0
 offset_bottom = 170.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_jlpd4")
@@ -1079,7 +1079,7 @@ autowrap_mode = 2
 [node name="Dmg" type="Label" parent="Cards_explanation/Panel/Page3/ClimatoFroido"]
 offset_left = 323.0
 offset_top = 120.0
-offset_right = 398.0
+offset_right = 423.0
 offset_bottom = 170.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_jlpd4")
@@ -1137,7 +1137,7 @@ autowrap_mode = 2
 [node name="Dmg" type="Label" parent="Cards_explanation/Panel/Page3/ForestoAnouvo"]
 offset_left = 323.0
 offset_top = 120.0
-offset_right = 398.0
+offset_right = 423.0
 offset_bottom = 170.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_jlpd4")
