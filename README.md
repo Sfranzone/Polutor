@@ -1,33 +1,40 @@
 # Polutor
 
-## Présentation du jeu
+## Présentation du jeu et inspiration
 
-
+Polutor est un jeu de carte inspiré de [Slay the Spire](https://store.steampowered.com/app/646570/Slay_the_Spire/) et [Daybreak](https://www.daybreakgame.org/). C'est un tour par tour où vous piochez deux cartes à chaque début de tour. Le but est de venir à bout des monstres apparus à cause de la pollution en utilisant votre deck de cartes préfait pour non seulement réduire à 0 les points de vie du monstre, mais également de gérer une jauge environnementale et sociale sous forme de rond/donut pour qu'elle reste dans un certain équilibre. Cette jauge change en fonction des cartes jouées qui ont toutes une influence sociale et environnementale. Si après avoir tué le monstre cette jauge n'est pas en équilibre, cela donne de gros bonus au prochain monstre, ce qui va rendre le combat beaucoup plus difficile.
 
 ## Médiation
 
-[Donut de l'UNIL](https://www.unil.ch/unil/fr/home/menuinst/universite/organisation-universite/unites-et-services/centre-de-competence-en-durabilite/articles-et-rapports/le-donut-de-l-unil.html)
+Polutor a pour objectif de sensibiliser les gens aux difficultés du monde moderne dans lequel on vit liées à la pollution et aux énergies (principalement l'électricité dans notre cas). Il n'est pas si facile de vouloir réduire la pollution dans le monde surtout dans les pays développé, car les gens ne veulent pas perdre leur confort si bien établit qui repose sur une grosse production d'énergie de la manière la plus efficace possible, mais pas la plus écologique parfois. Il est compliqué de, par exemple, remplacer une centrale nucléaire (pour réduire les déchets nucléaires) par des champs d'éolienne, car la production d'une éolienne est beaucoup moins élevée. D'après [cette article](https://www.energyscope.ch/fr/questions/combien-faut-il-deoliennes-pour-remplacer-une-centrale-nucleaire/) tiré du site [eneryscope.ch](www.energyscope.ch/fr), il est dit qu'il faudrait environ 700 éoliennes pour remplacer une centrale nucléaire comme celle de Mühleberg dans le canton de Berne en Suisse qui produit seulement 10% de la totalité de la puissance du parc nucléaire de la Suisse. Ce n'est donc pas qu'au travers de remplacement de centrales diverses qu'il faut regarder pour réduire la pollution. Certaine lois sont/pourraient être instaurées pour que tout un chacun puisse contribuer au bien-être de la planète tout en pouvant garder un minimum de confort. C'est là toute la problématique d'un document de l'UNIL intitulé le [Donut de l'UNIL](https://www.unil.ch/unil/fr/home/menuinst/universite/organisation-universite/unites-et-services/centre-de-competence-en-durabilite/articles-et-rapports/le-donut-de-l-unil.html) où, à l'aide de l'image d'un donut, il est expliqué les différents enjeux liés à la pollution et à sa réduction. Cette article utilise l'image d'un donut pour montrer qu'il existe un plafond environnemental et un plancher social qui sont deux limites planétaires qui auraient un impact significatif si elles sont dépassées. Si le plafond environnemental est franchi, cela aurait un impact écologique très important, comme nous le vivons déjà avec les changements climatiques, mais que si le plancher social, à l'inverse, venait à être franchi, cela aurait un impact sur l'humain, car nous serions privés de beaucoup de choses qui nous permettent d'avoir le confort que nous avons dans les pays développés comme par exemple la médecine ou l'éducation qui ne pourraient pas être aussi efficace sans la technologie, du coup de l'énergie dépensée, dont nous disposons aujourd'hui.
 
 ## Game Design
 
+### Le "Donut"
+Polutor est, comme déjà rapidement évoqué dans la présentation du jeu, basé sur des cartes qui peuvent être jouées pour détruire le monstre nous faisant face. Ces cartes ont une influence sociale et une influence environnementale indiquées par des chiffres qui iront modifier la jauge ronde représentée par la terre avec des zones délimitées. Ceci est une forme pour représenter le donut et ainsi il ne s'agira pas de simplement faire des dégâts au monstre, mais également de prendre en compte l'impact que chaque carte peut avoir sur le monde.
 
+### Les cartes
+
+Il y a, dans la version actuelle, 10 cartes différentes dans le deck de base avec plusieurs exemplaires pour certaines cartes. Chaque carte représente, sous forme animalière, une action que le joueur entreprant pour combattre le monstre. Ces actions peuvent être des constructions de structures permettant une meilleure production d'énergie pour de plus gros dégâts au monstre ou des mises en place de lois avec moins de dégâts, mais plus d'influence environnementale ou sociale. Les cartes ont également un coût en mana pour être limité dans les actions par tour et devoir utiliser chacunes d'entre elles intelligemment.
 
 ## Assets
 
 ### Musiques
 
+Les musiques et effets sonores de ce projet ont été téléchargées depuis [pixabay.com](https://pixabay.com/music/) et sont toutes sans copyright.
 
+### Images sans droits d'auteur
 
-### Images
+Trois images en libre accès ont été utlisées dans ce projet sans avoir été générées par des intelligences artificielles, ce sont l'image fond du menu principal et les deux images de fond des deux combats qui sont tirée de [opengameart.org](https://opengameart.org/content/simple-nature-pixel-background-for-video-game), de [bonyvxl sur reddit](https://www.reddit.com/r/PixelArt/comments/1ddogvb/snow_and_pollution_im_new_in_pixelart_what_do_you/?tl=fr) et de [John Paul](https://polonaise.artstation.com/projects/RYaN1r).
 
-#### Génération d'images d'IA
+## Intelligences Artificiels (ChatGPT)
 
+Durant ce projet, une seule intelligence artificielle, [ChatGPT](https://chatgpt.com/), a été utilisée. La principale fonction pour laquelle elle a été utilisée est la correction de code. En précisant le type de language que c'est, il est très facile de demander où se situe une erreur ou comment la corriger en demandant simplement à ChatGPT et en lui envoyant le code. ChatGPT a également été sollicité, mais cette fois-ci que de manière minimale pour la rédaction du code. En effet, il est difficile d'utiliser ChatGPT pour la rédaction de code dans un programme comme Godot avec un language spécifique à lui-même, c'est pourquoi il a été utilisé que de manière minimale.
+Le deuxième aspect pour lequel ChatGPT a été utilisé est la génération d'images. En effet, cela a permis de gagner du temps et d'avoir une forme d'unification dans le thème général de mes images pour les cartes. Les 10 images de cartes ont été générées en envoyant une prompt similaire à ChatGPT pour générer des images dans le même style.
 
+## Continuité
 
-#### Images en accès libre
-
-
-
-## Intelligences Artificiels
-
-### Coder avec l'intélligence artificiel
+- Deck building
+- Plus de cartes
+- Plus grandes storyline "sauvetage du monde"
+- Tower Defense

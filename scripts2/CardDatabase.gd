@@ -1,8 +1,8 @@
 const CARDS = { # mana, cout social, cout env., dommage, description de la carte]
-	"Eolapino" : [3, 12, 2, 10, "Avec ses amis éoliennes, ils produisent de un peu d'électricité grâce au vent tout en réduisant la quantité de monstres polluants apparaissant sur la planète."],
-	"Nuclearo" : [5, 2, 12, 20, "Construction d'une centrale nucléaire ne prenant pas beaucoup de place pour la quantité d'énergie produite, mais qui contribue un peu à la création d'habitat pour les monstres."],
-	"Barrachat" : [4, 12, 2, 15, "Un barrage bien contrôler permet de produire beaucoup de manière naturel en créant même de nouveau écosystème !"],
-	"Thermhibou" : [4, 16, 6, 15, "Une centrale thermique qui permet de produire beaucoup d'éléctricité, mais attention, en avoir trop augmente le pouvoir des monstres !"],
+	"Eolapino" : [3, 12, 2, 10, "Construction d'un champs d'Eolapinos, ils produisent de un peu d'électricité grâce au vent tout en réduisant la quantité de monstres polluants apparaissant sur la planète."],
+	"Nuclearo" : [5, 2, 12, 20, "Construction d'une Nuclearo ne prenant pas beaucoup de place pour la quantité d'énergie produite, mais qui contribue un peu à la création d'habitat pour les monstres."],
+	"Barrachat" : [4, 12, 2, 15, "Construction d'un Barrachat pour l'eau qui permet de produire beaucoup d'énergie de manière naturel en créant même de nouveau écosystème !"],
+	"Thermhibou" : [4, 6, 16, 15, "Construction d'une Thermibou qui permet de produire beaucoup d'éléctricité, mais attention, en avoir trop augmente le pouvoir des monstres !"],
 	"Panolero" : [3, 14, 4, 10, "Un champs de panneaux solaires qui produit un peu d'énergie à l'aide du soleil sans donner de moyen aux monstres de pollution de croître"],
 	"Amigo Tri" : [2, 20, 0, 0, "Instauration d'une lois pour le tri des déchets pour tous sous peine d'amende salée pour prévenir la prolifération des monstres."],
 	"Nuclearo Destructo" : [2, 24, 4, 0, "Destruction d'un Nuclearo, cela permet de créer moins de déchets nucléaires, mais réduit la puissance éléctrique du monde"],
