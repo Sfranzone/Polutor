@@ -3,7 +3,7 @@
 Lien de téléchargement du jeu : [itch.io](https://tatsumakyy.itch.io/polutor)
 
 - Installez le fichier en fonction de votre OS (Windows et MacOS disponible uniquement)
-- Windows : Lancez le ficher polutor.exe
+- Windows : Lancez le fichier polutor.exe
 - MacOS : Extraire les fichiers à l'endroit de votre choix, lancer le fichier Polutor. S'il n'est pas possible d'ouvrir le fichier Polutor, rendez-vous dans vos paramètres MacOS de Confidentialité et Sécurité pour "Ouvrir quand même" le fichier Polutor.
 
 
@@ -47,7 +47,7 @@ Les images d'interface sont des images sans droits d'auteur récupérées sur [G
 ## Intelligences Artificiels (ChatGPT)
 
 Durant ce projet, une seule intelligence artificielle, [ChatGPT](https://chatgpt.com/), a été utilisée. La principale fonction pour laquelle elle a été utilisée est la correction de code. En précisant le type de langage que c'est, il est très facile de demander où se situe une erreur ou comment la corriger en demandant simplement à ChatGPT et en lui envoyant le code. ChatGPT a également été sollicité, mais cette fois-ci que de manière minimale pour la rédaction du code. En effet, il est difficile d'utiliser ChatGPT pour la rédaction de code dans un programme comme Godot avec un langage spécifique à lui-même, c'est pourquoi il a été utilisé que de manière minimale.
-Le deuxième aspect pour lequel ChatGPT a été utilisé est la génération d'images. En effet, cela a permis de gagner du temps et d'avoir une forme d'unification dans le thème général de mes images pour les cartes et l'image de converture itch.io et du read.me. Les 10 images de cartes ont été générées en envoyant une requête similaire à ChatGPT pour générer des images dans le même style.
+Le deuxième aspect pour lequel ChatGPT a été utilisé est la génération d'images. En effet, cela a permis de gagner du temps et d'avoir une forme d'unification dans le thème général de mes images pour les cartes et l'image de couverture itch.io et du read.me. Les 10 images de cartes ont été générées en envoyant une requête similaire à ChatGPT pour générer des images dans le même style.
 
 ## Possibilités futures
 
@@ -55,7 +55,7 @@ Il y a plusieurs possibilités pour étendre ce jeu en implémentant de nouvelle
 - Plus de cartes : Augmenter la base de données de cartes pour diversifier les façons de battre le boss en restant dans la zone saine du Donut
 - Plus de monstres : Ajouter de nouveaux monstres avec différentes attaques avec des effets supplémentaires pour rallonger la durée de vie du jeu.
 - Deck building : Avec une augmentation de la base de données des cartes et d'augmentation et variation des monstres, il serait intéressant d'implémenté un système de deck building où le joueur peut changer son deck à chaque combat
-- Plus grandes storyline : Créer une histoire plus détaillée et étendue pour une plus grande immersion du joueur dans le jeu
+- Plus grandes storylines : Créer une histoire plus détaillée et étendue pour une plus grande immersion du joueur dans le jeu
 
 ### Tower Defense
 
@@ -64,5 +64,5 @@ Ceci est une idée qui est apparu très récemment dans les possibilités pour u
 ## Bugs connus
 
 - Le zoom sur les cartes ne se fait plus après le tutoriel (qu'il soit fait au complet ou passé)
-- Cartes légérement floutées quand on zoom dessus
-- Les cartes apparaissent au-dessus de tout le reste et peuvent empêcher certains cliques dans les options
+- Cartes légèrement floutées quand on zoom dessus
+- Les cartes apparaissent au-dessus de tout le reste et peuvent empêcher certaines actions dans les options
