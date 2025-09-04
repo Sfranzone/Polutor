@@ -1,9 +1,10 @@
-[gd_scene load_steps=20 format=3 uid="uid://b0jyw0dskbw1m"]
+[gd_scene load_steps=21 format=3 uid="uid://b0jyw0dskbw1m"]
 
 [ext_resource type="Texture2D" uid="uid://c7fo25dkewytj" path="res://assets/GUI/black_oval.png" id="1_eqfua"]
 [ext_resource type="Script" uid="uid://7w1ww4sd88ts" path="res://scripts2/Enemy2.gd" id="1_xi612"]
 [ext_resource type="Texture2D" uid="uid://2ngenbb8kcn0" path="res://assets/villains/Gazo.png" id="2_xi612"]
 [ext_resource type="Texture2D" uid="uid://ditj0cpb4v1ws" path="res://assets/GUI/horizontal_black_bar.png" id="3_3p8ue"]
+[ext_resource type="Texture2D" uid="uid://ds2f0uxoqo4" path="res://assets/villains/flame_aura.png" id="3_24nr5"]
 [ext_resource type="Texture2D" uid="uid://cpvv3cjqr4brr" path="res://assets/GUI/monster_health_bar_red.png" id="4_ffjv4"]
 [ext_resource type="FontFile" uid="uid://c4pe7v7qaoxgf" path="res://assets/fonts/Comfortaa-Bold.ttf" id="5_6olpu"]
 [ext_resource type="AudioStream" uid="uid://2q8bt48w73ap" path="res://assets/sound_effects/monster_death.mp3" id="7_ffjv4"]
@@ -282,6 +283,11 @@ script = ExtResource("1_xi612")
 position = Vector2(960, 560)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("1_eqfua")
+
+[node name="FlameAura" type="Sprite2D" parent="."]
+position = Vector2(960, 350)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("3_24nr5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(960, 400)

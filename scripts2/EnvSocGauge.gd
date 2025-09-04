@@ -2,7 +2,14 @@ extends Node2D
 
 var MAX_GAUGE = 100
 
-#var gauge_value = MAX_GAUGE / 2
+
+func _process(delta) -> void:
+	if Global.env_soc_gauge < 25:
+		$EnvSocProgressBar.texture_progress = $BlackGradient.texture
+	elif Global.env_soc_gauge >= 75:
+		$EnvSocProgressBar.texture_progress = $RedGradient.texture
+	else:
+		$EnvSocProgressBar.texture_progress = $GreenGradient.texture
 
 
 func _ready() -> void:

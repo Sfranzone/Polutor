@@ -7,6 +7,13 @@ const MAX_HEALTH = 100
 var health = MAX_HEALTH
 
 
+func _process(delta: float) -> void:
+	if Global.env_soc_gauge < 25 or Global.env_soc_gauge >= 75:
+		$FlameAura.visible = true
+	else:
+		$FlameAura.visible = false
+
+
 func _ready() -> void:
 	update_health_ui()
 	$HealthBar.max_value = MAX_HEALTH

@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=3 uid="uid://4lmt1jixyj1u"]
+[gd_scene load_steps=83 format=3 uid="uid://4lmt1jixyj1u"]
 
 [ext_resource type="Script" uid="uid://dhryot31mkwoo" path="res://scripts2/CardManager.gd" id="1_nbxl4"]
 [ext_resource type="Script" uid="uid://c5mxs7onr2mlc" path="res://scripts2/Main.gd" id="1_whado"]
@@ -20,6 +20,134 @@
 [ext_resource type="PackedScene" uid="uid://h3dwx6rdsu7d" path="res://scenes/menu_map.tscn" id="18_mf030"]
 [ext_resource type="AudioStream" uid="uid://bmciahdlcib36" path="res://assets/musics/monster_attack2.mp3" id="19_a2uni"]
 [ext_resource type="AudioStream" uid="uid://br72mhdca51n1" path="res://assets/musics/monster_attack.mp3" id="20_7u8nh"]
+
+[sub_resource type="Gradient" id="Gradient_a2uni"]
+offsets = PackedFloat32Array(0.62013)
+colors = PackedColorArray(0.882353, 0.372549, 0, 0.376471)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_7u8nh"]
+gradient = SubResource("Gradient_a2uni")
+fill = 2
+
+[sub_resource type="Animation" id="Animation_f2d05"]
+resource_name = "FireScreenAppear"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FireScreen:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FireScreen:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_7o55v"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FireScreen:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FireScreen:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hhugf"]
+_data = {
+&"FireScreenAppear": SubResource("Animation_f2d05"),
+&"RESET": SubResource("Animation_7o55v")
+}
+
+[sub_resource type="Animation" id="Animation_hhugf"]
+resource_name = "FireScreenDisappear"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FireScreen:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FireScreen:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_pvgnn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FireScreen:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FireScreen:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fd6ec"]
+_data = {
+&"FireScreenDisappear": SubResource("Animation_hhugf"),
+&"RESET": SubResource("Animation_pvgnn")
+}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tu7ba"]
 size = Vector2(150, 210)
@@ -1450,6 +1578,27 @@ show_behind_parent = true
 z_index = -10
 position = Vector2(960, 540)
 texture = ExtResource("2_mf030")
+
+[node name="FireScreen" type="Node2D" parent="."]
+
+[node name="FireScreen" type="TextureRect" parent="FireScreen"]
+visible = false
+z_index = -2
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = SubResource("GradientTexture2D_7u8nh")
+
+[node name="FireScreenAppear" type="AnimationPlayer" parent="FireScreen"]
+libraries = {
+&"": SubResource("AnimationLibrary_hhugf")
+}
+
+[node name="FireScreenDisappear" type="AnimationPlayer" parent="FireScreen"]
+libraries = {
+&"": SubResource("AnimationLibrary_fd6ec")
+}
+
+[node name="DarkenScreen" type="Node2D" parent="."]
 
 [node name="PlayerHand" type="Node2D" parent="."]
 script = ExtResource("2_nbxl4")

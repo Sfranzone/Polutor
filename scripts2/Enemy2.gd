@@ -1,8 +1,17 @@
 extends Node2D
 
+@onready var scene_transition_animation = $Scene_transition_animation/AnimationPlayer
+
 const MAX_HEALTH = 100
 
 var health = MAX_HEALTH
+
+
+func _process(delta: float) -> void:
+	if Global.env_soc_gauge < 25 or Global.env_soc_gauge > 75:
+		$FlameAura.visible = true
+	else:
+		$FlameAura.visible = false
 
 
 func _ready() -> void:
