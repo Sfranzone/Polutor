@@ -90,5 +90,7 @@ func end_monster_turn():
 	else:
 		$"../Deck".draw_card()
 	await get_tree().create_timer(1).timeout
+	if Global.env_soc_gauge < 25 and $"../PlayerHand".player_hand.size() > 0:
+		$"../PlayerHand".player_hand[int(randi_range(0, $"../PlayerHand".player_hand.size()-1))].visible = false
 	$"../EndTurnButton".disabled = false
 	$"../EndTurnButton".visible = true

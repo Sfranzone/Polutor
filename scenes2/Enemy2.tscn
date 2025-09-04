@@ -285,6 +285,7 @@ scale = Vector2(0.4, 0.4)
 texture = ExtResource("1_eqfua")
 
 [node name="FlameAura" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(960, 350)
 scale = Vector2(0.45, 0.45)
 texture = ExtResource("3_24nr5")
