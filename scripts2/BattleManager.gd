@@ -6,6 +6,7 @@ var battle_timer3s
 var battle_timer4s
 var monster_buff_25 = false
 var monster_buff_75 = false
+var disable_card1
 
 
 func _process(delta: float) -> void:
@@ -46,28 +47,39 @@ func monster_turn():
 	battle_timer1s.start()
 	await battle_timer1s.timeout
 	
-	if monster_buff_25 or monster_buff_75:
-		if randf() < 0.1:
-			# Monster basic attack
-			monster_basic_attack()
-			battle_timer2s.start()
-			await battle_timer2s.timeout
-		else:
-			# Monster big atack
-			monster_big_attack()
-			battle_timer4s.start()
-			await battle_timer4s.timeout
+	if monster_buff_75:
+	# Monster big atack
+		monster_big_attack()
+		battle_timer4s.start()
+		await battle_timer4s.timeout
 	else:
-		if randf() < 0.7:
-			# Monster basic attack
-			monster_basic_attack()
-			battle_timer2s.start()
-			await battle_timer2s.timeout
-		else:
-			# Monster big atack
-			monster_big_attack()
-			battle_timer4s.start()
-			await battle_timer4s.timeout
+	# Monster basic attack
+		monster_basic_attack()
+		battle_timer2s.start()
+		await battle_timer2s.timeout
+	
+	#if monster_buff_25 or monster_buff_75:
+		#if randf() < 0.1:
+			## Monster basic attack
+			#monster_basic_attack()
+			#battle_timer2s.start()
+			#await battle_timer2s.timeout
+		#else:
+			## Monster big atack
+			#monster_big_attack()
+			#battle_timer4s.start()
+			#await battle_timer4s.timeout
+	#else:
+		#if randf() < 0.7:
+			## Monster basic attack
+			#monster_basic_attack()
+			#battle_timer2s.start()
+			#await battle_timer2s.timeout
+		#else:
+			## Monster big atack
+			#monster_big_attack()
+			#battle_timer4s.start()
+			#await battle_timer4s.timeout
 	
 	
 	end_monster_turn()
@@ -78,7 +90,7 @@ func monster_basic_attack():
 	await get_tree().create_timer(0.5).timeout
 	$"../MonsterBaseAttack".play()
 	await get_tree().create_timer(0.5).timeout
-	$"../PlayerHealth".health_damage(5)
+	$"../PlayerHealth".health_damage(1)
 
 
 func monster_big_attack():
@@ -86,7 +98,7 @@ func monster_big_attack():
 	await get_tree().create_timer(2).timeout
 	$"../MonsterBigAttack".play()
 	await get_tree().create_timer(1).timeout
-	$"../PlayerHealth".health_damage(15)
+	$"../PlayerHealth".health_damage(2)
 
 
 func end_monster_turn():
@@ -102,7 +114,8 @@ func end_monster_turn():
 	else:
 		$"../Deck".draw_card()
 	await get_tree().create_timer(1).timeout
-	if Global.env_soc_gauge < 25 and $"../PlayerHand".player_hand.size() > 0:
-		$"../PlayerHand".player_hand[int(randi_range(0, $"../PlayerHand".player_hand.size()-1))].visible = false
+	if monster_buff_25 and $"../PlayerHand".player_hand.size() > 0:
+		disable_card1 = $"../PlayerHand".player_hand[int(randi_range(0, $"../PlayerHand".player_hand.size()-1))]
+		disable_card1.visible = false
 	$"../EndTurnButton".disabled = false
 	$"../EndTurnButton".visible = true

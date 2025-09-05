@@ -8,6 +8,16 @@ var monster_buff_25 = false
 var monster_buff_75 = false
 
 
+func _process(delta: float) -> void:
+	if Global.env_soc_gauge < 25:
+		monster_buff_25 = true
+	elif Global.env_soc_gauge >= 75:
+		monster_buff_75 = true
+	else:
+		monster_buff_25 = false
+		monster_buff_75 = false
+
+
 func _ready() -> void:
 	battle_timer1s = $"../BattleTimer1"
 	battle_timer1s.one_shot = true
@@ -36,7 +46,9 @@ func monster_turn():
 	battle_timer1s.start()
 	await battle_timer1s.timeout
 	
-	if Global.env_soc_gauge > 25 or Global.env_soc_gauge > 75:
+	
+	
+	if monster_buff_25 or monster_buff_75:
 		if randf() < 0.1:
 			# Monster basic attack
 			monster_basic_attack()
@@ -69,7 +81,7 @@ func monster_basic_attack():
 	$"../MonsterBaseAttack".play()
 	#battle_timer1s.start()
 	#await battle_timer1s.timeout
-	$"../PlayerHealth".health_damage(5)
+	$"../PlayerHealth".health_damage(1)
 
 
 func monster_big_attack():
@@ -79,7 +91,7 @@ func monster_big_attack():
 	await get_tree().create_timer(1).timeout
 	#battle_timer3s.start()
 	#await battle_timer3s.timeout
-	$"../PlayerHealth".health_damage(15)
+	$"../PlayerHealth".health_damage(2)
 
 
 func end_monster_turn():
@@ -95,9 +107,11 @@ func end_monster_turn():
 	else:
 		$"../Deck2".draw_card()
 	await get_tree().create_timer(1).timeout
+	if monster_buff_25 and $"../PlayerHand".player_hand.size() > 0:
+		$"../PlayerHand".player_hand[int(randi_range(0, $"../PlayerHand".player_hand.size()-1))].visible = false
 	$"../EndTurnButton".disabled = false
 	$"../EndTurnButton".visible = true
 
 
-func _on_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+#func _on_button_pressed() -> void:
+	#get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
