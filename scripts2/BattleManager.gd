@@ -4,6 +4,18 @@ var battle_timer1s
 var battle_timer2s
 var battle_timer3s
 var battle_timer4s
+var monster_buff_25 = false
+var monster_buff_75 = false
+
+
+func _process(delta: float) -> void:
+	if Global.env_soc_gauge < 25:
+		monster_buff_25 = true
+	elif Global.env_soc_gauge >= 75:
+		monster_buff_75 = true
+	else:
+		monster_buff_25 = false
+		monster_buff_75 = false
 
 
 func _ready() -> void:
@@ -34,7 +46,7 @@ func monster_turn():
 	battle_timer1s.start()
 	await battle_timer1s.timeout
 	
-	if Global.env_soc_gauge > 25 or Global.env_soc_gauge > 75:
+	if monster_buff_25 or monster_buff_75:
 		if randf() < 0.1:
 			# Monster basic attack
 			monster_basic_attack()

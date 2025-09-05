@@ -4,6 +4,8 @@ var battle_timer1s
 var battle_timer2s
 var battle_timer3s
 var battle_timer4s
+var monster_buff_25 = false
+var monster_buff_75 = false
 
 
 func _ready() -> void:

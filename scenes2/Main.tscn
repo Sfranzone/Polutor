@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=3 uid="uid://4lmt1jixyj1u"]
+[gd_scene load_steps=91 format=3 uid="uid://4lmt1jixyj1u"]
 
 [ext_resource type="Script" uid="uid://dhryot31mkwoo" path="res://scripts2/CardManager.gd" id="1_nbxl4"]
 [ext_resource type="Script" uid="uid://c5mxs7onr2mlc" path="res://scripts2/Main.gd" id="1_whado"]
@@ -147,6 +147,133 @@ tracks/1/keys = {
 _data = {
 &"FireScreenDisappear": SubResource("Animation_hhugf"),
 &"RESET": SubResource("Animation_pvgnn")
+}
+
+[sub_resource type="Gradient" id="Gradient_7u8nh"]
+offsets = PackedFloat32Array(0.590909)
+colors = PackedColorArray(0, 0, 0, 0.54902)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xy3v0"]
+gradient = SubResource("Gradient_7u8nh")
+
+[sub_resource type="Animation" id="Animation_fd6ec"]
+resource_name = "DarkenScreenAppear"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DarkenScreen:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DarkenScreen:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_7rc2c"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DarkenScreen:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DarkenScreen:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u378f"]
+_data = {
+&"DarkenScreenAppear": SubResource("Animation_fd6ec"),
+&"RESET": SubResource("Animation_7rc2c")
+}
+
+[sub_resource type="Animation" id="Animation_u378f"]
+resource_name = "DarkenScreenDissappear"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DarkenScreen:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DarkenScreen:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_2m120"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DarkenScreen:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DarkenScreen:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vne51"]
+_data = {
+&"DarkenScreenDissappear": SubResource("Animation_u378f"),
+&"RESET": SubResource("Animation_2m120")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tu7ba"]
@@ -1599,6 +1726,23 @@ libraries = {
 }
 
 [node name="DarkenScreen" type="Node2D" parent="."]
+
+[node name="DarkenScreen" type="TextureRect" parent="DarkenScreen"]
+visible = false
+z_index = -2
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = SubResource("GradientTexture2D_xy3v0")
+
+[node name="DarkenScreenAppear" type="AnimationPlayer" parent="DarkenScreen"]
+libraries = {
+&"": SubResource("AnimationLibrary_u378f")
+}
+
+[node name="DarkenScreenDisappear" type="AnimationPlayer" parent="DarkenScreen"]
+libraries = {
+&"": SubResource("AnimationLibrary_vne51")
+}
 
 [node name="PlayerHand" type="Node2D" parent="."]
 script = ExtResource("2_nbxl4")
