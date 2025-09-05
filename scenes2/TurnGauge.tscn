@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://mc42etnrpf08"]
+[gd_scene load_steps=8 format=3 uid="uid://mc42etnrpf08"]
 
-[ext_resource type="Script" uid="uid://cgq42vv7n8sn0" path="res://scripts2/TourGauge.gd" id="1_3skw1"]
-[ext_resource type="FontFile" uid="uid://c4pe7v7qaoxgf" path="res://assets/fonts/Comfortaa-Bold.ttf" id="1_ldhtr"]
+[ext_resource type="Script" uid="uid://cgq42vv7n8sn0" path="res://scripts2/TurnGauge.gd" id="1_df6ry"]
+[ext_resource type="FontFile" uid="uid://c4pe7v7qaoxgf" path="res://assets/fonts/Comfortaa-Bold.ttf" id="2_kwpd8"]
+[ext_resource type="PackedScene" uid="uid://ne1mtcf1gjyd" path="res://scenes/scene_transition_animation.tscn" id="3_01gjk"]
 
 [sub_resource type="Gradient" id="Gradient_7pg68"]
 offsets = PackedFloat32Array(0.566474)
@@ -22,10 +23,10 @@ width = 24
 height = 144
 fill_from = Vector2(1, 0)
 
-[node name="TourGauge" type="Node2D"]
-script = ExtResource("1_3skw1")
+[node name="TurnGauge" type="Node2D"]
+script = ExtResource("1_df6ry")
 
-[node name="TourProgressBar" type="TextureProgressBar" parent="."]
+[node name="TurnProgressBar" type="TextureProgressBar" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
 max_value = 10.0
@@ -35,13 +36,15 @@ texture_under = SubResource("GradientTexture2D_ldhtr")
 texture_progress = SubResource("GradientTexture2D_3skw1")
 texture_progress_offset = Vector2(3, 3)
 
-[node name="TourNumber" type="Label" parent="."]
+[node name="TurnNumber" type="Label" parent="."]
 offset_top = 55.0
 offset_right = 30.0
 offset_bottom = 85.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_ldhtr")
+theme_override_fonts/font = ExtResource("2_kwpd8")
 theme_override_font_sizes/font_size = 15
 text = "5"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Scene_transition_animation" parent="." instance=ExtResource("3_01gjk")]
