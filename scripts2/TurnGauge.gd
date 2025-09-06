@@ -2,15 +2,15 @@ extends Node2D
 
 @onready var scene_transition_animation = $Scene_transition_animation/AnimationPlayer
 
-var TOUR_FULL = 10
+var TURN_FULL = 10
 
 
 
-var tour = TOUR_FULL
+var turn = TURN_FULL
 
 
 func _ready() -> void:
-	$TourProgressBar.max_value = TOUR_FULL
+	$TurnProgressBar.max_value = TURN_FULL
 	update_turn_ui()
 
 
@@ -20,18 +20,18 @@ func update_turn_ui():
 
 
 func set_turn_bar() -> void:
-	$TurnProgressBar.value = tour
+	$TurnProgressBar.value = turn
 
 
 func set_turn_label():
-	$TurnNumber.text = str(tour)
+	$TurnNumber.text = str(turn)
 
 
 
-func set_turn_down(tour_down):
-	tour -= tour_down
-	if tour <= 0:
-		tour = 0
+func set_turn_down(turn_down):
+	turn -= turn_down
+	if turn <= 0:
+		turn = 0
 		update_turn_ui()
 		player_dead()
 	else:

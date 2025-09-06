@@ -1,4 +1,4 @@
-[gd_scene load_steps=91 format=3 uid="uid://4lmt1jixyj1u"]
+[gd_scene load_steps=92 format=3 uid="uid://4lmt1jixyj1u"]
 
 [ext_resource type="Script" uid="uid://dhryot31mkwoo" path="res://scripts2/CardManager.gd" id="1_nbxl4"]
 [ext_resource type="Script" uid="uid://c5mxs7onr2mlc" path="res://scripts2/Main.gd" id="1_whado"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://b3lr5g3qlghm6" path="res://scenes2/Mana.tscn" id="8_nn3pv"]
 [ext_resource type="PackedScene" uid="uid://cx1mg4bd0jghh" path="res://scenes2/PlayerHealth.tscn" id="9_nmreb"]
 [ext_resource type="Script" uid="uid://c8vja52mm8ck8" path="res://scripts2/BattleManager.gd" id="10_7ymo5"]
+[ext_resource type="PackedScene" uid="uid://mc42etnrpf08" path="res://scenes2/TurnGauge.tscn" id="11_7u8nh"]
 [ext_resource type="PackedScene" uid="uid://ne1mtcf1gjyd" path="res://scenes/scene_transition_animation.tscn" id="12_eifcl"]
 [ext_resource type="PackedScene" uid="uid://bmxpd3d64j602" path="res://scenes2/EnvSocGauge.tscn" id="12_v3at8"]
 [ext_resource type="Script" uid="uid://dhyn8esjg3y0n" path="res://scripts2/Tutorial.gd" id="15_8ajrv"]
@@ -1787,8 +1788,13 @@ position = Vector2(1625, 600)
 scale = Vector2(0.75, 0.75)
 
 [node name="PlayerHealth" parent="." instance=ExtResource("9_nmreb")]
+visible = false
 position = Vector2(175, 550)
 scale = Vector2(0.75, 0.75)
+
+[node name="TurnGauge" parent="." instance=ExtResource("11_7u8nh")]
+position = Vector2(50, 300)
+scale = Vector2(3, 3)
 
 [node name="EnvSocGauge" parent="." instance=ExtResource("12_v3at8")]
 position = Vector2(200, 125)

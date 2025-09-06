@@ -89,8 +89,14 @@ func monster_basic_attack():
 	$"../Enemy/BasicAttack/BasicAttackMove".play("AttackMove")
 	await get_tree().create_timer(0.5).timeout
 	$"../MonsterBaseAttack".play()
-	await get_tree().create_timer(0.5).timeout
-	$"../PlayerHealth".health_damage(1)
+	
+	# HP damage
+	#await get_tree().create_timer(0.5).timeout
+	#$"../PlayerHealth".health_damage(5)
+	
+	# Turn reduce
+	await get_tree().create_timer(2).timeout
+	$"../TurnGauge".set_turn_down(1)
 
 
 func monster_big_attack():
@@ -98,7 +104,12 @@ func monster_big_attack():
 	await get_tree().create_timer(2).timeout
 	$"../MonsterBigAttack".play()
 	await get_tree().create_timer(1).timeout
-	$"../PlayerHealth".health_damage(2)
+	
+	# HP damage
+	#$"../PlayerHealth".health_damage(15)
+	
+	# Turn reduce
+	$"../TurnGauge".set_turn_down(2)
 
 
 func end_monster_turn():
