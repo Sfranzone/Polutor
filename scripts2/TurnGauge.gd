@@ -5,8 +5,22 @@ extends Node2D
 var TURN_FULL = 10
 
 
-
+var turn_under_6 = false
+var turn_under_3 = false
 var turn = TURN_FULL
+
+
+func _process(delta: float) -> void:
+	if $TurnProgressBar.value < 7 and $TurnProgressBar.value >= 4:
+		$TurnProgressBar.texture_progress = $OrangeProgress.texture
+	elif $TurnProgressBar.value < 4 and $TurnProgressBar.value >= 0:
+		$TurnProgressBar.texture_progress = $RedProgress.texture
+	else:
+		$TurnProgressBar.texture_progress = $GreenProgress.texture
+	if $TurnProgressBar.value < 6:
+		$TurnNumber.add_theme_color_override("font_color", Color.WHITE)
+	else:
+		$TurnNumber.add_theme_color_override("font_color", Color.BLACK)
 
 
 func _ready() -> void:

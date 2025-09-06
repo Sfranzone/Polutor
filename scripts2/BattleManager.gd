@@ -12,8 +12,10 @@ var disable_card1
 func _process(delta: float) -> void:
 	if Global.env_soc_gauge < 25:
 		monster_buff_25 = true
-	elif Global.env_soc_gauge >= 75:
+		monster_buff_75 = false
+	elif Global.env_soc_gauge > 75:
 		monster_buff_75 = true
+		monster_buff_25 = false
 	else:
 		monster_buff_25 = false
 		monster_buff_75 = false

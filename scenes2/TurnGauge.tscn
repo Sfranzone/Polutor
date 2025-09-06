@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://mc42etnrpf08"]
+[gd_scene load_steps=14 format=3 uid="uid://mc42etnrpf08"]
 
 [ext_resource type="Script" uid="uid://cgq42vv7n8sn0" path="res://scripts2/TurnGauge.gd" id="1_df6ry"]
 [ext_resource type="FontFile" uid="uid://c4pe7v7qaoxgf" path="res://assets/fonts/Comfortaa-Bold.ttf" id="2_kwpd8"]
@@ -19,6 +19,36 @@ colors = PackedColorArray(0, 1, 0, 1, 0, 1, 0, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_3skw1"]
 gradient = SubResource("Gradient_ldhtr")
+width = 24
+height = 144
+fill_from = Vector2(1, 0)
+
+[sub_resource type="Gradient" id="Gradient_df6ry"]
+offsets = PackedFloat32Array(0.502703, 0.972973)
+colors = PackedColorArray(0.87451, 0.580392, 0, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_kwpd8"]
+gradient = SubResource("Gradient_df6ry")
+width = 24
+height = 144
+fill_from = Vector2(1, 0)
+
+[sub_resource type="Gradient" id="Gradient_kwpd8"]
+offsets = PackedFloat32Array(0.502703, 0.972973)
+colors = PackedColorArray(0.87451, 0, 0, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_01gjk"]
+gradient = SubResource("Gradient_kwpd8")
+width = 24
+height = 144
+fill_from = Vector2(1, 0)
+
+[sub_resource type="Gradient" id="Gradient_fa0o3"]
+offsets = PackedFloat32Array(0.502703, 0.972973)
+colors = PackedColorArray(0, 1, 0, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wp11q"]
+gradient = SubResource("Gradient_fa0o3")
 width = 24
 height = 144
 fill_from = Vector2(1, 0)
@@ -48,3 +78,27 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Scene_transition_animation" parent="." instance=ExtResource("3_01gjk")]
+
+[node name="OrangeProgress" type="TextureRect" parent="."]
+visible = false
+offset_left = 70.0
+offset_top = 30.0
+offset_right = 94.0
+offset_bottom = 174.0
+texture = SubResource("GradientTexture2D_kwpd8")
+
+[node name="RedProgress" type="TextureRect" parent="."]
+visible = false
+offset_left = 140.0
+offset_top = 60.0
+offset_right = 164.0
+offset_bottom = 204.0
+texture = SubResource("GradientTexture2D_01gjk")
+
+[node name="GreenProgress" type="TextureRect" parent="."]
+visible = false
+offset_left = 220.0
+offset_top = 69.0
+offset_right = 244.0
+offset_bottom = 213.0
+texture = SubResource("GradientTexture2D_wp11q")
