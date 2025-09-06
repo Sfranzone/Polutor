@@ -93,14 +93,15 @@ func monster_big_attack():
 	$"../Enemy2/BigAttack/BigAttackMove".play("BigAttack")
 	await get_tree().create_timer(2).timeout
 	$"../MonsterBigAttack".play()
-	await get_tree().create_timer(1).timeout
 	#battle_timer3s.start()
 	#await battle_timer3s.timeout
 	
 	# HP damage
+	#await get_tree().create_timer(1).timeout
 	#$"../PlayerHealth".health_damage(15)
 	
 	# Turn reduce
+	await get_tree().create_timer(2.5).timeout
 	$"../TurnGauge".set_turn_down(2)
 
 

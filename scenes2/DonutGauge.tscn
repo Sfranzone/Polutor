@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=3 uid="uid://dhi8mjlh371k6"]
+
+[sub_resource type="Gradient" id="Gradient_gy7he"]
+offsets = PackedFloat32Array(0.691892, 0.697297)
+colors = PackedColorArray(0, 0, 0, 1, 0.0392157, 0.0392157, 0.0392157, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_mitap"]
+gradient = SubResource("Gradient_gy7he")
+width = 100
+height = 100
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="Gradient" id="Gradient_jf5dv"]
+offsets = PackedFloat32Array(0.691892, 0.697297)
+colors = PackedColorArray(0.0392157, 1, 0.0392157, 1, 0.0392157, 0.0392157, 0.0392157, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_3b25n"]
+gradient = SubResource("Gradient_jf5dv")
+width = 97
+height = 97
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[node name="DonutProgressBar" type="Node2D"]
+
+[node name="BackTexture" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_mitap")
+
+[node name="ProgressBar" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_3b25n")
