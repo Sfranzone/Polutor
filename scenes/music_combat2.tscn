@@ -4,5 +4,6 @@
 
 [node name="Music_fight2" type="AudioStreamPlayer"]
 stream = ExtResource("1_g3jh5")
+volume_db = -5.0
 bus = &"Music"
 parameters/looping = true
