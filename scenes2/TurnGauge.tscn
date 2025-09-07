@@ -77,8 +77,6 @@ text = "5"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Scene_transition_animation" parent="." instance=ExtResource("3_01gjk")]
-
 [node name="OrangeProgress" type="TextureRect" parent="."]
 visible = false
 offset_left = 70.0
@@ -102,3 +100,5 @@ offset_top = 69.0
 offset_right = 244.0
 offset_bottom = 213.0
 texture = SubResource("GradientTexture2D_wp11q")
+
+[node name="Scene_transition_animation" parent="." instance=ExtResource("3_01gjk")]

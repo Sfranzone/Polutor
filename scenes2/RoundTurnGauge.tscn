@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cghgok80e4wwd"]
+
+[node name="RoundTurnGauge" type="Node2D"]
+
+[node name="RoundTurnGauge" type="TextureProgressBar" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+max_value = 10.0
+fill_mode = 4
