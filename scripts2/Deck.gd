@@ -6,14 +6,14 @@ const STARTING_HAND_SIZE = Global.starting_hand_size
 
 
 var player_deck = [
-	"Eolapino","Eolapino", 
-	"Nuclearo", "Nuclearo", 
-	"Barrachat", "Barrachat", 
-	"Thermhibou", "Thermhibou", 
-	"Panolero", "Panolero", 
-	"Amigo Tri", 
-	"Nuclearo Destructo", 
-	"Taxito Gratuito", 
+	"Eolapino","Eolapino", "Eolapino",
+	"Nuclearo", "Nuclearo", "Nuclearo",
+	"Barrachat", "Barrachat", "Barrachat",
+	"Thermhibou", "Thermhibou", "Thermhibou",
+	"Panolero", "Panolero", "Panolero",
+	"Amigo Tri",
+	"Nuclearo Destructo",
+	"Taxito Gratuito",
 	"Climato Froido",
 	"Foresto Anouvo"
 	]

@@ -21,7 +21,7 @@ func set_turn_bar() -> void:
 
 func set_turn_up(turn_up):
 	turn += turn_up
-	if turn <= 0:
+	if turn >= 10:
 		turn = 0
 		set_turn_bar()
 		player_dead()

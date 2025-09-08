@@ -1787,6 +1787,7 @@ position = Vector2(1625, 600)
 scale = Vector2(0.75, 0.75)
 
 [node name="RoundTurnGauge" parent="." instance=ExtResource("21_7u8nh")]
+position = Vector2(50, 450)
 
 [node name="EnvSocGauge" parent="." instance=ExtResource("12_v3at8")]
 position = Vector2(200, 125)

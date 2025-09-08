@@ -51,6 +51,10 @@ func finish_drag():
 			enemy_reference.damage(int(card_being_dragged.get_node("Damage").text))
 			mana_reference.mana_spent(int(card_being_dragged.get_node("ManaCost").text))
 			envsoc_gauge_reference.change_gauge_value(int(card_being_dragged.get_node("SocialCost").text), int(card_being_dragged.get_node("EnvCost").text))
+			if int(card_being_dragged.get_node("Damage").text) == 0:
+				$"../Deck".draw_card()
+			else:
+				pass
 			#update_soc_env_gauge()
 		else:
 			pass
