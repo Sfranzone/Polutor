@@ -1793,8 +1793,6 @@ position = Vector2(175, 550)
 scale = Vector2(0.75, 0.75)
 
 [node name="RoundTurnGauge" parent="." instance=ExtResource("21_7u8nh")]
-position = Vector2(50, 450)
-scale = Vector2(0.15, 0.15)
 
 [node name="EnvSocGauge" parent="." instance=ExtResource("12_v3at8")]
 position = Vector2(200, 125)
@@ -1830,6 +1828,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_3e7p2")
 text = "End Turn"
 
 [node name="Tutorial" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1920.0
