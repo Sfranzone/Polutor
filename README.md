@@ -1,5 +1,7 @@
 # ![Polutor](./assets/background/titre.png)
 
+/!\ Ceci est un projet en cours de développement /!\
+
 Lien de téléchargement du jeu : [itch.io](https://tatsumakyy.itch.io/polutor)
 
 - Installez le fichier en fonction de votre OS (Windows et MacOS disponible uniquement)
