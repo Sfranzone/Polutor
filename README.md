@@ -57,10 +57,6 @@ Il y a plusieurs possibilités pour étendre ce jeu en implémentant de nouvelle
 - Deck building : Avec une augmentation de la base de données des cartes et d'augmentation et variation des monstres, il serait intéressant d'implémenté un système de deck building où le joueur peut changer son deck à chaque combat
 - Plus grandes storylines : Créer une histoire plus détaillée et étendue pour une plus grande immersion du joueur dans le jeu
 
-### Tower Defense
-
-Ceci est une idée qui est apparu très récemment dans les possibilités pour une amélioration de jeu et de la médiation : transformer ce jeu en [Tower Defense](https://fr.wikipedia.org/wiki/Tower_defense). L'aspect des cartes de "construction" m'a fait penser qu'une adaptation de ce thème de jeu en Tower Defense pourrait une option très intéressante a considéré.
-
 ## Bugs connus
 
 - Le zoom sur les cartes ne se fait plus après le tutoriel (qu'il soit fait au complet ou passé)
