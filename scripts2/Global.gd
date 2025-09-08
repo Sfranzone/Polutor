@@ -6,7 +6,10 @@ const starting_hand_size = 6
 
 var tutorial_done = true
 var intro_movie_seen = true
+
+# Monster management
 var monster_buff = false
+var gazo_boosted = false
 
 
 # EnvSoc gauge management

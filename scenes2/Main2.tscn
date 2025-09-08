@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://b03rb3xn06wdt"]
+[gd_scene load_steps=38 format=3 uid="uid://b03rb3xn06wdt"]
 
 [ext_resource type="Texture2D" uid="uid://c7x5uaf23veqn" path="res://assets/background/background_laus3.jpg" id="1_hh2pn"]
 [ext_resource type="Script" uid="uid://cc7ysxw6fjins" path="res://scripts2/Main2.gd" id="1_mi7a0"]
@@ -10,7 +10,6 @@
 [ext_resource type="Script" uid="uid://cwl8tk4iegf8" path="res://scripts2/InputManager2.gd" id="7_mi7a0"]
 [ext_resource type="PackedScene" uid="uid://b0jyw0dskbw1m" path="res://scenes2/Enemy2.tscn" id="8_hh2pn"]
 [ext_resource type="PackedScene" uid="uid://b3lr5g3qlghm6" path="res://scenes2/Mana.tscn" id="9_pnuyh"]
-[ext_resource type="PackedScene" uid="uid://cx1mg4bd0jghh" path="res://scenes2/PlayerHealth.tscn" id="10_4yr0x"]
 [ext_resource type="PackedScene" uid="uid://cghgok80e4wwd" path="res://scenes2/RoundTurnGauge.tscn" id="11_kbxn7"]
 [ext_resource type="PackedScene" uid="uid://bmxpd3d64j602" path="res://scenes2/EnvSocGauge.tscn" id="11_r80hs"]
 [ext_resource type="Script" uid="uid://b5hltnykd4y4q" path="res://scripts2/BattleManager2.gd" id="12_hh2pn"]
@@ -399,11 +398,6 @@ script = ExtResource("7_mi7a0")
 
 [node name="Mana" parent="." instance=ExtResource("9_pnuyh")]
 position = Vector2(1625, 600)
-scale = Vector2(0.75, 0.75)
-
-[node name="PlayerHealth" parent="." instance=ExtResource("10_4yr0x")]
-visible = false
-position = Vector2(175, 550)
 scale = Vector2(0.75, 0.75)
 
 [node name="RoundTurnGauge" parent="." instance=ExtResource("11_kbxn7")]

@@ -2,7 +2,8 @@ extends Node2D
 
 @onready var scene_transition_animation = $Scene_transition_animation/AnimationPlayer
 
-const MAX_HEALTH = 100
+const MAX_HEALTH = 150
+const MAX_HEALTH_MONSTER_BUFF = 200
 
 var health = MAX_HEALTH
 
@@ -16,7 +17,12 @@ func _process(delta: float) -> void:
 
 func _ready() -> void:
 	update_health_ui()
-	$HealthBar.max_value = MAX_HEALTH
+	if Global.env_soc_gauge > 75:
+		$HealthBar.max_value = MAX_HEALTH_MONSTER_BUFF
+	elif Global.env_soc_gauge < 25:
+		Global.gazo_boosted = true
+	else:
+		$HealthBar.max_value = MAX_HEALTH
 
 
 func update_health_ui() -> void:
