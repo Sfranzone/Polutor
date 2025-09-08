@@ -4,7 +4,7 @@ extends Node
 const starting_hand_size = 6
 
 
-var tutorial_done = true
+var tutorial_done = false
 var intro_movie_seen = true
 
 # Monster management
