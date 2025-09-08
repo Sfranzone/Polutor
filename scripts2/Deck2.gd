@@ -56,7 +56,7 @@ func draw_card():
 	new_card.get_node("SocialCost").text = str(card_database_reference.CARDS[card_drawn_name][1])
 	new_card.get_node("EnvCost").text = str(card_database_reference.CARDS[card_drawn_name][2])
 	new_card.get_node("Damage").text = str(card_database_reference.CARDS[card_drawn_name][3])
-	new_card.get_node("Description").text = card_database_reference.CARDS[card_drawn_name][4]
+	#new_card.get_node("Description").text = card_database_reference.CARDS[card_drawn_name][4]
 	new_card.get_node("NameCard").text = card_drawn_name
 	$"../CardManager2".add_child(new_card)
 	new_card.name = "Card"

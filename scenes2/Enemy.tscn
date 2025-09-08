@@ -11,10 +11,6 @@
 [ext_resource type="AudioStream" uid="uid://b8q28jf45ioh" path="res://assets/sound_effects/hit_sound.mp3" id="8_28wf5"]
 [ext_resource type="PackedScene" uid="uid://ne1mtcf1gjyd" path="res://scenes/scene_transition_animation.tscn" id="9_28wf5"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0v4sl"]
-radius = 135.0
-height = 378.0
-
 [sub_resource type="Animation" id="Animation_0v4sl"]
 resource_name = "AttackMove"
 length = 2.0
@@ -276,6 +272,10 @@ _data = {
 &"RESET": SubResource("Animation_i6y1n")
 }
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0v4sl"]
+radius = 135.0
+height = 378.0
+
 [node name="Enemy" type="Node2D"]
 script = ExtResource("1_km8uc")
 
@@ -289,43 +289,6 @@ visible = false
 position = Vector2(960, 365)
 scale = Vector2(0.55, 0.45)
 texture = ExtResource("3_3rxyu")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(960, 400)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("1_il5ij")
-
-[node name="HealthBarBG" type="Sprite2D" parent="."]
-position = Vector2(960, 65)
-scale = Vector2(1.6, 0.45)
-texture = ExtResource("3_kld86")
-
-[node name="HealthBar" type="TextureProgressBar" parent="."]
-offset_left = 560.0
-offset_top = -35.0
-offset_right = 1360.0
-offset_bottom = 215.0
-value = 50.0
-texture_progress = ExtResource("3_ayafi")
-
-[node name="HealthLabel" type="Label" parent="."]
-offset_left = 560.0
-offset_top = 40.0
-offset_right = 1360.0
-offset_bottom = 95.0
-theme_override_fonts/font = ExtResource("3_0v4sl")
-theme_override_font_sizes/font_size = 35
-text = "100"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Area2D" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(960, 400)
-shape = SubResource("CapsuleShape2D_0v4sl")
 
 [node name="BasicAttack" type="Node2D" parent="."]
 position = Vector2(960, 150)
@@ -401,6 +364,43 @@ root_node = NodePath("../..")
 libraries = {
 &"": SubResource("AnimationLibrary_i6y1n")
 }
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(960, 400)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_il5ij")
+
+[node name="HealthBarBG" type="Sprite2D" parent="."]
+position = Vector2(960, 65)
+scale = Vector2(1.6, 0.45)
+texture = ExtResource("3_kld86")
+
+[node name="HealthBar" type="TextureProgressBar" parent="."]
+offset_left = 560.0
+offset_top = -35.0
+offset_right = 1360.0
+offset_bottom = 215.0
+value = 50.0
+texture_progress = ExtResource("3_ayafi")
+
+[node name="HealthLabel" type="Label" parent="."]
+offset_left = 560.0
+offset_top = 40.0
+offset_right = 1360.0
+offset_bottom = 95.0
+theme_override_fonts/font = ExtResource("3_0v4sl")
+theme_override_font_sizes/font_size = 35
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(960, 400)
+shape = SubResource("CapsuleShape2D_0v4sl")
 
 [node name="Monster_death" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_b854e")

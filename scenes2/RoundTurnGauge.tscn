@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cghgok80e4wwd"]
+[gd_scene load_steps=7 format=3 uid="uid://cghgok80e4wwd"]
 
 [ext_resource type="Texture2D" uid="uid://dwp172jog3hcb" path="res://assets/GUI/turn_timer2Bis.png" id="1_gabio"]
 [ext_resource type="Script" uid="uid://76fv0d58slfe" path="res://scripts2/RoundTurnGauge.gd" id="1_jwrkk"]
 [ext_resource type="FontFile" uid="uid://c4pe7v7qaoxgf" path="res://assets/fonts/Comfortaa-Bold.ttf" id="3_qkrd1"]
+[ext_resource type="PackedScene" uid="uid://ne1mtcf1gjyd" path="res://scenes/scene_transition_animation.tscn" id="4_wu4qo"]
 
 [sub_resource type="Gradient" id="Gradient_jwrkk"]
 offsets = PackedFloat32Array(0.669014, 0.68662)
@@ -27,15 +28,182 @@ radial_initial_angle = 336.4
 texture_under = ExtResource("1_gabio")
 texture_progress = SubResource("GradientTexture2D_qkrd1")
 
-[node name="Label" type="Label" parent="."]
-offset_left = 818.0
-offset_top = 278.0
-offset_right = 925.0
-offset_bottom = 464.0
+[node name="1" type="Label" parent="."]
+offset_left = 664.0
+offset_top = 195.0
+offset_right = 1052.0
+offset_bottom = 642.0
 rotation = -0.10472
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_qkrd1")
-theme_override_font_sizes/font_size = 200
+theme_override_font_sizes/font_size = 300
 text = "1"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="2" type="Label" parent="."]
+offset_left = 1148.0
+offset_top = 180.0
+offset_right = 1536.0
+offset_bottom = 627.0
+rotation = 0.471239
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_qkrd1")
+theme_override_font_sizes/font_size = 300
+text = "2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="3" type="Label" parent="."]
+offset_left = 1635.0
+offset_top = 483.0
+offset_right = 2023.0
+offset_bottom = 930.0
+rotation = 1.22173
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_qkrd1")
+theme_override_font_sizes/font_size = 300
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="4" type="Label" parent="."]
+offset_left = 1801.0
+offset_top = 980.0
+offset_right = 2189.0
+offset_bottom = 1427.0
+rotation = 1.82911
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_qkrd1")
+theme_override_font_sizes/font_size = 300
+text = "4"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="5" type="Label" parent="."]
+offset_left = 1589.0
+offset_top = 1450.0
+offset_right = 1977.0
+offset_bottom = 1897.0
+rotation = 2.47837
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_qkrd1")
+theme_override_font_sizes/font_size = 300
+text = "5"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="6" type="Label" parent="."]
+offset_left = 1189.0
+offset_top = 1724.0
+offset_right = 1577.0
+offset_bottom = 2171.0
+rotation = 3.08574
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_qkrd1")
+theme_override_font_sizes/font_size = 300
+text = "6"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="7" type="Label" parent="."]
+offset_left = 687.0
+offset_top = 1706.0
+offset_right = 1075.0
+offset_bottom = 2153.0
+rotation = 3.66519
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_qkrd1")
+theme_override_font_sizes/font_size = 300
+text = "7"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="8" type="Label" parent="."]
+offset_left = 273.0
+offset_top = 1440.0
+offset_right = 661.0
+offset_bottom = 1887.0
+rotation = 4.32842
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_qkrd1")
+theme_override_font_sizes/font_size = 300
+text = "8"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="9" type="Label" parent="."]
+offset_left = 123.0
+offset_top = 963.0
+offset_right = 511.0
+offset_bottom = 1410.0
+rotation = 4.93928
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_qkrd1")
+theme_override_font_sizes/font_size = 300
+text = "9"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="10" type="Label" parent="."]
+offset_left = 261.0
+offset_top = 489.0
+offset_right = 649.0
+offset_bottom = 936.0
+rotation = 5.55015
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_qkrd1")
+theme_override_font_sizes/font_size = 300
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect1" type="ColorRect" parent="."]
+offset_left = 1012.0
+offset_top = 928.0
+offset_right = 1849.0
+offset_bottom = 957.0
+rotation = -0.0680678
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = 1000.0
+offset_top = 945.0
+offset_right = 1865.0
+offset_bottom = 974.0
+rotation = 0.575959
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+offset_left = 1016.0
+offset_top = 995.0
+offset_right = 1881.0
+offset_bottom = 1036.0
+rotation = 1.22173
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="."]
+offset_left = 975.0
+offset_top = 1012.0
+offset_right = 1840.0
+offset_bottom = 1046.0
+rotation = 1.82911
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="."]
+offset_left = 935.0
+offset_top = 1001.0
+offset_right = 1800.0
+offset_bottom = 1035.0
+rotation = 2.42601
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect6" type="ColorRect" parent="."]
+offset_left = 903.0
+offset_top = 993.0
+offset_right = 1768.0
+offset_bottom = 1027.0
+rotation = 3.07178
+color = Color(0, 0, 0, 1)
+
+[node name="Scene_transition_animation" parent="." instance=ExtResource("4_wu4qo")]

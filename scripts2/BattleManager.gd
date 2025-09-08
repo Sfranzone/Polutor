@@ -97,8 +97,12 @@ func monster_basic_attack():
 	#$"../PlayerHealth".health_damage(5)
 	
 	# Turn reduce
+	#await get_tree().create_timer(2).timeout
+	#$"../TurnGauge".set_turn_down(1)
+	
+	# Round turn
 	await get_tree().create_timer(2).timeout
-	$"../TurnGauge".set_turn_down(1)
+	$"../RoundTurnGauge".set_turn_up(1)
 
 
 func monster_big_attack():
@@ -111,8 +115,14 @@ func monster_big_attack():
 	#$"../PlayerHealth".health_damage(15)
 	
 	# Turn reduce
+	#await get_tree().create_timer(2.5).timeout
+	#$"../TurnGauge".set_turn_down(2)
+	
+	# Round turn
 	await get_tree().create_timer(2.5).timeout
-	$"../TurnGauge".set_turn_down(2)
+	$"../RoundTurnGauge".set_turn_up(1)
+	await get_tree().create_timer(0.5).timeout
+	$"../RoundTurnGauge".set_turn_up(1)
 
 
 func end_monster_turn():
