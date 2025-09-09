@@ -61,6 +61,6 @@ Il y a plusieurs possibilités pour étendre ce jeu en implémentant de nouvelle
 
 ## Bugs connus
 
-- Le zoom sur les cartes ne se fait plus après le tutoriel (qu'il soit fait au complet ou passé)
+- Le zoom sur les cartes ne se fait plus après un moment
 - Cartes légèrement floutées quand on zoom dessus
 - Les cartes apparaissent au-dessus de tout le reste et peuvent empêcher certaines actions dans les options
