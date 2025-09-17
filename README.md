@@ -61,6 +61,6 @@ Il y a plusieurs possibilités pour étendre ce jeu en implémentant de nouvelle
 
 ## Bugs connus
 
-- Le zoom sur les cartes ne se fait plus après un moment
-- Cartes légèrement floutées quand on zoom dessus
-- Les cartes apparaissent au-dessus de tout le reste et peuvent empêcher certaines actions dans les options
+- Le zoom sur les cartes ne se fait plus après un moment (Zoom désactivé pour le moment)
+- Cartes légèrement floutées quand on zoom dessus (Zoom désactivé pour le moment)
+- Les cartes apparaissent au-dessus de tout le reste et peuvent empêcher certaines actions dans les options (Zoom désactivé pour le moment)
