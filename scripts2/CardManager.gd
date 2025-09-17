@@ -36,8 +36,11 @@ func _process(delta: float) -> void:
 			
 			
 func start_drag(card):
-	card_being_dragged = card
-	card.scale = Vector2(DEFAULT_CARD_SCALE, DEFAULT_CARD_SCALE)
+	if Global.monster_turn:
+		pass
+	else:
+		card_being_dragged = card
+		card.scale = Vector2(DEFAULT_CARD_SCALE, DEFAULT_CARD_SCALE)
 
 
 func finish_drag():

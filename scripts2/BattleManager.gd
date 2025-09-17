@@ -42,7 +42,8 @@ func _on_end_turn_button_pressed() -> void:
 
 
 func monster_turn():
-	# Start opponent turn : disable/hide button + prevent action from player
+	Global.monster_turn = true
+	# Start monster turn : disable/hide button + prevent action from player
 	$"../EndTurnButton".disabled = true
 	$"../EndTurnButton".visible = false
 	
@@ -147,3 +148,4 @@ func end_monster_turn():
 	$"../EndTurnButton".disabled = false
 	$"../EndTurnButton".visible = true
 	$"../Enemy/Area2D/CollisionShape2D".disabled = false
+	Global.monster_turn = false

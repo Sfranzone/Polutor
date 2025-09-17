@@ -40,6 +40,7 @@ func _on_end_turn_button_pressed() -> void:
 
 
 func monster_turn():
+	Global.monster_turn = true
 	# Start opponent turn : disable/hide button + prevent action from player
 	$"../EndTurnButton".disabled = true
 	$"../EndTurnButton".visible = false
@@ -134,6 +135,7 @@ func end_monster_turn():
 		$"../PlayerHand".player_hand[int(randi_range(0, $"../PlayerHand".player_hand.size()-1))].visible = false
 	$"../EndTurnButton".disabled = false
 	$"../EndTurnButton".visible = true
+	Global.monster_turn = false
 
 
 #func _on_button_pressed() -> void:
