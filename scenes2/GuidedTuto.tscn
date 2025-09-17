@@ -1,29 +1,29 @@
-[gd_scene load_steps=38 format=3 uid="uid://b03rb3xn06wdt"]
+[gd_scene load_steps=38 format=3 uid="uid://cvvjv4qknoma5"]
 
-[ext_resource type="Texture2D" uid="uid://c7x5uaf23veqn" path="res://assets/background/background_laus3.jpg" id="1_hh2pn"]
-[ext_resource type="Script" uid="uid://cc7ysxw6fjins" path="res://scripts2/Main2.gd" id="1_mi7a0"]
-[ext_resource type="Script" uid="uid://l6ni1thqj2rc" path="res://scripts2/CardManager2.gd" id="2_hh2pn"]
-[ext_resource type="Script" uid="uid://brvcjdgdrtuuj" path="res://scripts2/PlayerHand.gd" id="3_rt2qh"]
-[ext_resource type="Texture2D" uid="uid://ckgnqsiv24qi5" path="res://assets/cards/backcard_texture.png" id="5_kbxn7"]
-[ext_resource type="Script" uid="uid://4xw5qpaqkox7" path="res://scripts2/Deck2.gd" id="5_mi7a0"]
-[ext_resource type="FontFile" uid="uid://c4pe7v7qaoxgf" path="res://assets/fonts/Comfortaa-Bold.ttf" id="7_0hday"]
-[ext_resource type="Script" uid="uid://cwl8tk4iegf8" path="res://scripts2/InputManager2.gd" id="7_mi7a0"]
-[ext_resource type="PackedScene" uid="uid://b0jyw0dskbw1m" path="res://scenes2/Enemy2.tscn" id="8_hh2pn"]
-[ext_resource type="PackedScene" uid="uid://b3lr5g3qlghm6" path="res://scenes2/Mana.tscn" id="9_pnuyh"]
-[ext_resource type="PackedScene" uid="uid://cghgok80e4wwd" path="res://scenes2/RoundTurnGauge.tscn" id="11_kbxn7"]
-[ext_resource type="PackedScene" uid="uid://bmxpd3d64j602" path="res://scenes2/EnvSocGauge.tscn" id="11_r80hs"]
-[ext_resource type="Script" uid="uid://b5hltnykd4y4q" path="res://scripts2/BattleManager2.gd" id="12_hh2pn"]
-[ext_resource type="PackedScene" uid="uid://ne1mtcf1gjyd" path="res://scenes/scene_transition_animation.tscn" id="13_euqgl"]
-[ext_resource type="PackedScene" uid="uid://h3dwx6rdsu7d" path="res://scenes/menu_map.tscn" id="14_bfg1n"]
-[ext_resource type="AudioStream" uid="uid://doxs0784q3lr7" path="res://assets/musics/monster_attack_gazo.mp3" id="16_rt2qh"]
-[ext_resource type="AudioStream" uid="uid://cyjwxie7s7x6o" path="res://assets/musics/monster_attack_gazo2.mp3" id="17_qp0d8"]
+[ext_resource type="Script" uid="uid://c8jcy77exakpx" path="res://scripts2/GuidedTuto.gd" id="1_6uw3v"]
+[ext_resource type="Texture2D" uid="uid://c7x5uaf23veqn" path="res://assets/background/background_laus3.jpg" id="1_svm2s"]
+[ext_resource type="Script" uid="uid://brvcjdgdrtuuj" path="res://scripts2/PlayerHand.gd" id="2_0obt4"]
+[ext_resource type="Script" uid="uid://4xw5qpaqkox7" path="res://scripts2/Deck2.gd" id="3_6uw3v"]
+[ext_resource type="Texture2D" uid="uid://ckgnqsiv24qi5" path="res://assets/cards/backcard_texture.png" id="4_5ftun"]
+[ext_resource type="FontFile" uid="uid://c4pe7v7qaoxgf" path="res://assets/fonts/Comfortaa-Bold.ttf" id="5_s5pew"]
+[ext_resource type="Script" uid="uid://cwl8tk4iegf8" path="res://scripts2/InputManager2.gd" id="6_fs7xl"]
+[ext_resource type="PackedScene" uid="uid://b0jyw0dskbw1m" path="res://scenes2/Enemy2.tscn" id="7_smtsj"]
+[ext_resource type="PackedScene" uid="uid://b3lr5g3qlghm6" path="res://scenes2/Mana.tscn" id="8_wdgty"]
+[ext_resource type="PackedScene" uid="uid://cghgok80e4wwd" path="res://scenes2/RoundTurnGauge.tscn" id="9_0vqop"]
+[ext_resource type="PackedScene" uid="uid://bmxpd3d64j602" path="res://scenes2/EnvSocGauge.tscn" id="10_0d8br"]
+[ext_resource type="Script" uid="uid://b5hltnykd4y4q" path="res://scripts2/BattleManager2.gd" id="11_0obt4"]
+[ext_resource type="PackedScene" uid="uid://ne1mtcf1gjyd" path="res://scenes/scene_transition_animation.tscn" id="12_xqcuv"]
+[ext_resource type="Script" uid="uid://l6ni1thqj2rc" path="res://scripts2/CardManager2.gd" id="14_1bb71"]
+[ext_resource type="AudioStream" uid="uid://doxs0784q3lr7" path="res://assets/musics/monster_attack_gazo.mp3" id="15_5ftun"]
+[ext_resource type="AudioStream" uid="uid://cyjwxie7s7x6o" path="res://assets/musics/monster_attack_gazo2.mp3" id="16_s5pew"]
+[ext_resource type="PackedScene" uid="uid://h3dwx6rdsu7d" path="res://scenes/menu_map.tscn" id="17_m83up"]
 
-[sub_resource type="Gradient" id="Gradient_qp0d8"]
+[sub_resource type="Gradient" id="Gradient_a2uni"]
 offsets = PackedFloat32Array(0.62013)
 colors = PackedColorArray(0.882353, 0.372549, 0, 0.376471)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_qp0d8"]
-gradient = SubResource("Gradient_qp0d8")
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_t3cfe"]
+gradient = SubResource("Gradient_a2uni")
 fill = 2
 
 [sub_resource type="Animation" id="Animation_f2d05"]
@@ -146,12 +146,12 @@ _data = {
 &"RESET": SubResource("Animation_pvgnn")
 }
 
-[sub_resource type="Gradient" id="Gradient_kbxn7"]
+[sub_resource type="Gradient" id="Gradient_7u8nh"]
 offsets = PackedFloat32Array(0.590909)
 colors = PackedColorArray(0, 0, 0, 0.54902)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_kbxn7"]
-gradient = SubResource("Gradient_kbxn7")
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_80t7d"]
+gradient = SubResource("Gradient_7u8nh")
 
 [sub_resource type="Animation" id="Animation_fd6ec"]
 resource_name = "DarkenScreenAppear"
@@ -273,10 +273,10 @@ _data = {
 &"RESET": SubResource("Animation_2m120")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xyrrl"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wdgty"]
 size = Vector2(150, 210)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mf653"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0vqop"]
 bg_color = Color(0.60933, 0.60933, 0.60933, 1)
 border_width_left = 5
 border_width_top = 5
@@ -288,7 +288,7 @@ corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6fgie"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0d8br"]
 bg_color = Color(0, 0, 0, 1)
 border_width_left = 5
 border_width_top = 5
@@ -300,7 +300,7 @@ corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pnibb"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_boyne"]
 bg_color = Color(1, 1, 1, 1)
 border_width_left = 5
 border_width_top = 5
@@ -312,14 +312,14 @@ corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
-[node name="Main2" type="Node2D"]
-script = ExtResource("1_mi7a0")
+[node name="GuidedTuto" type="Node2D"]
+script = ExtResource("1_6uw3v")
 
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -10
 position = Vector2(960, 540)
 scale = Vector2(1.55, 1.55)
-texture = ExtResource("1_hh2pn")
+texture = ExtResource("1_svm2s")
 
 [node name="FireScreen" type="Node2D" parent="."]
 
@@ -328,7 +328,7 @@ visible = false
 z_index = -2
 offset_right = 1920.0
 offset_bottom = 1080.0
-texture = SubResource("GradientTexture2D_qp0d8")
+texture = SubResource("GradientTexture2D_t3cfe")
 
 [node name="FireScreenAppear" type="AnimationPlayer" parent="FireScreen"]
 libraries = {
@@ -347,7 +347,7 @@ visible = false
 z_index = -2
 offset_right = 1920.0
 offset_bottom = 1080.0
-texture = SubResource("GradientTexture2D_kbxn7")
+texture = SubResource("GradientTexture2D_80t7d")
 
 [node name="DarkenScreenAppear" type="AnimationPlayer" parent="DarkenScreen"]
 libraries = {
@@ -360,69 +360,61 @@ libraries = {
 }
 
 [node name="PlayerHand" type="Node2D" parent="."]
-script = ExtResource("3_rt2qh")
+script = ExtResource("2_0obt4")
 
-[node name="Deck2" type="Node2D" parent="."]
+[node name="DeckTuto" type="Node2D" parent="."]
 position = Vector2(150, 890)
-script = ExtResource("5_mi7a0")
+script = ExtResource("3_6uw3v")
 
-[node name="Sprite2D" type="Sprite2D" parent="Deck2"]
+[node name="Sprite2D" type="Sprite2D" parent="DeckTuto"]
 z_index = -2
 scale = Vector2(0.6, 0.6)
-texture = ExtResource("5_kbxn7")
+texture = ExtResource("4_5ftun")
 
-[node name="Area2D" type="Area2D" parent="Deck2"]
+[node name="Area2D" type="Area2D" parent="DeckTuto"]
 collision_layer = 4
 collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Deck2/Area2D"]
-shape = SubResource("RectangleShape2D_xyrrl")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeckTuto/Area2D"]
+shape = SubResource("RectangleShape2D_wdgty")
 disabled = true
 
-[node name="Label" type="Label" parent="Deck2"]
+[node name="Label" type="Label" parent="DeckTuto"]
 offset_left = -20.0
 offset_top = -20.0
 offset_right = 20.0
 offset_bottom = 3.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("7_0hday")
+theme_override_fonts/font = ExtResource("5_s5pew")
 theme_override_font_sizes/font_size = 25
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="InputManager2" type="Node2D" parent="."]
-script = ExtResource("7_mi7a0")
+[node name="InputManagerTuto" type="Node2D" parent="."]
+script = ExtResource("6_fs7xl")
 
-[node name="Enemy2" parent="." instance=ExtResource("8_hh2pn")]
+[node name="EnemyTuto" parent="." instance=ExtResource("7_smtsj")]
 
-[node name="Mana" parent="." instance=ExtResource("9_pnuyh")]
+[node name="Mana" parent="." instance=ExtResource("8_wdgty")]
 position = Vector2(1625, 600)
 scale = Vector2(0.75, 0.75)
 
-[node name="RoundTurnGauge" parent="." instance=ExtResource("11_kbxn7")]
+[node name="RoundTurnGauge" parent="." instance=ExtResource("9_0vqop")]
 position = Vector2(50, 450)
 
-[node name="EnvSocGauge" parent="." instance=ExtResource("11_r80hs")]
+[node name="EnvSocGauge" parent="." instance=ExtResource("10_0d8br")]
 position = Vector2(200, 125)
 
-[node name="BattleManager2" type="Node" parent="."]
-script = ExtResource("12_hh2pn")
+[node name="BattleManagerTuto" type="Node" parent="."]
+script = ExtResource("11_0obt4")
 
-[node name="BattleTimer1" type="Timer" parent="."]
+[node name="Scene_transition_animation" parent="." instance=ExtResource("12_xqcuv")]
 
-[node name="BattleTimer2" type="Timer" parent="."]
+[node name="Menu_map" parent="." instance=ExtResource("17_m83up")]
 
-[node name="BattleTimer4" type="Timer" parent="."]
-
-[node name="BattleTimer3" type="Timer" parent="."]
-
-[node name="Scene_transition_animation" parent="." instance=ExtResource("13_euqgl")]
-
-[node name="Menu_map" parent="." instance=ExtResource("14_bfg1n")]
-
-[node name="CardManager2" type="Node2D" parent="."]
-script = ExtResource("2_hh2pn")
+[node name="CardManagerTuto" type="Node2D" parent="."]
+script = ExtResource("14_1bb71")
 
 [node name="EndTurnButton" type="Button" parent="."]
 offset_left = 1650.0
@@ -431,19 +423,17 @@ offset_right = 1850.0
 offset_bottom = 950.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("7_0hday")
+theme_override_fonts/font = ExtResource("5_s5pew")
 theme_override_font_sizes/font_size = 35
-theme_override_styles/hover = SubResource("StyleBoxFlat_mf653")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_6fgie")
-theme_override_styles/normal = SubResource("StyleBoxFlat_pnibb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0vqop")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0d8br")
+theme_override_styles/normal = SubResource("StyleBoxFlat_boyne")
 text = "End Turn"
 
 [node name="MonsterBaseAttack" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("16_rt2qh")
+stream = ExtResource("15_5ftun")
 bus = &"SFX"
 
 [node name="MonsterBigAttack" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("17_qp0d8")
+stream = ExtResource("16_s5pew")
 bus = &"SFX"
-
-[connection signal="pressed" from="EndTurnButton" to="BattleManager2" method="_on_end_turn_button_pressed"]
