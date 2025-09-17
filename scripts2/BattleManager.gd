@@ -37,6 +37,7 @@ func _ready() -> void:
 
 
 func _on_end_turn_button_pressed() -> void:
+	$"../Enemy/Area2D/CollisionShape2D".disabled = true
 	monster_turn()
 
 
@@ -140,6 +141,9 @@ func end_monster_turn():
 	await get_tree().create_timer(1).timeout
 	if monster_buff_25 and $"../PlayerHand".player_hand.size() > 0:
 		disable_card1 = $"../PlayerHand".player_hand[int(randi_range(0, $"../PlayerHand".player_hand.size()-1))]
-		disable_card1.visible = false
+		#disable_card1.visible = false
+		$"../PlayerHand".remove_card_from_hand(disable_card1)
+		disable_card1.get_node("Area2D/CollisionShape2D").disabled = true
 	$"../EndTurnButton".disabled = false
 	$"../EndTurnButton".visible = true
+	$"../Enemy/Area2D/CollisionShape2D".disabled = false

@@ -3,6 +3,9 @@ extends Control
 
 func _ready() -> void:
 	if Global.tutorial_done == false:
+		# Disable collision shape of monster
+		$"../Enemy/Area2D/CollisionShape2D".disabled = true
+		
 		$Control/Tuto2/Text2.visible = false
 		$Control/Tuto3/Text3.visible = false
 		$Control/Tuto4/Text4.visible = false
@@ -104,12 +107,14 @@ func _on_continue_button_7_pressed() -> void:
 func _on_continue_button_8_pressed() -> void:
 	$Control/Tuto8/ContinueButton8.visible = false
 	Global.tutorial_done = true
+	$"../Enemy/Area2D/CollisionShape2D".disabled = false
 	$".".visible = false
 
 
 func _on_yes_pressed() -> void:
 	$".".visible = false
 	Global.tutorial_done = true
+	$"../Enemy/Area2D/CollisionShape2D".disabled = false
 
 
 func _on_no_pressed() -> void:

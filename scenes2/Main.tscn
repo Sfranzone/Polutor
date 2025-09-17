@@ -1700,6 +1700,8 @@ shadow_offset = Vector2(0, 3.41)
 [node name="Main" type="Node2D"]
 script = ExtResource("1_whado")
 
+[node name="Scene_transition_animation" parent="." instance=ExtResource("12_eifcl")]
+
 [node name="Background" type="Sprite2D" parent="."]
 show_behind_parent = true
 z_index = -10
@@ -1802,8 +1804,6 @@ script = ExtResource("10_7ymo5")
 [node name="BattleTimer4" type="Timer" parent="."]
 
 [node name="BattleTimer3" type="Timer" parent="."]
-
-[node name="Scene_transition_animation" parent="." instance=ExtResource("12_eifcl")]
 
 [node name="CardManager" type="Node2D" parent="."]
 script = ExtResource("1_nbxl4")

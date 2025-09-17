@@ -72,21 +72,23 @@ func on_left_click_released():
 	
 	
 func on_hovered_over_card(card):
-	if !is_hovering_on_card:
-		is_hovering_on_card = true
-		highlight_card(card, true)
+	pass
+	#if !is_hovering_on_card:
+		#is_hovering_on_card = true
+		#highlight_card(card, true)
 
 
 func on_hovered_off_card(card):
-	if !card_being_dragged:
-		# If not dragged
-		highlight_card(card, false)
-		# Check if hovered off card straight on to another
-		var new_card_hovered = raycast_check_for_card()
-		if new_card_hovered:
-			highlight_card(new_card_hovered, true)
-		else:
-			is_hovering_on_card = false
+	pass
+	#if !card_being_dragged:
+		## If not dragged
+		#highlight_card(card, false)
+		## Check if hovered off card straight on to another
+		#var new_card_hovered = raycast_check_for_card()
+		#if new_card_hovered:
+			#highlight_card(new_card_hovered, true)
+		#else:
+			#is_hovering_on_card = false
 	
 	
 func highlight_card(card, hovered):
