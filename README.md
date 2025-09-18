@@ -46,10 +46,10 @@ Trois images en libre accès ont été utilisées dans ce projet sans avoir ét�
 
 Les images d'interface sont des images sans droits d'auteur récupérées sur [Google Image](https://www.google.com/imghp?hl=en&authuser=1&ogbl)
 
-## Intelligences Artificiels (ChatGPT)
+<!-- ## Intelligences Artificiels (ChatGPT)
 
 Durant ce projet, une seule intelligence artificielle, [ChatGPT](https://chatgpt.com/), a été utilisée. La principale fonction pour laquelle elle a été utilisée est la correction de code. En précisant le type de langage que c'est, il est très facile de demander où se situe une erreur ou comment la corriger en demandant simplement à ChatGPT et en lui envoyant le code. ChatGPT a également été sollicité, mais cette fois-ci que de manière minimale pour la rédaction du code. En effet, il est difficile d'utiliser ChatGPT pour la rédaction de code dans un programme comme Godot avec un langage spécifique à lui-même, c'est pourquoi il a été utilisé que de manière minimale.
-Le deuxième aspect pour lequel ChatGPT a été utilisé est la génération d'images. En effet, cela a permis de gagner du temps et d'avoir une forme d'unification dans le thème général de mes images pour les cartes et l'image de couverture itch.io et du read.me. Les 10 images de cartes ont été générées en envoyant une requête similaire à ChatGPT pour générer des images dans le même style.
+Le deuxième aspect pour lequel ChatGPT a été utilisé est la génération d'images. En effet, cela a permis de gagner du temps et d'avoir une forme d'unification dans le thème général de mes images pour les cartes et l'image de couverture itch.io et du read.me. Les 10 images de cartes ont été générées en envoyant une requête similaire à ChatGPT pour générer des images dans le même style. -->
 
 ## Possibilités futures
 
