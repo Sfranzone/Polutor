@@ -1,8 +1,8 @@
 [gd_scene load_steps=37 format=3 uid="uid://cvvjv4qknoma5"]
 
 [ext_resource type="Script" uid="uid://c8jcy77exakpx" path="res://scripts2/GuidedTuto.gd" id="1_6uw3v"]
-[ext_resource type="Texture2D" uid="uid://c7x5uaf23veqn" path="res://assets/background/background_laus3.jpg" id="1_svm2s"]
 [ext_resource type="Script" uid="uid://brvcjdgdrtuuj" path="res://scripts2/PlayerHand.gd" id="2_0obt4"]
+[ext_resource type="Texture2D" uid="uid://747d4pydcfgp" path="res://assets/background/polluted_city.png" id="2_svm2s"]
 [ext_resource type="Texture2D" uid="uid://ckgnqsiv24qi5" path="res://assets/cards/backcard_texture.png" id="4_5ftun"]
 [ext_resource type="Script" uid="uid://3qo145jadjdh" path="res://scripts2/DeckTuto.gd" id="4_w88k1"]
 [ext_resource type="FontFile" uid="uid://c4pe7v7qaoxgf" path="res://assets/fonts/Comfortaa-Bold.ttf" id="5_s5pew"]
@@ -316,9 +316,9 @@ script = ExtResource("1_6uw3v")
 
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -10
-position = Vector2(960, 540)
-scale = Vector2(1.55, 1.55)
-texture = ExtResource("1_svm2s")
+position = Vector2(960, 415)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("2_svm2s")
 
 [node name="FireScreen" type="Node2D" parent="."]
 
