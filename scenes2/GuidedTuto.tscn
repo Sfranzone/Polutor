@@ -1,19 +1,18 @@
-[gd_scene load_steps=38 format=3 uid="uid://cvvjv4qknoma5"]
+[gd_scene load_steps=37 format=3 uid="uid://cvvjv4qknoma5"]
 
 [ext_resource type="Script" uid="uid://c8jcy77exakpx" path="res://scripts2/GuidedTuto.gd" id="1_6uw3v"]
 [ext_resource type="Texture2D" uid="uid://c7x5uaf23veqn" path="res://assets/background/background_laus3.jpg" id="1_svm2s"]
 [ext_resource type="Script" uid="uid://brvcjdgdrtuuj" path="res://scripts2/PlayerHand.gd" id="2_0obt4"]
-[ext_resource type="Script" uid="uid://4xw5qpaqkox7" path="res://scripts2/Deck2.gd" id="3_6uw3v"]
 [ext_resource type="Texture2D" uid="uid://ckgnqsiv24qi5" path="res://assets/cards/backcard_texture.png" id="4_5ftun"]
+[ext_resource type="Script" uid="uid://3qo145jadjdh" path="res://scripts2/DeckTuto.gd" id="4_w88k1"]
 [ext_resource type="FontFile" uid="uid://c4pe7v7qaoxgf" path="res://assets/fonts/Comfortaa-Bold.ttf" id="5_s5pew"]
-[ext_resource type="Script" uid="uid://cwl8tk4iegf8" path="res://scripts2/InputManager2.gd" id="6_fs7xl"]
-[ext_resource type="PackedScene" uid="uid://b0jyw0dskbw1m" path="res://scenes2/Enemy2.tscn" id="7_smtsj"]
+[ext_resource type="PackedScene" uid="uid://dwh4c41pt70qq" path="res://scenes2/EnemyTuto.tscn" id="8_6uw3v"]
 [ext_resource type="PackedScene" uid="uid://b3lr5g3qlghm6" path="res://scenes2/Mana.tscn" id="8_wdgty"]
 [ext_resource type="PackedScene" uid="uid://cghgok80e4wwd" path="res://scenes2/RoundTurnGauge.tscn" id="9_0vqop"]
 [ext_resource type="PackedScene" uid="uid://bmxpd3d64j602" path="res://scenes2/EnvSocGauge.tscn" id="10_0d8br"]
-[ext_resource type="Script" uid="uid://b5hltnykd4y4q" path="res://scripts2/BattleManager2.gd" id="11_0obt4"]
+[ext_resource type="Script" uid="uid://bpgdk6ekmmt5q" path="res://scripts2/BattleManagerTuto.gd" id="11_7vj38"]
 [ext_resource type="PackedScene" uid="uid://ne1mtcf1gjyd" path="res://scenes/scene_transition_animation.tscn" id="12_xqcuv"]
-[ext_resource type="Script" uid="uid://l6ni1thqj2rc" path="res://scripts2/CardManager2.gd" id="14_1bb71"]
+[ext_resource type="Script" uid="uid://rbehu7nncvbv" path="res://scripts2/CardManagerTuto.gd" id="14_svm2s"]
 [ext_resource type="AudioStream" uid="uid://doxs0784q3lr7" path="res://assets/musics/monster_attack_gazo.mp3" id="15_5ftun"]
 [ext_resource type="AudioStream" uid="uid://cyjwxie7s7x6o" path="res://assets/musics/monster_attack_gazo2.mp3" id="16_s5pew"]
 [ext_resource type="PackedScene" uid="uid://h3dwx6rdsu7d" path="res://scenes/menu_map.tscn" id="17_m83up"]
@@ -364,7 +363,7 @@ script = ExtResource("2_0obt4")
 
 [node name="DeckTuto" type="Node2D" parent="."]
 position = Vector2(150, 890)
-script = ExtResource("3_6uw3v")
+script = ExtResource("4_w88k1")
 
 [node name="Sprite2D" type="Sprite2D" parent="DeckTuto"]
 z_index = -2
@@ -392,9 +391,8 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="InputManagerTuto" type="Node2D" parent="."]
-script = ExtResource("6_fs7xl")
 
-[node name="EnemyTuto" parent="." instance=ExtResource("7_smtsj")]
+[node name="EnemyTuto" parent="." instance=ExtResource("8_6uw3v")]
 
 [node name="Mana" parent="." instance=ExtResource("8_wdgty")]
 position = Vector2(1625, 600)
@@ -407,14 +405,14 @@ position = Vector2(50, 450)
 position = Vector2(200, 125)
 
 [node name="BattleManagerTuto" type="Node" parent="."]
-script = ExtResource("11_0obt4")
+script = ExtResource("11_7vj38")
 
 [node name="Scene_transition_animation" parent="." instance=ExtResource("12_xqcuv")]
 
 [node name="Menu_map" parent="." instance=ExtResource("17_m83up")]
 
 [node name="CardManagerTuto" type="Node2D" parent="."]
-script = ExtResource("14_1bb71")
+script = ExtResource("14_svm2s")
 
 [node name="EndTurnButton" type="Button" parent="."]
 offset_left = 1650.0
