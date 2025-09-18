@@ -42,7 +42,7 @@ Les musiques et effets sonores de ce projet ont été téléchargées depuis [pi
 
 ### Images sans droits d'auteur
 
-Trois images en libre accès ont été utilisées dans ce projet sans avoir été générées par des intelligences artificielles, ce sont l'image fond du menu principal et les deux images de fond des deux combats qui sont tirée de [opengameart.org](https://opengameart.org/content/simple-nature-pixel-background-for-video-game) et de [John Paul](https://polonaise.artstation.com/projects/RYaN1r).
+Deux images en libre accès ont été utilisées dans ce projet sans avoir été générées par des intelligences artificielles, ce sont les deux images de fond des deux combats (sans compter le tutoriel) qui sont tirée de [opengameart.org](https://opengameart.org/content/simple-nature-pixel-background-for-video-game) et de [John Paul](https://polonaise.artstation.com/projects/RYaN1r).
 
 Les images d'interface sont des images sans droits d'auteur récupérées sur [Google Image](https://www.google.com/imghp?hl=en&authuser=1&ogbl)
 
@@ -64,3 +64,4 @@ Il y a plusieurs possibilités pour étendre ce jeu en implémentant de nouvelle
 - Le zoom sur les cartes ne se fait plus après un moment (Zoom désactivé pour le moment)
 - Cartes légèrement floutées quand on zoom dessus (Zoom désactivé pour le moment)
 - Les cartes apparaissent au-dessus de tout le reste et peuvent empêcher certaines actions dans les options (Zoom désactivé pour le moment)
+- Nouveau tutoriel en cours de fabrication
