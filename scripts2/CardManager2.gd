@@ -5,7 +5,7 @@ const COLLISION_MASK_CARD = 1
 const COLLISION_MASK_CARD_SLOT = 2
 const DEFAULT_CARD_MOVE_SPEED = 0.1
 const DEFAULT_CARD_SCALE = 1
-const CARD_BIGGER_SCALE = 1.05
+const CARD_BIGGER_SCALE = 1
 const COLLISION_MASK_CARD_ENEMY = 2
 
 var screen_size
@@ -36,8 +36,12 @@ func _process(delta: float) -> void:
 			
 			
 func start_drag(card):
-	card_being_dragged = card
-	card.scale = Vector2(DEFAULT_CARD_SCALE, DEFAULT_CARD_SCALE)
+	if Global.monster_turn:
+		pass
+	else:
+		card_being_dragged = card
+		card.scale = Vector2(DEFAULT_CARD_SCALE, DEFAULT_CARD_SCALE)
+		card_being_dragged.z_index = 10
 
 
 func finish_drag():
@@ -54,6 +58,7 @@ func finish_drag():
 			#update_soc_env_gauge()
 		else:
 			pass
+	card_being_dragged.z_index = 0
 	card_being_dragged = null
 			
 			
@@ -68,21 +73,23 @@ func on_left_click_released():
 	
 	
 func on_hovered_over_card(card):
-	if !is_hovering_on_card:
-		is_hovering_on_card = true
-		highlight_card(card, true)
+	pass
+	#if !is_hovering_on_card:
+		#is_hovering_on_card = true
+		#highlight_card(card, true)
 
 
 func on_hovered_off_card(card):
-	if !card_being_dragged:
-		# If not dragged
-		highlight_card(card, false)
-		# Check if hovered off card straight on to another
-		var new_card_hovered = raycast_check_for_card()
-		if new_card_hovered:
-			highlight_card(new_card_hovered, true)
-		else:
-			is_hovering_on_card = false
+	pass
+	#if !card_being_dragged:
+		## If not dragged
+		#highlight_card(card, false)
+		## Check if hovered off card straight on to another
+		#var new_card_hovered = raycast_check_for_card()
+		#if new_card_hovered:
+			#highlight_card(new_card_hovered, true)
+		#else:
+			#is_hovering_on_card = false
 	
 	
 func highlight_card(card, hovered):
@@ -131,6 +138,6 @@ func get_card_with_highest_z_index(cards):
 	for i in range(1, cards.size()):
 		var current_card = cards[i].collider.get_parent()
 		if current_card.z_index > highest_z_index:
-			highest_z_card= current_card
+			highest_z_card = current_card
 			highest_z_index = current_card.z_index
 	return highest_z_card

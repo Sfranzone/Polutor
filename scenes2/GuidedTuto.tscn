@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://cvvjv4qknoma5"]
+[gd_scene load_steps=43 format=3 uid="uid://cvvjv4qknoma5"]
 
 [ext_resource type="Script" uid="uid://c8jcy77exakpx" path="res://scripts2/GuidedTuto.gd" id="1_6uw3v"]
 [ext_resource type="Script" uid="uid://brvcjdgdrtuuj" path="res://scripts2/PlayerHand.gd" id="2_0obt4"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ckgnqsiv24qi5" path="res://assets/cards/backcard_texture.png" id="4_5ftun"]
 [ext_resource type="Script" uid="uid://3qo145jadjdh" path="res://scripts2/DeckTuto.gd" id="4_w88k1"]
 [ext_resource type="FontFile" uid="uid://c4pe7v7qaoxgf" path="res://assets/fonts/Comfortaa-Bold.ttf" id="5_s5pew"]
+[ext_resource type="Script" uid="uid://bqxqmitrtky67" path="res://scripts2/InputManagerTuto.gd" id="7_6uw3v"]
 [ext_resource type="PackedScene" uid="uid://dwh4c41pt70qq" path="res://scenes2/EnemyTuto.tscn" id="8_6uw3v"]
 [ext_resource type="PackedScene" uid="uid://b3lr5g3qlghm6" path="res://scenes2/Mana.tscn" id="8_wdgty"]
 [ext_resource type="PackedScene" uid="uid://cghgok80e4wwd" path="res://scenes2/RoundTurnGauge.tscn" id="9_0vqop"]
@@ -311,6 +312,51 @@ corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
+[sub_resource type="Gradient" id="Gradient_6uw3v"]
+offsets = PackedFloat32Array(0.562162)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fs7xl"]
+gradient = SubResource("Gradient_6uw3v")
+width = 1920
+height = 1080
+
+[sub_resource type="Animation" id="Animation_6uw3v"]
+resource_name = "DarkenTutoStart"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DarkenTutoStart2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.45098)]
+}
+
+[sub_resource type="Animation" id="Animation_fs7xl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DarkenTutoStart2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fs7xl"]
+_data = {
+&"DarkenTutoStart": SubResource("Animation_6uw3v"),
+&"RESET": SubResource("Animation_fs7xl")
+}
+
 [node name="GuidedTuto" type="Node2D"]
 script = ExtResource("1_6uw3v")
 
@@ -391,8 +437,10 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="InputManagerTuto" type="Node2D" parent="."]
+script = ExtResource("7_6uw3v")
 
 [node name="EnemyTuto" parent="." instance=ExtResource("8_6uw3v")]
+visible = false
 
 [node name="Mana" parent="." instance=ExtResource("8_wdgty")]
 position = Vector2(1625, 600)
@@ -415,6 +463,7 @@ script = ExtResource("11_7vj38")
 script = ExtResource("14_svm2s")
 
 [node name="EndTurnButton" type="Button" parent="."]
+visible = false
 offset_left = 1650.0
 offset_top = 850.0
 offset_right = 1850.0
@@ -435,3 +484,17 @@ bus = &"SFX"
 [node name="MonsterBigAttack" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("16_s5pew")
 bus = &"SFX"
+
+[node name="DarkenTutoStart" type="Node2D" parent="."]
+
+[node name="DarkenTutoStart2" type="Sprite2D" parent="DarkenTutoStart"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(960, 540)
+texture = SubResource("GradientTexture2D_fs7xl")
+
+[node name="DarkenTutoStart" type="AnimationPlayer" parent="DarkenTutoStart"]
+libraries = {
+&"": SubResource("AnimationLibrary_fs7xl")
+}
+
+[connection signal="pressed" from="EndTurnButton" to="BattleManagerTuto" method="_on_end_turn_button_pressed"]

@@ -25,10 +25,13 @@ func _ready() -> void:
 	player_deck.shuffle()
 	$Label.text = str(player_deck.size())
 	card_database_reference = preload("res://scripts2/CardDatabase.gd")
-	for i in range(STARTING_HAND_SIZE):
-		draw_card()
-		draw_card_this_turn = false
-	draw_card_this_turn = true
+	if Global.stop_drag_card:
+		pass
+	else:
+		for i in range(STARTING_HAND_SIZE):
+			draw_card()
+			draw_card_this_turn = false
+		draw_card_this_turn = true
 
 
 func draw_card():
@@ -58,7 +61,7 @@ func draw_card():
 	new_card.get_node("Damage").text = str(card_database_reference.CARDS[card_drawn_name][3])
 	#new_card.get_node("Description").text = card_database_reference.CARDS[card_drawn_name][4]
 	new_card.get_node("NameCard").text = card_drawn_name
-	$"../CardManager2".add_child(new_card)
+	$"../CardManagerTuto".add_child(new_card)
 	new_card.name = "Card"
 	$"../PlayerHand".add_card_to_hand(new_card, CARD_DRAW_SPEED)
 	new_card.get_node("AnimationPlayer").play("card_flip")

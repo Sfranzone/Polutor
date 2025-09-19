@@ -5,7 +5,7 @@ const COLLISION_MASK_CARD = 1
 const COLLISION_MASK_CARD_SLOT = 2
 const DEFAULT_CARD_MOVE_SPEED = 0.1
 const DEFAULT_CARD_SCALE = 1
-const CARD_BIGGER_SCALE = 1.05
+const CARD_BIGGER_SCALE = 1
 const COLLISION_MASK_CARD_ENEMY = 2
 
 var screen_size
@@ -41,6 +41,7 @@ func start_drag(card):
 	else:
 		card_being_dragged = card
 		card.scale = Vector2(DEFAULT_CARD_SCALE, DEFAULT_CARD_SCALE)
+		card_being_dragged.z_index = 10
 
 
 func finish_drag():
@@ -61,6 +62,7 @@ func finish_drag():
 			#update_soc_env_gauge()
 		else:
 			pass
+	card_being_dragged.z_index = 0
 	card_being_dragged = null
 			
 			

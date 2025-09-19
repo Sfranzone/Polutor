@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cblt561y68b82"]
+
+[ext_resource type="AudioStream" uid="uid://bju1mkdbiniv5" path="res://assets/musics/combat_music_tuto.mp3" id="1_iwbjj"]
+
+[node name="Combat_music_tuto" type="AudioStreamPlayer"]
+stream = ExtResource("1_iwbjj")
+volume_db = -10.0
+bus = &"Music"
+parameters/looping = true

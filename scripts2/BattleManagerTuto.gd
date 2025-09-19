@@ -59,9 +59,9 @@ func monster_turn():
 
 
 func monster_basic_attack():
-	$"../Enemy2/BasicAttack/BasicAttackMove".play("AttackMove")
+	#$"../Enemy2/BasicAttack/BasicAttackMove".play("AttackMove")
 	await get_tree().create_timer(1).timeout
-	$"../MonsterBaseAttack".play()
+	#$"../MonsterBaseAttack".play()
 	#battle_timer1s.start()
 	#await battle_timer1s.timeout
 	
@@ -77,9 +77,9 @@ func monster_basic_attack():
 
 
 func monster_big_attack():
-	$"../Enemy2/BigAttack/BigAttackMove".play("BigAttack")
+	#$"../Enemy2/BigAttack/BigAttackMove".play("BigAttack")
 	await get_tree().create_timer(2).timeout
-	$"../MonsterBigAttack".play()
+	#$"../MonsterBigAttack".play()
 	#battle_timer3s.start()
 	#await battle_timer3s.timeout
 	
@@ -103,7 +103,7 @@ func end_monster_turn():
 	if $"../PlayerHand".player_hand.size() > 6:
 		pass
 	else:
-		$"../Deck2".draw_card()
+		$"../DeckTuto".draw_card()
 	$"../Mana".reset_mana()
 	await get_tree().create_timer(0.5).timeout
 	if $"../PlayerHand".player_hand.size() > 6:
