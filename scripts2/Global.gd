@@ -7,7 +7,7 @@ const starting_hand_size = 6
 var tutorial_done = false
 var intro_movie_seen = true
 var monster_turn = false
-var stop_drag_card = true
+var stop_drag_card = false
 
 # Monster management
 var monster_buff = false

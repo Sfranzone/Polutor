@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://cvvjv4qknoma5"]
+[gd_scene load_steps=69 format=3 uid="uid://cvvjv4qknoma5"]
 
 [ext_resource type="Script" uid="uid://c8jcy77exakpx" path="res://scripts2/GuidedTuto.gd" id="1_6uw3v"]
 [ext_resource type="Script" uid="uid://brvcjdgdrtuuj" path="res://scripts2/PlayerHand.gd" id="2_0obt4"]
@@ -395,9 +395,34 @@ tracks/1/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("NextWelcome:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("NextWelcome:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_smtsj"]
 resource_name = "WelcomeFadeIn"
+length = 3.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -422,12 +447,371 @@ tracks/1/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("NextWelcome:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("NextWelcome:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1bb71"]
 _data = {
 &"RESET": SubResource("Animation_0obt4"),
 &"WelcomeFadeIn": SubResource("Animation_smtsj")
 }
+
+[sub_resource type="Animation" id="Animation_1bb71"]
+resource_name = "NextBlinking"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NextWelcome:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_5ftun"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NextWelcome:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s5pew"]
+_data = {
+&"NextBlinking": SubResource("Animation_1bb71"),
+&"RESET": SubResource("Animation_5ftun")
+}
+
+[sub_resource type="Animation" id="Animation_s5pew"]
+resource_name = "WelcomeFadeOut"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../DarkenTutoStart:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_t3cfe"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../DarkenTutoStart:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_80t7d"]
+_data = {
+&"RESET": SubResource("Animation_t3cfe"),
+&"WelcomeFadeOut": SubResource("Animation_s5pew")
+}
+
+[sub_resource type="Animation" id="Animation_80t7d"]
+resource_name = "MonsterFadeIn"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../EnemyTuto:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../EnemyTuto:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_wdgty"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../EnemyTuto:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../EnemyTuto:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wdgty"]
+_data = {
+&"MonsterFadeIn": SubResource("Animation_80t7d"),
+&"RESET": SubResource("Animation_wdgty")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fs7xl"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.8, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_smtsj"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.8, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0obt4"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.8, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ftun"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.8, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t3cfe"]
+bg_color = Color(0.509286, 0.509286, 0.509286, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.8, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wdgty"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.8, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kobs2"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.8, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1bb71"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+expand_margin_left = 50.0
+expand_margin_top = 60.0
+expand_margin_right = 50.0
+expand_margin_bottom = 200.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s5pew"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_80t7d"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xqcuv"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0l7mm"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wma5t"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
 
 [node name="GuidedTuto" type="Node2D"]
 script = ExtResource("1_6uw3v")
@@ -512,7 +896,7 @@ autowrap_mode = 2
 script = ExtResource("7_6uw3v")
 
 [node name="EnemyTuto" parent="." instance=ExtResource("8_6uw3v")]
-visible = false
+modulate = Color(1, 1, 1, 0)
 
 [node name="Mana" parent="." instance=ExtResource("8_wdgty")]
 position = Vector2(1625, 600)
@@ -528,8 +912,6 @@ position = Vector2(200, 125)
 script = ExtResource("11_7vj38")
 
 [node name="Scene_transition_animation" parent="." instance=ExtResource("12_xqcuv")]
-
-[node name="Menu_map" parent="." instance=ExtResource("17_m83up")]
 
 [node name="CardManagerTuto" type="Node2D" parent="."]
 script = ExtResource("14_svm2s")
@@ -599,9 +981,28 @@ libraries = {
 }
 
 [node name="NextWelcome" type="Label" parent="Welcome"]
-offset_right = 40.0
-offset_bottom = 23.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 760.0
+offset_top = 710.0
+offset_right = 1160.0
+offset_bottom = 760.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_s5pew")
+theme_override_font_sizes/font_size = 30
 text = "Cliquer pour continuer"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NextBlinking" type="AnimationPlayer" parent="Welcome"]
+libraries = {
+&"": SubResource("AnimationLibrary_s5pew")
+}
 
 [node name="NextWelcomeButton" type="Button" parent="Welcome"]
 modulate = Color(1, 1, 1, 0)
@@ -609,4 +1010,139 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 disabled = true
 
+[node name="WelcomeFadeOut" type="AnimationPlayer" parent="Welcome"]
+libraries = {
+&"": SubResource("AnimationLibrary_80t7d")
+}
+
+[node name="MonsterAppear" type="Node2D" parent="."]
+
+[node name="MonsterFadeIn" type="AnimationPlayer" parent="MonsterAppear"]
+libraries = {
+&"": SubResource("AnimationLibrary_wdgty")
+}
+
+[node name="HereMonster" type="Label" parent="MonsterAppear"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Voici un monstre que vous devrez tuer"
+
+[node name="CardExplain" type="Node2D" parent="."]
+
+[node name="DonutExplain" type="Node2D" parent="."]
+
+[node name="ExitTuto" type="Node2D" parent="."]
+
+[node name="ExitTuto" type="Button" parent="ExitTuto"]
+offset_left = 1500.0
+offset_top = 100.0
+offset_right = 1775.0
+offset_bottom = 145.0
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.374139, 0.374139, 0.374139, 1)
+theme_override_fonts/font = ExtResource("5_s5pew")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxFlat_fs7xl")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_smtsj")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_0obt4")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_5ftun")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_5ftun")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_t3cfe")
+theme_override_styles/hover = SubResource("StyleBoxFlat_t3cfe")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_wdgty")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wdgty")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_kobs2")
+theme_override_styles/normal = SubResource("StyleBoxFlat_kobs2")
+text = "Passer le tutoriel"
+
+[node name="ExitConfirmation" type="Node2D" parent="ExitTuto"]
+visible = false
+
+[node name="ExitTutoPanel" type="Panel" parent="ExitTuto/ExitConfirmation"]
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="ExitTutoConfirm" type="Label" parent="ExitTuto/ExitConfirmation"]
+offset_left = 610.0
+offset_top = 400.0
+offset_right = 1310.0
+offset_bottom = 440.0
+theme_override_fonts/font = ExtResource("5_s5pew")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_1bb71")
+text = "Êtes-vous sûr de vouloir passer le tutoriel ?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Yes" type="Button" parent="ExitTuto/ExitConfirmation"]
+offset_left = 775.0
+offset_top = 550.0
+offset_right = 835.0
+offset_bottom = 590.0
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.344076, 0.344076, 0.344076, 1)
+theme_override_fonts/font = ExtResource("5_s5pew")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxFlat_s5pew")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_80t7d")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xqcuv")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0l7mm")
+theme_override_styles/normal = SubResource("StyleBoxFlat_wma5t")
+text = "Oui"
+
+[node name="No" type="Button" parent="ExitTuto/ExitConfirmation"]
+offset_left = 1075.0
+offset_top = 550.0
+offset_right = 1141.0
+offset_bottom = 590.0
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.344076, 0.344076, 0.344076, 1)
+theme_override_fonts/font = ExtResource("5_s5pew")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxFlat_s5pew")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_80t7d")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xqcuv")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0l7mm")
+theme_override_styles/normal = SubResource("StyleBoxFlat_wma5t")
+text = "Non"
+
+[node name="Menu_map" parent="." instance=ExtResource("17_m83up")]
+
 [connection signal="pressed" from="EndTurnButton" to="BattleManagerTuto" method="_on_end_turn_button_pressed"]
+[connection signal="pressed" from="Welcome/NextWelcomeButton" to="." method="_on_next_welcome_button_pressed"]
+[connection signal="pressed" from="ExitTuto/ExitTuto" to="." method="_on_exit_tuto_pressed"]
+[connection signal="pressed" from="ExitTuto/ExitConfirmation/Yes" to="." method="_on_yes_pressed"]
+[connection signal="pressed" from="ExitTuto/ExitConfirmation/No" to="." method="_on_no_pressed"]

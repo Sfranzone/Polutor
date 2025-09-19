@@ -22,6 +22,7 @@ var draw_card_this_turn = false
 
 
 func _ready() -> void:
+	Global.stop_drag_card = true
 	player_deck.shuffle()
 	$Label.text = str(player_deck.size())
 	card_database_reference = preload("res://scripts2/CardDatabase.gd")

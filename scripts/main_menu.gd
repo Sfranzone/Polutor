@@ -23,9 +23,14 @@ func _on_start_game_pressed():
 		get_tree().change_scene_to_file("res://scenes2/IntroMovie.tscn")
 		#intro_not = 0
 	else:
-		scene_transition_animation.play("fade_in")
-		await get_tree().create_timer(0.5).timeout
-		get_tree().change_scene_to_file("res://scenes2/Main.tscn")
+		if Global.tutorial_done:
+			scene_transition_animation.play("fade_in")
+			await get_tree().create_timer(0.5).timeout
+			get_tree().change_scene_to_file("res://scenes2/Main.tscn")
+		else:
+			scene_transition_animation.play("fade_in")
+			await get_tree().create_timer(0.5).timeout
+			get_tree().change_scene_to_file("res://scenes2/GuidedTuto.tscn")
 
 
 func _on_options_pressed():

@@ -32,6 +32,9 @@ func _process(delta: float) -> void:
 
 
 func _ready() -> void:
+	# Things disabled at start
+	$Welcome/NextWelcome.visible = false
+	
 	scene_transition_animation.play("fade_out")
 	await get_tree().create_timer(0.5).timeout
 	Global.stop_music()
@@ -43,3 +46,32 @@ func _ready() -> void:
 	$EndTurnButton.visible = false
 	await get_tree().create_timer(1).timeout
 	$DarkenTutoStart/DarkenTutoStart.play("DarkenTutoStart")
+	await get_tree().create_timer(2).timeout
+	$Welcome/WelcomeFadeIn.play("WelcomeFadeIn")
+	await get_tree().create_timer(3).timeout
+	$Welcome/NextBlinking.play("NextBlinking")
+	$Welcome/NextWelcomeButton.disabled = false
+	
+
+
+func _on_next_welcome_button_pressed() -> void:
+	$Welcome/WelcomeFadeOut.play("WelcomeFadeOut")
+	await get_tree().create_timer(1).timeout
+	$Welcome.visible = false
+	await get_tree().create_timer(1).timeout
+	$MonsterAppear/MonsterFadeIn.play("MonsterFadeIn")
+
+
+func _on_exit_tuto_pressed() -> void:
+	$ExitTuto/ExitConfirmation.visible = true
+
+
+func _on_no_pressed() -> void:
+	$ExitTuto/ExitConfirmation.visible = false
+
+
+func _on_yes_pressed() -> void:
+	scene_transition_animation.play("fade_in")
+	await get_tree().create_timer(0.5).timeout
+	Global.tutorial_done = true
+	get_tree().change_scene_to_file("res://scenes2/Main.tscn")
