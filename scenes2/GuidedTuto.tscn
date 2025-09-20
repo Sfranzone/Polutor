@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=3 uid="uid://cvvjv4qknoma5"]
+[gd_scene load_steps=70 format=3 uid="uid://cvvjv4qknoma5"]
 
 [ext_resource type="Script" uid="uid://c8jcy77exakpx" path="res://scripts2/GuidedTuto.gd" id="1_6uw3v"]
 [ext_resource type="Script" uid="uid://brvcjdgdrtuuj" path="res://scripts2/PlayerHand.gd" id="2_0obt4"]
@@ -515,33 +515,6 @@ _data = {
 &"RESET": SubResource("Animation_5ftun")
 }
 
-[sub_resource type="Animation" id="Animation_s5pew"]
-resource_name = "WelcomeFadeOut"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../DarkenTutoStart:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-
 [sub_resource type="Animation" id="Animation_t3cfe"]
 length = 0.001
 tracks/0/type = "value"
@@ -567,6 +540,33 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_s5pew"]
+resource_name = "WelcomeFadeOut"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../DarkenTutoStart:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_80t7d"]
@@ -634,6 +634,21 @@ _data = {
 &"MonsterFadeIn": SubResource("Animation_80t7d"),
 &"RESET": SubResource("Animation_wdgty")
 }
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xhhmv"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_bottom = 10.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fs7xl"]
 bg_color = Color(1, 1, 1, 1)
@@ -1023,9 +1038,19 @@ libraries = {
 }
 
 [node name="HereMonster" type="Label" parent="MonsterAppear"]
-offset_right = 40.0
-offset_bottom = 23.0
-text = "Voici un monstre que vous devrez tuer"
+offset_left = 1300.0
+offset_top = 350.0
+offset_right = 1800.0
+offset_bottom = 450.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_s5pew")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_xhhmv")
+text = "Voici un monstre.
+Vous devrez utiliser vos cartes intelligemment pour abaisser la vie du monstre à zéro en moins de 10 tours."
+autowrap_mode = 2
+
+[node name="Arrow" type="Sprite2D" parent="MonsterAppear"]
 
 [node name="CardExplain" type="Node2D" parent="."]
 
