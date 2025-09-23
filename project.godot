@@ -25,6 +25,7 @@ DefeatMusic="*res://scenes/music_defeat.tscn"
 TransitionMusic="*res://scenes/music_transition.tscn"
 CombatMusic2="*res://scenes/music_combat2.tscn"
 CombatMusicTuto="*res://scenes/music_combat_tuto.tscn"
+SaveManager="*res://scripts2/SaveManager.gd"
 
 [display]
 
