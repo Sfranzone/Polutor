@@ -34,6 +34,10 @@ func _process(delta: float) -> void:
 func _ready() -> void:
 	# Things disabled at start
 	$Welcome/NextWelcome.visible = false
+	$Welcome/NextWelcomeButton.disabled = true
+	$MonsterAppear/NextMonsterButton.disabled = true
+	$MonsterAppear.visible = false
+	$MonsterAppear/NextMonster.visible = false
 	
 	scene_transition_animation.play("fade_out")
 	await get_tree().create_timer(0.5).timeout
@@ -55,11 +59,15 @@ func _ready() -> void:
 
 
 func _on_next_welcome_button_pressed() -> void:
+	$MonsterAppear.visible = true
 	$Welcome/WelcomeFadeOut.play("WelcomeFadeOut")
 	await get_tree().create_timer(1).timeout
 	$Welcome.visible = false
 	await get_tree().create_timer(1).timeout
 	$MonsterAppear/MonsterFadeIn.play("MonsterFadeIn")
+	await get_tree().create_timer(4).timeout
+	$MonsterAppear/BlinkingNext.play("BlinkingNext")
+	$MonsterAppear/NextMonsterButton.disabled = false
 
 
 func _on_exit_tuto_pressed() -> void:
@@ -75,3 +83,9 @@ func _on_yes_pressed() -> void:
 	await get_tree().create_timer(0.5).timeout
 	Global.tutorial_done = true
 	get_tree().change_scene_to_file("res://scenes2/Main.tscn")
+
+
+func _on_next_monster_button_pressed() -> void:
+	$MonsterAppear/MonsterAppearFadeOut.play("MonsterAppearFadeOut")
+	await get_tree().create_timer(1).timeout
+	$MonsterAppear.visible = false
